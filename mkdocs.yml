@@ -1,0 +1,240 @@
+site_name: Enterprise AI Automations Using Small LLM Documentation
+site_url: https://github.io/raqueeb/ai_work_flow
+repo_url: https://github.com/raqueeb/ai_work_flow
+repo_name: raqueeb/ai_work_flow
+site_author: রকিবুল হাসান
+site_description: >-
+   রোড টু হাইটেক ইন্ডাস্ট্রি: এআই নিয়ে কাজ
+copyright: "সৃজনশীল লাইসেন্সিং ২০২৪ - ২০২৬ &copy; রকিবুল হাসান"
+edit_uri: ""
+
+theme:
+  name: material
+  language: bn
+  palette:
+    scheme: default
+    primary: indigo
+    accent: indigo
+  font:
+    text: SiyamRupali
+    code: SiyamRupali
+  favicon: assets/favicon.png
+  icon:
+    logo: logo
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - navigation.footer
+  static_templates:
+    - 404.html
+  include_search_page: true
+  search_index_only: true
+  
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - blog
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+
+extra:
+  status:
+    new: Recently added
+    deprecated: Deprecated
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/raqueeb
+    - icon: fontawesome/brands/facebook-messenger
+      link: http://m.me/raqueeb
+    - icon: fontawesome/brands/whatsapp
+      link: tel:+8801713095767
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/raqueeb
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/raqueeb/
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/raqueeb
+    - icon: fontawesome/brands/facebook
+      link: https://facebook.com/raqueeb
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append: []
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Home: index.md
+  - Overview: overview.md
+
+  # ══════════════════════════════════════════════════════
+  # AI-DEVELOPMENT
+  # ══════════════════════════════════════════════════════
+  - "AI-Driven Development":
+    - "Overview": "ai-development/index.md"
+    - "AI Software Life Cycle": "ai-development/sdlc.md"
+    - "Why Reasoning Matters": "ai-development/reasoning.md"
+    - "Citizen Developer Guide": "ai-development/citizen-developers.md"
+    - "বাংলা - AI ডেভেলপমেন্ট": "bangla/ai-development/index.md"
+
+  # ══════════════════════════════════════════════════════
+  # GETTING STARTED
+  # ══════════════════════════════════════════════════════
+  - "Getting Started":
+    - "Overview": "getting-started/index.md"
+    - "Talk to LM Studio": "getting-started/talk-to-llm.md"
+    - "বাংলা - শুরু করুন": "bangla/getting-started/index.md"
+
+  # ══════════════════════════════════════════════════════
+  # ISP CLASSIFIER
+  # ══════════════════════════════════════════════════════
+  - "ISP Classifier":
+    - "Overview": "isp-classifier/index.md"
+    - "Baseline Classifier": "isp-classifier/baseline.md"
+    - "LLM Classifier": "isp-classifier/llm-classifier.md"
+    - "Classifier Comparison": "isp-classifier/comparison.md"
+    - "বাংলা - ISP Classifier": "bangla/isp-classifier/index.md"
+
+  # ══════════════════════════════════════════════════════
+  # ISP REASONING
+  # ══════════════════════════════════════════════════════
+  - "ISP Reasoning":
+    - "Overview": "isp-classifier-reasoning/index.md"
+    - "AI Reasoning": "isp-classifier-reasoning/reasoning.md"
+    - "বাংলা - ISP Reasoning": "bangla/isp-classifier-reasoning/index.md"
+
+  # ══════════════════════════════════════════════════════
+  # QWEN + RAG
+  # ══════════════════════════════════════════════════════
+  - "Qwen + RAG":
+    - "Overview": "qwen-rag/index.md"
+    - "Qwen RAG Demo": "qwen-rag/qwen-rag-demo.md"
+    - "Simple RAG": "qwen-rag/simple-rag.md"
+    - "Vector Storage": "qwen-rag/vector-storage.md"
+    - "বাংলা - Qwen RAG": "bangla/qwen-rag/index.md"
+
+  # ══════════════════════════════════════════════════════
+  # GEMMA E4B
+  # ══════════════════════════════════════════════════════
+  - "Gemma E4B":
+    - "Overview": "gemma-e4b/index.md"
+    - "Standard Apps": "gemma-e4b/standard-apps.md"
+    - "SLM Apps": "gemma-e4b/slm-apps.md"
+    - "বাংলা - Gemma E4B": "bangla/gemma-e4b/index.md"
+
+  # ══════════════════════════════════════════════════════
+  # HR ASSISTANT
+  # ══════════════════════════════════════════════════════
+  - "HR Assistant":
+    - "Overview": "hr-assistant/index.md"
+    - "HR Manager": "hr-assistant/hr-manager.md"
+    - "HR Assistant": "hr-assistant/hr-assistant.md"
+    - "Sales Funnel": "hr-assistant/sales-funnel.md"
+    - "বাংলা - HR Assistant": "bangla/hr-assistant/index.md"
+
+  # ══════════════════════════════════════════════════════
+  # SLA SYSTEM
+  # ══════════════════════════════════════════════════════
+  - "SLA System":
+    - "Overview": "sla-system/index.md"
+    - "SLA Classifier": "sla-system/classifier.md"
+    - "ERP Approval": "sla-system/erp-approval.md"
+    - "বাংলা - SLA System": "bangla/sla-system/index.md"
+
+  # ══════════════════════════════════════════════════════
+  # SMART GIFT AI
+  # ══════════════════════════════════════════════════════
+  - "Smart Gift AI":
+    - "Overview": "smart-gift/index.md"
+    - "Admin Panel": "smart-gift/admin.md"
+    - "বাংলা - Smart Gift": "bangla/smart-gift/index.md"
+
+  # ══════════════════════════════════════════════════════
+  # LLM DEMOS
+  # ══════════════════════════════════════════════════════
+  - "LLM Demos":
+    - "Overview": "llm-demos/index.md"
+    - "LM Demos": "llm-demos/lm-demos.md"
+    - "Hierarchy Demo": "llm-demos/hierarchy.md"
+    - "Mini Quick Demo": "llm-demos/mini-quick.md"
+    - "Stress Test": "llm-demos/stress-test.md"
+    - "বাংলা - LLM Demos": "bangla/llm-demos/index.md"
+
+  # ══════════════════════════════════════════════════════
+  # ENTERPRISE APPS
+  # ══════════════════════════════════════════════════════
+  - "Enterprise Apps":
+    - "Overview": "enterprise-apps/index.md"
+    - "Model Use Class": "enterprise-apps/model-use.md"
+    - "বাংলা - Enterprise Apps": "bangla/enterprise-apps/index.md"
+
+  # ══════════════════════════════════════════════════════
+  # MLOps
+  # ══════════════════════════════════════════════════════
+  - "MLOps":
+    - "Overview": "mlops/index.md"
+    - "Churn Prediction": "mlops/churn-prediction.md"
+    - "Model Registry": "mlops/model-registry.md"
+    - "Monitoring": "mlops/monitoring.md"
+    - "A/B Testing": "mlops/ab-testing.md"
+    - "Retraining": "mlops/retraining.md"
+    - "বাংলা - MLOps": "bangla/mlops/index.md"
+
+  # ══════════════════════════════════════════════════════
+  # REFERENCE
+  # ══════════════════════════════════════════════════════
+  - "বাংলা - রেফারেন্স": "bangla/reference/index.md"

@@ -782,6 +782,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -790,30 +801,13 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How It Works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#decision-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Decision Flow
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#rule-engine-architecture" class="md-nav__link">
+  <a href="#processing-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rule Engine Architecture
+        Processing Pipeline
       
     </span>
   </a>
@@ -821,10 +815,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#keyword-mapping" class="md-nav__link">
+  <a href="#keyword-categories" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Keyword Mapping
+        Keyword Categories
       
     </span>
   </a>
@@ -832,10 +826,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#performance-comparison" class="md-nav__link">
+  <a href="#classification-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Performance Comparison
+        Classification Flow
       
     </span>
   </a>
@@ -843,10 +837,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-example" class="md-nav__link">
+  <a href="#implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Code Example
+        Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strengths-and-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strengths and Limitations
       
     </span>
   </a>
@@ -2625,6 +2630,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2633,30 +2649,13 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How It Works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#decision-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Decision Flow
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#rule-engine-architecture" class="md-nav__link">
+  <a href="#processing-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rule Engine Architecture
+        Processing Pipeline
       
     </span>
   </a>
@@ -2664,10 +2663,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#keyword-mapping" class="md-nav__link">
+  <a href="#keyword-categories" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Keyword Mapping
+        Keyword Categories
       
     </span>
   </a>
@@ -2675,10 +2674,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#performance-comparison" class="md-nav__link">
+  <a href="#classification-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Performance Comparison
+        Classification Flow
       
     </span>
   </a>
@@ -2686,10 +2685,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-example" class="md-nav__link">
+  <a href="#implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Code Example
+        Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strengths-and-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strengths and Limitations
       
     </span>
   </a>
@@ -2737,122 +2747,148 @@
 
 <h1 id="baseline-classifier">Baseline Classifier<a class="headerlink" href="#baseline-classifier" title="Permanent link">&para;</a></h1>
 <p>Rule-based classification using keyword matching for fast, deterministic results.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The baseline classifier is a simple, lightweight system that categorizes ISP support tickets based on keyword matching. It processes text input through a series of transformations to identify the appropriate ISP error code.</p>
 <h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<p>The classifier receives complaint text and processes it through several stages. First, it normalizes the input by converting to lowercase. Then it searches for known keywords in the text. If a match is found in the lookup dictionary, it returns the corresponding ISP code. Otherwise, it returns "Unknown".</p>
 <pre class="mermaid"><code>flowchart TD
-    A[Complaint Text] --&gt; B[Text Preprocessing]
-    B --&gt; C[Keyword Extraction]
-    C --&gt; D[Lookup Dictionary]
+    A[Ticket Input] --&gt; B[Convert to Lowercase]
+    B --&gt; C[Extract Keywords]
+    C --&gt; D[Search Dictionary]
     D --&gt; E{Match Found?}
     E --&gt;|Yes| F[Return ISP Code]
-    E --&gt;|No| G[Return "Unknown"]
+    E --&gt;|No| G[Return Unknown]
 
     style F fill:#c8e6c9
     style G fill:#ffcdd2</code></pre>
-<h3 id="decision-flow">Decision Flow<a class="headerlink" href="#decision-flow" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Complaint Text
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>      ↓
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Text Preprocessing
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      ↓
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Keyword Extraction
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      ↓
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Lookup Dictionary
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>      ↓
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Match Found? ───No──→ Return &quot;Unknown&quot;
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>      ↓Yes
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Return ISP Code
-</span></code></pre></div>
-<h2 id="rule-engine-architecture">Rule Engine Architecture<a class="headerlink" href="#rule-engine-architecture" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TD
-    A[Input Text] --&gt; B[Normalize]
-    B --&gt; C[Tokenize]
-    C --&gt; D[Match Rules]
-    D --&gt; E[ONT: ISP-001]
-    D --&gt; F[Router: ISP-002]
-    D --&gt; G[DNS: ISP-003]
-    D --&gt; H[Speed: ISP-004]
-    E --&gt; I[Output Code]
-    F --&gt; I
-    G --&gt; I
-    H --&gt; I
+<h2 id="processing-pipeline">Processing Pipeline<a class="headerlink" href="#processing-pipeline" title="Permanent link">&para;</a></h2>
+<p>The system processes each ticket through a defined pipeline with specific steps for text normalization, tokenization, and matching.</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph Input
+        A[Ticket Text]
+    end
 
-    style I fill:#90caf9</code></pre>
-<h2 id="keyword-mapping">Keyword Mapping<a class="headerlink" href="#keyword-mapping" title="Permanent link">&para;</a></h2>
+    subgraph Process
+        B[Normalize] --&gt; C[Tokenize] --&gt; D[Match Rules]
+    end
+
+    subgraph Output
+        E[ISP Code]
+    end
+
+    A --&gt; B
+    D --&gt; E</code></pre>
+<h2 id="keyword-categories">Keyword Categories<a class="headerlink" href="#keyword-categories" title="Permanent link">&para;</a></h2>
+<p>The system uses a predefined dictionary that maps keywords to ISP error codes. Each code represents a specific category of network or service issues.</p>
 <table>
 <thead>
 <tr>
-<th>Keywords</th>
+<th>Category</th>
 <th>ISP Code</th>
-<th>Description</th>
+<th>Keywords</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>ont, red light, fiber, no signal</td>
+<td>ONT/Fiber</td>
 <td>ISP-001</td>
-<td>ONT/Fiber Issue</td>
+<td>ont, red light, fiber, no signal</td>
 </tr>
 <tr>
-<td>router, wifi, wi-fi, wireless</td>
+<td>Router</td>
 <td>ISP-002</td>
-<td>Router Problem</td>
+<td>router, wifi, wireless, connection</td>
 </tr>
 <tr>
-<td>dns, resolve, can't access</td>
+<td>DNS</td>
 <td>ISP-003</td>
-<td>DNS Issue</td>
+<td>dns, resolve, cannot access</td>
 </tr>
 <tr>
-<td>slow, buffering, lag</td>
+<td>Speed</td>
 <td>ISP-004</td>
-<td>Speed Problem</td>
+<td>slow, buffering, lag</td>
 </tr>
 <tr>
-<td>billing, payment, charge</td>
+<td>Billing</td>
 <td>ISP-005</td>
-<td>Billing Issue</td>
+<td>billing, payment, charge</td>
 </tr>
 <tr>
-<td>outage, down, no connection</td>
-<td>ISP-006</td>
 <td>Outage</td>
+<td>ISP-006</td>
+<td>outage, down, no connection</td>
 </tr>
 </tbody>
 </table>
-<h2 id="performance-comparison">Performance Comparison<a class="headerlink" href="#performance-comparison" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>graph LR
-    A[Baseline] --&gt;|Pro| B[Fast]
-    A --&gt;|Pro| C[No LLM Cost]
-    A --&gt;|Pro| D[Deterministic]
-    A --&gt;|Con| E[Limited Coverage]
-    A --&gt;|Con| F[No Context]</code></pre>
-<h2 id="code-example">Code Example<a class="headerlink" href="#code-example" title="Permanent link">&para;</a></h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">ISP_CODES</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="s2">&quot;ISP-001&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ont&quot;</span><span class="p">,</span> <span class="s2">&quot;red light&quot;</span><span class="p">,</span> <span class="s2">&quot;fiber&quot;</span><span class="p">,</span> <span class="s2">&quot;no signal&quot;</span><span class="p">],</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="s2">&quot;ISP-002&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;router&quot;</span><span class="p">,</span> <span class="s2">&quot;wifi&quot;</span><span class="p">,</span> <span class="s2">&quot;wi-fi&quot;</span><span class="p">,</span> <span class="s2">&quot;wireless&quot;</span><span class="p">],</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="s2">&quot;ISP-003&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;dns&quot;</span><span class="p">,</span> <span class="s2">&quot;resolve&quot;</span><span class="p">,</span> <span class="s2">&quot;can&#39;t access&quot;</span><span class="p">],</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="s2">&quot;ISP-004&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;slow&quot;</span><span class="p">,</span> <span class="s2">&quot;buffering&quot;</span><span class="p">,</span> <span class="s2">&quot;lag&quot;</span><span class="p">],</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="s2">&quot;ISP-005&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;billing&quot;</span><span class="p">,</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span> <span class="s2">&quot;charge&quot;</span><span class="p">],</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="s2">&quot;ISP-006&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;outage&quot;</span><span class="p">,</span> <span class="s2">&quot;down&quot;</span><span class="p">,</span> <span class="s2">&quot;no connection&quot;</span><span class="p">],</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">classify_baseline</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">text_lower</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="k">for</span> <span class="n">code</span><span class="p">,</span> <span class="n">keywords</span> <span class="ow">in</span> <span class="n">ISP_CODES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">kw</span> <span class="ow">in</span> <span class="n">text_lower</span> <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">keywords</span><span class="p">):</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>            <span class="k">return</span> <span class="n">code</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="k">return</span> <span class="s2">&quot;ISP-UNKNOWN&quot;</span>
+<h2 id="classification-flow">Classification Flow<a class="headerlink" href="#classification-flow" title="Permanent link">&para;</a></h2>
+<p>When a ticket arrives, the classifier checks each keyword category in order. The first match determines the result. If no keywords match, the ticket is marked as Unknown.</p>
+<pre class="mermaid"><code>flowchart TD
+    A[New Ticket] --&gt; B{Contains ONT keywords?}
+    B --&gt;|Yes| Z[ISP-001]
+    B --&gt;|No| C{Contains Router keywords?}
+    C --&gt;|Yes| Y[ISP-002]
+    C --&gt;|No| D{Contains DNS keywords?}
+    D --&gt;|Yes| X[ISP-003]
+    D --&gt;|No| E{Contains Speed keywords?}
+    E --&gt;|Yes| W[ISP-004]
+    E --&gt;|No| F{Contains Billing keywords?}
+    F --&gt;|Yes| V[ISP-005]
+    F --&gt;|No| G{Contains Outage keywords?}
+    G --&gt;|Yes| U[ISP-006]
+    G --&gt;|No| T[Unknown]
+
+    style Z fill:#c8e6c9
+    style Y fill:#c8e6c9
+    style X fill:#c8e6c9
+    style W fill:#c8e6c9
+    style V fill:#c8e6c9
+    style U fill:#c8e6c9
+    style T fill:#ffcdd2</code></pre>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
+<p>The classifier uses a simple dictionary lookup approach. It iterates through each ISP code and checks if any of its keywords appear in the input text.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">ISP_CODES</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="s2">&quot;ISP-001&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ont&quot;</span><span class="p">,</span> <span class="s2">&quot;red light&quot;</span><span class="p">,</span> <span class="s2">&quot;fiber&quot;</span><span class="p">,</span> <span class="s2">&quot;no signal&quot;</span><span class="p">],</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="s2">&quot;ISP-002&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;router&quot;</span><span class="p">,</span> <span class="s2">&quot;wifi&quot;</span><span class="p">,</span> <span class="s2">&quot;wireless&quot;</span><span class="p">,</span> <span class="s2">&quot;connection&quot;</span><span class="p">],</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="s2">&quot;ISP-003&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;dns&quot;</span><span class="p">,</span> <span class="s2">&quot;resolve&quot;</span><span class="p">,</span> <span class="s2">&quot;cannot access&quot;</span><span class="p">],</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="s2">&quot;ISP-004&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;slow&quot;</span><span class="p">,</span> <span class="s2">&quot;buffering&quot;</span><span class="p">,</span> <span class="s2">&quot;lag&quot;</span><span class="p">],</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="s2">&quot;ISP-005&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;billing&quot;</span><span class="p">,</span> <span class="s2">&quot;payment&quot;</span><span class="p">,</span> <span class="s2">&quot;charge&quot;</span><span class="p">],</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="s2">&quot;ISP-006&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;outage&quot;</span><span class="p">,</span> <span class="s2">&quot;down&quot;</span><span class="p">,</span> <span class="s2">&quot;no connection&quot;</span><span class="p">],</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">classify_baseline</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">text_lower</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="k">for</span> <span class="n">code</span><span class="p">,</span> <span class="n">keywords</span> <span class="ow">in</span> <span class="n">ISP_CODES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">kw</span> <span class="ow">in</span> <span class="n">text_lower</span> <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">keywords</span><span class="p">):</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>            <span class="k">return</span> <span class="n">code</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="k">return</span> <span class="s2">&quot;ISP-UNKNOWN&quot;</span>
 </span></code></pre></div>
+<h2 id="strengths-and-limitations">Strengths and Limitations<a class="headerlink" href="#strengths-and-limitations" title="Permanent link">&para;</a></h2>
+<p>The baseline classifier offers fast, deterministic results with no external API dependencies. However, it has limited understanding of context and cannot handle complex or ambiguous tickets.</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph Strengths
+        A[Fast Processing]
+        B[No API Cost]
+        C[Consistent Results]
+    end
+
+    subgraph Limitations
+        D[No Context Understanding]
+        E[Limited Coverage]
+        F[Keyword Dependent]
+    end</code></pre>
 <h2 id="when-to-use">When to Use<a class="headerlink" href="#when-to-use" title="Permanent link">&para;</a></h2>
+<p>The baseline approach works well for simple, straightforward tickets with clear keywords. It is not suitable for complex issues that require understanding context or nuance.</p>
 <table>
 <thead>
 <tr>
-<th>Use Case</th>
-<th>Recommended</th>
+<th>Scenario</th>
+<th>Recommendation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Simple complaints</td>
+<td>Simple keyword-based tickets</td>
 <td>Yes</td>
 </tr>
 <tr>
@@ -2860,19 +2896,20 @@
 <td>Yes</td>
 </tr>
 <tr>
-<td>Edge cases, ambiguous text</td>
+<td>Ambiguous or nuanced tickets</td>
 <td>No</td>
 </tr>
 <tr>
-<td>Need explanations</td>
+<td>Requires explanation of classification</td>
 <td>No</td>
 </tr>
 </tbody>
 </table>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>After implementing the baseline classifier, consider upgrading to the LLM-based classifier for handling complex cases where keyword matching is insufficient.</p>
 <ul>
-<li><a href="../llm-classifier/">LLM Classifier</a> - Handle complex cases</li>
-<li><a href="../comparison/">Classifier Comparison</a> - See full comparison</li>
+<li><a href="../llm-classifier/">LLM Classifier</a> - Handle complex cases with AI</li>
+<li><a href="../comparison/">Classifier Comparison</a> - Compare both approaches</li>
 </ul>
 
 

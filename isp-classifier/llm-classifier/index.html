@@ -2761,11 +2761,14 @@
     style F fill:#c8e6c9</code></pre>
 <h2 id="prompt-template">Prompt Template<a class="headerlink" href="#prompt-template" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>graph LR
-    A[System] --&gt;|Classify this complaint|
-    B[User] --&gt;|Complaint text|
-    C[Assistant] --&gt;|ISP Code + Reason|
+    A[System] --&gt;|"Classify this complaint"| B
+    B[User] --&gt;|"Complaint text"| C
+    C[Assistant] --&gt;|"ISP Code + Reason"| D
 
-    style C fill:#c8e6c9</code></pre>
+    style A fill:#3498db,color:#fff
+    style B fill:#e74c3c,color:#fff
+    style C fill:#f39c12,color:#fff
+    style D fill:#27ae60,color:#fff</code></pre>
 <h2 id="response-format">Response Format<a class="headerlink" href="#response-format" title="Permanent link">&para;</a></h2>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ISP-002&quot;</span><span class="p">,</span>

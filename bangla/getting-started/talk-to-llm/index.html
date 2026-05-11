@@ -2582,13 +2582,13 @@
 <h2 id="_2">সার্ভার কনফিগ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>সার্ভার কনফিগারেশনে পোর্ট 1234 দিতে হবে, হোস্ট localhost রাখতে হবে, আর মডেল হিসেবে Qwen 2.5 সিলেক্ট করতে হবে। এনডপয়েন্ট হিসেবে POST /v1/chat আর POST /v1/completions আছে।</p>
 <pre class="mermaid"><code>graph LR
-    subgraph কনফিগারেশন
+    subgraph Config
         A[পোর্ট: 1234]
         B[হোস্ট: localhost]
         C[মডেল: Qwen 2.5]
     end
 
-    subgraph এনডপয়েন্ট
+    subgraph Endpoints
         D[POST /v1/chat]
         E[POST /v1/completions]
     end

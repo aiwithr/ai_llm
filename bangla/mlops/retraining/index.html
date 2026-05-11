@@ -2574,18 +2574,18 @@
     style H fill:#c8e6c9</code></pre>
 <h2 id="_3">অটোমেটেড পাইপলাইন<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart LR
-    subgraph মনিটরিং
+    subgraph Monitoring
         A[পারফরম্যান্স চেক]
         A --&gt; B{ড্রিফট?}
     end
 
-    subgraph ট্রেনিং
+    subgraph Training
         B --&gt;|হ্যাঁ| C[নতুন ডেটা]
         C --&gt; D[ট্রেন নতুন মডেল]
         D --&gt; E[ভ্যালিডেট]
     end
 
-    subgraph ডিপ্লয়মেন্ট
+    subgraph Deployment
         E --&gt; F{এনাফ পারফরম্যান্স?}
         F --&gt;|হ্যাঁ| G[রোলআউট]
         F --&gt;|না| H[এবর্ট]

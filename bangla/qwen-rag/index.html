@@ -2934,17 +2934,17 @@
 <h2 id="_1">কম্পোনেন্ট<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>সিস্টেমে তিনটা মূল অংশ আছে। ডেটা অংশে Documents আর Index আছে, যেখানে ডকুমেন্ট সংরক্ষণ করা হয়। retrieval অংশে Vector Store আর Embedding Model আছে, যেখানে সার্চ করা হয়। generation অংশে Qwen LLM আছে, যেখানে উত্তর তৈরি হয়।</p>
 <pre class="mermaid"><code>graph LR
-    subgraph ডেটা
+    subgraph Data
         A[ডকুমেন্টস]
         B[ইনডেক্স]
     end
 
-    subgraph retrieval
+    subgraph Retrieval
         C[ভেক্টর স্টোর]
         D[এমবেডিং মডেল]
     end
 
-    subgraph generation
+    subgraph Generation
         E[কুয়েন LLM]
         F[রেসপন্স]
     end

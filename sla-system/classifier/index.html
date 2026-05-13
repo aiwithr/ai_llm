@@ -12,27 +12,31 @@
         <meta name="author" content="রকিবুল হাসান">
       
       
-        <link rel="canonical" href="https://github.io/raqueeb/ai_work_flow/bangla/sla-system/classifier/">
+        <link rel="canonical" href="https://github.io/raqueeb/ai_work_flow/sla-system/classifier/">
       
       
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../erp-approval/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/favicon.png">
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>SLA ক্লাসিফায়ার - Enterprise AI Automations Using Small LLM Documentation</title>
+        <title>SLA Classifier - Enterprise AI Automations Using Small LLM Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +55,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -86,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sla" class="md-skip">
+        <a href="#sla-classifier" class="md-skip">
           কনটেন্টে যান
         </a>
       
@@ -102,7 +106,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="হেডার">
-    <a href="../../.." title="Enterprise AI Automations Using Small LLM Documentation" class="md-header__button md-logo" aria-label="Enterprise AI Automations Using Small LLM Documentation" data-md-component="logo">
+    <a href="../.." title="Enterprise AI Automations Using Small LLM Documentation" class="md-header__button md-logo" aria-label="Enterprise AI Automations Using Small LLM Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -127,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SLA ক্লাসিফায়ার
+              SLA Classifier
             
           </span>
         </div>
@@ -224,7 +228,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ন্যাভিগেশন" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Enterprise AI Automations Using Small LLM Documentation" class="md-nav__button md-logo" aria-label="Enterprise AI Automations Using Small LLM Documentation" data-md-component="logo">
+    <a href="../.." title="Enterprise AI Automations Using Small LLM Documentation" class="md-nav__button md-logo" aria-label="Enterprise AI Automations Using Small LLM Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -259,7 +263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -286,14 +290,68 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    সহজ আলাপ
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PROJECT_SUMMARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Executive Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PROJECT_SUMMARY_bangla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    বাংলা - সামারি
   
 
     
@@ -327,8 +385,6 @@
       
         
       
-        
-      
     
     
     
@@ -342,11 +398,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../ai-development/" class="md-nav__link ">
+            <a href="../../ai-development/" class="md-nav__link ">
               
   
   
@@ -364,14 +420,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -390,7 +446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ai-development/sdlc/" class="md-nav__link">
+      <a href="../../ai-development/sdlc/" class="md-nav__link">
         
   
   
@@ -418,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ai-development/reasoning/" class="md-nav__link">
+      <a href="../../ai-development/reasoning/" class="md-nav__link">
         
   
   
@@ -446,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ai-development/citizen-developers/" class="md-nav__link">
+      <a href="../../ai-development/citizen-developers/" class="md-nav__link">
         
   
   
@@ -474,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai-development/" class="md-nav__link">
+      <a href="../../bangla/ai-development/" class="md-nav__link">
         
   
   
@@ -482,34 +538,6 @@
     
   
     বাংলা - AI ডেভেলপমেন্ট
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ai-development/agentic-ai-staff/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    নন-টেকনিক্যাল স্টাফ
   
 
     
@@ -560,11 +588,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../getting-started/" class="md-nav__link ">
+            <a href="../../getting-started/" class="md-nav__link ">
               
   
   
@@ -582,14 +610,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -608,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/talk-to-llm/" class="md-nav__link">
+      <a href="../../getting-started/talk-to-llm/" class="md-nav__link">
         
   
   
@@ -636,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
+      <a href="../../bangla/getting-started/" class="md-nav__link">
         
   
   
@@ -698,11 +726,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../isp-classifier/" class="md-nav__link ">
+            <a href="../../isp-classifier/" class="md-nav__link ">
               
   
   
@@ -720,14 +748,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -746,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../isp-classifier/baseline/" class="md-nav__link">
+      <a href="../../isp-classifier/baseline/" class="md-nav__link">
         
   
   
@@ -774,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../isp-classifier/llm-classifier/" class="md-nav__link">
+      <a href="../../isp-classifier/llm-classifier/" class="md-nav__link">
         
   
   
@@ -802,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../isp-classifier/comparison/" class="md-nav__link">
+      <a href="../../isp-classifier/comparison/" class="md-nav__link">
         
   
   
@@ -830,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../isp-classifier/" class="md-nav__link">
+      <a href="../../bangla/isp-classifier/" class="md-nav__link">
         
   
   
@@ -888,11 +916,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../isp-classifier-reasoning/" class="md-nav__link ">
+            <a href="../../isp-classifier-reasoning/" class="md-nav__link ">
               
   
   
@@ -910,14 +938,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -936,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../isp-classifier-reasoning/reasoning/" class="md-nav__link">
+      <a href="../../isp-classifier-reasoning/reasoning/" class="md-nav__link">
         
   
   
@@ -964,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../isp-classifier-reasoning/" class="md-nav__link">
+      <a href="../../bangla/isp-classifier-reasoning/" class="md-nav__link">
         
   
   
@@ -1026,11 +1054,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../qwen-rag/" class="md-nav__link ">
+            <a href="../../qwen-rag/" class="md-nav__link ">
               
   
   
@@ -1048,14 +1076,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1074,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../qwen-rag/qwen-rag-demo/" class="md-nav__link">
+      <a href="../../qwen-rag/qwen-rag-demo/" class="md-nav__link">
         
   
   
@@ -1102,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../qwen-rag/simple-rag/" class="md-nav__link">
+      <a href="../../qwen-rag/simple-rag/" class="md-nav__link">
         
   
   
@@ -1130,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../qwen-rag/vector-storage/" class="md-nav__link">
+      <a href="../../qwen-rag/vector-storage/" class="md-nav__link">
         
   
   
@@ -1158,7 +1186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qwen-rag/" class="md-nav__link">
+      <a href="../../bangla/qwen-rag/" class="md-nav__link">
         
   
   
@@ -1218,11 +1246,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../gemma-e4b/" class="md-nav__link ">
+            <a href="../../gemma-e4b/" class="md-nav__link ">
               
   
   
@@ -1240,14 +1268,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="">
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1266,7 +1294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gemma-e4b/standard-apps/" class="md-nav__link">
+      <a href="../../gemma-e4b/standard-apps/" class="md-nav__link">
         
   
   
@@ -1294,7 +1322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gemma-e4b/slm-apps/" class="md-nav__link">
+      <a href="../../gemma-e4b/slm-apps/" class="md-nav__link">
         
   
   
@@ -1322,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gemma-e4b/" class="md-nav__link">
+      <a href="../../bangla/gemma-e4b/" class="md-nav__link">
         
   
   
@@ -1384,11 +1412,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../hr-assistant/" class="md-nav__link ">
+            <a href="../../hr-assistant/" class="md-nav__link ">
               
   
   
@@ -1406,14 +1434,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="">
+              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1432,7 +1460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hr-assistant/hr-manager/" class="md-nav__link">
+      <a href="../../hr-assistant/hr-manager/" class="md-nav__link">
         
   
   
@@ -1460,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hr-assistant/hr-assistant/" class="md-nav__link">
+      <a href="../../hr-assistant/hr-assistant/" class="md-nav__link">
         
   
   
@@ -1488,7 +1516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hr-assistant/sales-funnel/" class="md-nav__link">
+      <a href="../../hr-assistant/sales-funnel/" class="md-nav__link">
         
   
   
@@ -1516,7 +1544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hr-assistant/" class="md-nav__link">
+      <a href="../../bangla/hr-assistant/" class="md-nav__link">
         
   
   
@@ -1548,6 +1576,8 @@
       
   
   
+    
+  
   
   
     
@@ -1572,15 +1602,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../sla-system/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1598,14 +1628,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="">
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1621,10 +1651,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../sla-system/classifier/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLA Classifier
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1640,6 +1697,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="সূচি তালিকা">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      সূচি তালিকা
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classification-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classification Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classification Criteria
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classification Criteria">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#priority-1-critical-1-hour-sla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority 1 - Critical (1 Hour SLA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priority-2-urgent-4-hour-sla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority 2 - Urgent (4 Hour SLA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priority-3-normal-24-hour-sla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority 3 - Normal (24 Hour SLA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1652,7 +1801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sla-system/erp-approval/" class="md-nav__link">
+      <a href="../erp-approval/" class="md-nav__link">
         
   
   
@@ -1680,7 +1829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../bangla/sla-system/" class="md-nav__link">
         
   
   
@@ -1738,11 +1887,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../smart-gift/" class="md-nav__link ">
+            <a href="../../smart-gift/" class="md-nav__link ">
               
   
   
@@ -1760,14 +1909,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="">
+              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1786,7 +1935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../smart-gift/admin/" class="md-nav__link">
+      <a href="../../smart-gift/admin/" class="md-nav__link">
         
   
   
@@ -1814,7 +1963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../smart-gift/" class="md-nav__link">
+      <a href="../../bangla/smart-gift/" class="md-nav__link">
         
   
   
@@ -1878,11 +2027,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../llm-demos/" class="md-nav__link ">
+            <a href="../../llm-demos/" class="md-nav__link ">
               
   
   
@@ -1900,14 +2049,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="">
+              <label class="md-nav__link " for="__nav_14" id="__nav_14_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1926,7 +2075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../llm-demos/lm-demos/" class="md-nav__link">
+      <a href="../../llm-demos/lm-demos/" class="md-nav__link">
         
   
   
@@ -1954,7 +2103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../llm-demos/hierarchy/" class="md-nav__link">
+      <a href="../../llm-demos/hierarchy/" class="md-nav__link">
         
   
   
@@ -1982,7 +2131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../llm-demos/mini-quick/" class="md-nav__link">
+      <a href="../../llm-demos/mini-quick/" class="md-nav__link">
         
   
   
@@ -2010,7 +2159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../llm-demos/stress-test/" class="md-nav__link">
+      <a href="../../llm-demos/stress-test/" class="md-nav__link">
         
   
   
@@ -2038,7 +2187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llm-demos/" class="md-nav__link">
+      <a href="../../bangla/llm-demos/" class="md-nav__link">
         
   
   
@@ -2096,11 +2245,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../enterprise-apps/" class="md-nav__link ">
+            <a href="../../enterprise-apps/" class="md-nav__link ">
               
   
   
@@ -2118,14 +2267,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="">
+              <label class="md-nav__link " for="__nav_15" id="__nav_15_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_13">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2144,7 +2293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../enterprise-apps/model-use/" class="md-nav__link">
+      <a href="../../enterprise-apps/model-use/" class="md-nav__link">
         
   
   
@@ -2172,7 +2321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../enterprise-apps/" class="md-nav__link">
+      <a href="../../bangla/enterprise-apps/" class="md-nav__link">
         
   
   
@@ -2238,11 +2387,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../mlops/" class="md-nav__link ">
+            <a href="../../mlops/" class="md-nav__link ">
               
   
   
@@ -2260,14 +2409,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_14" id="__nav_14_label" tabindex="">
+              <label class="md-nav__link " for="__nav_16" id="__nav_16_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_14">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2286,7 +2435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mlops/churn-prediction/" class="md-nav__link">
+      <a href="../../mlops/churn-prediction/" class="md-nav__link">
         
   
   
@@ -2314,7 +2463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mlops/model-registry/" class="md-nav__link">
+      <a href="../../mlops/model-registry/" class="md-nav__link">
         
   
   
@@ -2342,7 +2491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mlops/monitoring/" class="md-nav__link">
+      <a href="../../mlops/monitoring/" class="md-nav__link">
         
   
   
@@ -2370,7 +2519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mlops/ab-testing/" class="md-nav__link">
+      <a href="../../mlops/ab-testing/" class="md-nav__link">
         
   
   
@@ -2398,7 +2547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mlops/retraining/" class="md-nav__link">
+      <a href="../../mlops/retraining/" class="md-nav__link">
         
   
   
@@ -2426,7 +2575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mlops/" class="md-nav__link">
+      <a href="../../bangla/mlops/" class="md-nav__link">
         
   
   
@@ -2461,7 +2610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/" class="md-nav__link">
+      <a href="../../bangla/reference/" class="md-nav__link">
         
   
   
@@ -2508,10 +2657,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#classification-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ক্লাসিফিকেশন প্রবাহ
+        Classification Flow
       
     </span>
   </a>
@@ -2519,22 +2668,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#classification-criteria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ক্লাসিফিকেশন মাপকাঠি
+        Classification Criteria
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="ক্লাসিফিকেশন মাপকাঠি">
+    <nav class="md-nav" aria-label="Classification Criteria">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-1-sla" class="md-nav__link">
+  <a href="#priority-1-critical-1-hour-sla" class="md-nav__link">
     <span class="md-ellipsis">
       
-        প্রায়োরিটি 1 - ক্রিটিক্যাল (1 ঘণ্টা SLA)
+        Priority 1 - Critical (1 Hour SLA)
       
     </span>
   </a>
@@ -2542,10 +2691,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-4-sla" class="md-nav__link">
+  <a href="#priority-2-urgent-4-hour-sla" class="md-nav__link">
     <span class="md-ellipsis">
       
-        প্রায়োরিটি 2 - আর্জেন্ট (4 ঘণ্টা SLA)
+        Priority 2 - Urgent (4 Hour SLA)
       
     </span>
   </a>
@@ -2553,10 +2702,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-24-sla" class="md-nav__link">
+  <a href="#priority-3-normal-24-hour-sla" class="md-nav__link">
     <span class="md-ellipsis">
       
-        প্রায়োরিটি 3 - নরমাল (24 ঘণ্টা SLA)
+        Priority 3 - Normal (24 Hour SLA)
       
     </span>
   </a>
@@ -2569,10 +2718,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ইমপ্লিমেন্টেশন
+        Implementation
       
     </span>
   </a>
@@ -2596,58 +2745,58 @@
 
 
 
-<h1 id="sla">SLA ক্লাসিফায়ার<a class="headerlink" href="#sla" title="Permanent link">&para;</a></h1>
-<p>সার্ভিস লেভেল এগ্রিমেন্ট টায়ার অনুযায়ী টিকিটের অটোমেটেড ক্লাসিফিকেশন।</p>
-<h2 id="_1">ক্লাসিফিকেশন প্রবাহ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h1 id="sla-classifier">SLA Classifier<a class="headerlink" href="#sla-classifier" title="Permanent link">&para;</a></h1>
+<p>Automated classification of tickets based on Service Level Agreement tiers.</p>
+<h2 id="classification-flow">Classification Flow<a class="headerlink" href="#classification-flow" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart TD
-    A[ইনকামিং টিকিট] --&gt; B[কীওয়ার্ড এক্সট্রাক্ট]
-    B --&gt; C{টায়ার ডিটেকশন}
+    A[Incoming Ticket] --&gt; B[Extract Keywords]
+    B --&gt; C{Tier Detection}
 
-    C --&gt;|ক্রিটিক্যাল| D[প্রায়োরিটি 1]
-    C --&gt;|আর্জেন্ট| E[প্রায়োরিটি 2]
-    C --&gt;|নরমাল| F[প্রায়োরিটি 3]
+    C --&gt;|Critical| D[Priority 1]
+    C --&gt;|Urgent| E[Priority 2]
+    C --&gt;|Normal| F[Priority 3]
 
-    D --&gt; G[SLA: 1 ঘণ্টা]
-    E --&gt; H[SLA: 4 ঘণ্টা]
-    F --&gt; I[SLA: 24 ঘণ্টা]
+    D --&gt; G[SLA: 1 Hour]
+    E --&gt; H[SLA: 4 Hours]
+    F --&gt; I[SLA: 24 Hours]
 
-    G --&gt; J[এসকেলেশন পাথ A]
-    H --&gt; K[এসকেলেশন পাথ B]
-    I --&gt; L[এসকেলেশন পাথ C]
+    G --&gt; J[Escalation Path A]
+    H --&gt; K[Escalation Path B]
+    I --&gt; L[Escalation Path C]
 
     style G fill:#ffcdd2
     style H fill:#fff3e0
     style I fill:#c8e6c9</code></pre>
-<h2 id="_2">ক্লাসিফিকেশন মাপকাঠি<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="1-1-sla">প্রায়োরিটি 1 - ক্রিটিক্যাল (1 ঘণ্টা SLA)<a class="headerlink" href="#1-1-sla" title="Permanent link">&para;</a></h3>
+<h2 id="classification-criteria">Classification Criteria<a class="headerlink" href="#classification-criteria" title="Permanent link">&para;</a></h2>
+<h3 id="priority-1-critical-1-hour-sla">Priority 1 - Critical (1 Hour SLA)<a class="headerlink" href="#priority-1-critical-1-hour-sla" title="Permanent link">&para;</a></h3>
 <ul>
-<li>সম্পূর্ণ সার্ভিস বন্ধ</li>
-<li>সিকিউরিটি ব্রিচ</li>
-<li>একাধিক গ্রাহক প্রভাবিত</li>
+<li>Complete service outage</li>
+<li>Security breach</li>
+<li>Multiple affected customers</li>
 </ul>
-<h3 id="2-4-sla">প্রায়োরিটি 2 - আর্জেন্ট (4 ঘণ্টা SLA)<a class="headerlink" href="#2-4-sla" title="Permanent link">&para;</a></h3>
+<h3 id="priority-2-urgent-4-hour-sla">Priority 2 - Urgent (4 Hour SLA)<a class="headerlink" href="#priority-2-urgent-4-hour-sla" title="Permanent link">&para;</a></h3>
 <ul>
-<li>আংশিক সার্ভিস ডিগ্রেডেশন</li>
-<li>একক গ্রাহকের ক্রিটিক্যাল ইস্যু</li>
-<li>পারফরম্যান্স ড্রপ</li>
+<li>Partial service degradation</li>
+<li>Single customer critical issue</li>
+<li>Performance degradation</li>
 </ul>
-<h3 id="3-24-sla">প্রায়োরিটি 3 - নরমাল (24 ঘণ্টা SLA)<a class="headerlink" href="#3-24-sla" title="Permanent link">&para;</a></h3>
+<h3 id="priority-3-normal-24-hour-sla">Priority 3 - Normal (24 Hour SLA)<a class="headerlink" href="#priority-3-normal-24-hour-sla" title="Permanent link">&para;</a></h3>
 <ul>
-<li>সাধারণ প্রশ্ন</li>
-<li>ফিচার রিকোয়েস্ট</li>
-<li>ছোট সমস্যা</li>
+<li>General inquiries</li>
+<li>Feature requests</li>
+<li>Minor issues</li>
 </ul>
-<h2 id="_3">ইমপ্লিমেন্টেশন<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">classify_sla_tier</span><span class="p">(</span><span class="n">ticket_text</span><span class="p">):</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="c1"># ক্রিটিক্যাল কীওয়ার্ড</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="c1"># Critical keywords</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">kw</span> <span class="ow">in</span> <span class="n">ticket_text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;outage&#39;</span><span class="p">,</span> <span class="s1">&#39;down&#39;</span><span class="p">,</span> <span class="s1">&#39;breach&#39;</span><span class="p">]):</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="k">return</span> <span class="s2">&quot;P1&quot;</span><span class="p">,</span> <span class="s2">&quot;1h&quot;</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="c1"># আর্জেন্ট কীওয়ার্ড</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="c1"># Urgent keywords</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">kw</span> <span class="ow">in</span> <span class="n">ticket_text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;slow&#39;</span><span class="p">,</span> <span class="s1">&#39;degraded&#39;</span><span class="p">,</span> <span class="s1">&#39;intermittent&#39;</span><span class="p">]):</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="k">return</span> <span class="s2">&quot;P2&quot;</span><span class="p">,</span> <span class="s2">&quot;4h&quot;</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="c1"># ডিফল্ট নরমাল</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="c1"># Default to normal</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="k">return</span> <span class="s2">&quot;P3&quot;</span><span class="p">,</span> <span class="s2">&quot;24h&quot;</span>
 </span></code></pre></div>
 
@@ -2682,6 +2831,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="ফুটার" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="পূর্ববর্তী: Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                পূর্ববর্তী
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../erp-approval/" class="md-footer__link md-footer__link--next" aria-label="পরে: ERP Approval">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                পরে
+              </span>
+              <div class="md-ellipsis">
+                ERP Approval
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -2792,10 +2979,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0995\u09cd\u09b2\u09bf\u09aa\u09ac\u09cb\u09b0\u09cd\u09a1\u09c7 \u0995\u09aa\u09bf \u09b9\u09df\u09c7\u099b\u09c7", "clipboard.copy": "\u0995\u09cd\u09b2\u09bf\u09aa\u09ac\u09cb\u09b0\u09cd\u09a1\u09c7 \u0995\u09aa\u09bf \u0995\u09b0\u09c1\u09a8", "search.result.more.one": "\u098f\u0987 \u09aa\u09c3\u09b7\u09cd\u09a0\u09be\u09af\u09bc \u0986\u09b0\u0993 \u09e7\u099f\u09bf \u0986\u099b\u09c7", "search.result.more.other": "\u098f\u0987 \u09aa\u09c3\u09b7\u09cd\u09a0\u09be\u09af\u09bc \u0986\u09b0\u0993 #\u099f\u09bf \u0986\u099b\u09c7", "search.result.none": "\u0995\u09bf\u099b\u09c1 \u09aa\u09be\u0993\u09df\u09be \u09af\u09be\u09df\u09a8\u09bf", "search.result.one": "\u09e7 \u099f\u09be \u09a1\u0995\u09c1\u09ae\u09c7\u09a8\u09cd\u099f", "search.result.other": "# \u099f\u09be \u09a1\u0995\u09c1\u09ae\u09c7\u09a8\u09cd\u099f", "search.result.placeholder": "\u09b8\u09be\u09b0\u09cd\u099a \u099f\u09be\u0987\u09aa \u0995\u09b0\u09c1\u09a8", "search.result.term.missing": "\u0985\u09a8\u09c1\u09aa\u09b8\u09cd\u09a5\u09bf\u09a4", "select.version": "\u09b8\u0982\u09b8\u09cd\u0995\u09b0\u09a3 \u09a8\u09bf\u09b0\u09cd\u09ac\u09be\u099a\u09a8 \u0995\u09b0\u09c1\u09a3"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0995\u09cd\u09b2\u09bf\u09aa\u09ac\u09cb\u09b0\u09cd\u09a1\u09c7 \u0995\u09aa\u09bf \u09b9\u09df\u09c7\u099b\u09c7", "clipboard.copy": "\u0995\u09cd\u09b2\u09bf\u09aa\u09ac\u09cb\u09b0\u09cd\u09a1\u09c7 \u0995\u09aa\u09bf \u0995\u09b0\u09c1\u09a8", "search.result.more.one": "\u098f\u0987 \u09aa\u09c3\u09b7\u09cd\u09a0\u09be\u09af\u09bc \u0986\u09b0\u0993 \u09e7\u099f\u09bf \u0986\u099b\u09c7", "search.result.more.other": "\u098f\u0987 \u09aa\u09c3\u09b7\u09cd\u09a0\u09be\u09af\u09bc \u0986\u09b0\u0993 #\u099f\u09bf \u0986\u099b\u09c7", "search.result.none": "\u0995\u09bf\u099b\u09c1 \u09aa\u09be\u0993\u09df\u09be \u09af\u09be\u09df\u09a8\u09bf", "search.result.one": "\u09e7 \u099f\u09be \u09a1\u0995\u09c1\u09ae\u09c7\u09a8\u09cd\u099f", "search.result.other": "# \u099f\u09be \u09a1\u0995\u09c1\u09ae\u09c7\u09a8\u09cd\u099f", "search.result.placeholder": "\u09b8\u09be\u09b0\u09cd\u099a \u099f\u09be\u0987\u09aa \u0995\u09b0\u09c1\u09a8", "search.result.term.missing": "\u0985\u09a8\u09c1\u09aa\u09b8\u09cd\u09a5\u09bf\u09a4", "select.version": "\u09b8\u0982\u09b8\u09cd\u0995\u09b0\u09a3 \u09a8\u09bf\u09b0\u09cd\u09ac\u09be\u099a\u09a8 \u0995\u09b0\u09c1\u09a3"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

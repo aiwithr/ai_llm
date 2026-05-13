@@ -3529,10 +3529,21 @@
 - LM Studio installed and running
 - Qwen 2.5 1.5B or Gemma 4 E4B model loaded
 - Python 3.8+ installed</p>
-<p><strong>Key Scripts:</strong>
-| Script | Description |
-|--------|-------------|
-| <code>talk_to_llm.py</code> | Basic LLM communication script |</p>
+<p><strong>Key Scripts:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>talk_to_llm.py</code></td>
+<td>Basic LLM communication script</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Quick Start:</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -3558,21 +3569,64 @@
 - <strong>Billing</strong>: Invoice disputes, payment processing, subscription changes
 - <strong>Service Outages</strong>: Planned maintenance, unplanned downtime
 - <strong>Account Management</strong>: Profile updates, password resets, cancellations</p>
-<p><strong>Diagnostic Codes:</strong>
-| Code | Description |
-|------|-------------|
-| ISP-001 | ONT/Fiber issues |
-| ISP-002 | WiFi/Router issues |
-| ISP-006 | Weather-related outages |
-| ISP-036 | Fiber cut/damage |
-| ISP-047 | Signal level issues |</p>
-<p><strong>Key Scripts:</strong>
-| Script | Description |
-|--------|-------------|
-| <code>app-baseline-class.py</code> | Baseline rule-based classifier |
-| <code>app-optimized-classifiers.py</code> | Optimized classifier |
-| <code>app-classifier1.py</code> to <code>app-classifier9.py</code> | Various classifier versions |
-| <code>traditional_vs_ai_workflow.py</code> | Comparison script |</p>
+<p><strong>Diagnostic Codes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISP-001</td>
+<td>ONT/Fiber issues</td>
+</tr>
+<tr>
+<td>ISP-002</td>
+<td>WiFi/Router issues</td>
+</tr>
+<tr>
+<td>ISP-006</td>
+<td>Weather-related outages</td>
+</tr>
+<tr>
+<td>ISP-036</td>
+<td>Fiber cut/damage</td>
+</tr>
+<tr>
+<td>ISP-047</td>
+<td>Signal level issues</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Scripts:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app-baseline-class.py</code></td>
+<td>Baseline rule-based classifier</td>
+</tr>
+<tr>
+<td><code>app-optimized-classifiers.py</code></td>
+<td>Optimized classifier</td>
+</tr>
+<tr>
+<td><code>app-classifier1.py</code> to <code>app-classifier9.py</code></td>
+<td>Various classifier versions</td>
+</tr>
+<tr>
+<td><code>traditional_vs_ai_workflow.py</code></td>
+<td>Comparison script</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Usage:</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">isp_classifier</span><span class="w"> </span><span class="kn">import</span> <span class="n">LLMClassifier</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -3625,11 +3679,25 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Key Scripts:</strong>
-| Script | Description |
-|--------|-------------|
-| <code>app-reasoning1.py</code> | Basic reasoning with Qwen |
-| <code>app-reasoning2.py</code> | Enhanced reasoning with Gemma |</p>
+<p><strong>Key Scripts:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app-reasoning1.py</code></td>
+<td>Basic reasoning with Qwen</td>
+</tr>
+<tr>
+<td><code>app-reasoning2.py</code></td>
+<td>Enhanced reasoning with Gemma</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Example Output:</strong>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Complaint: &quot;My ONT has a red light and internet stopped working&quot;
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
@@ -3673,19 +3741,56 @@
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>│    LLM      │ ─────▶ Generate response
 </span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>└─────────────┘
 </span></code></pre></div></p>
-<p><strong>Key Scripts:</strong>
-| Script | Description |
-|--------|-------------|
-| <code>qwen_rag_demo.py</code> | Full RAG implementation |
-| <code>qwen_simple_rag.py</code> | Basic RAG example |
-| <code>qwen_vector_storage.py</code> | Vector storage utilities |</p>
-<p><strong>Benefits:</strong>
-| Benefit | Description |
-|---------|-------------|
-| Accuracy | Responses based on actual documents |
-| Freshness | Knowledge base can be updated |
-| Attribution | Sources can be cited |
-| Hallucination | Reduced by grounding in documents |</p>
+<p><strong>Key Scripts:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qwen_rag_demo.py</code></td>
+<td>Full RAG implementation</td>
+</tr>
+<tr>
+<td><code>qwen_simple_rag.py</code></td>
+<td>Basic RAG example</td>
+</tr>
+<tr>
+<td><code>qwen_vector_storage.py</code></td>
+<td>Vector storage utilities</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Benefits:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Benefit</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accuracy</td>
+<td>Responses based on actual documents</td>
+</tr>
+<tr>
+<td>Freshness</td>
+<td>Knowledge base can be updated</td>
+</tr>
+<tr>
+<td>Attribution</td>
+<td>Sources can be cited</td>
+</tr>
+<tr>
+<td>Hallucination</td>
+<td>Reduced by grounding in documents</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Use Cases:</strong>
 1. Technical Support - Pull relevant troubleshooting guides
 2. Policy Q&amp;A - Answer based on company documentation
@@ -3694,31 +3799,108 @@
 <h3 id="5-gemma-e4b">5. Gemma E4B<a class="headerlink" href="#5-gemma-e4b" title="Permanent link">&para;</a></h3>
 <p><strong>Location:</strong> <code>gemma-e4b/</code></p>
 <p><strong>Purpose:</strong> Showcases Google's Gemma 4 E4B (4-bit quantized) model capabilities for complex reasoning and classification.</p>
-<p><strong>Model Specifications:</strong>
-| Spec | Value |
-|------|-------|
-| Model | gemma-4-e4b |
-| Quantization | 4-bit |
-| Context | 8K tokens |
-| Speed | Medium |
-| Accuracy | High |</p>
-<p><strong>Performance Comparison:</strong>
-| Metric | Qwen 1.5B | Gemma E4B |
-|--------|-----------|-----------|
-| Accuracy | 32.7% | 58.2% |
-| Speed (ms) | 2973 | 4500 |
-| Context | 4K | 8K |
-| Reasoning | Basic | Advanced |</p>
-<p><strong>Key Scripts:</strong>
-| Script | Description |
-|--------|-------------|
-| <code>gemma-4-e4b-app-optimized-classifiers.py</code> | Optimized classifier |
-| <code>gemma-4-e4b-app-reasoning2.py</code> | Reasoning classifier |
-| <code>gemma-4-e4b-cybersec_analysis.py</code> | Cybersecurity analysis |
-| <code>gemma-4-e4b-network_monitor.py</code> | Network monitoring |
-| <code>gemma-4-e4b-test_llm_ISP_ticket_classifier.py</code> | ISP ticket classifier |
-| <code>apps-standard.py</code> | Standard LLM apps |
-| <code>apps-slm.py</code> | SLM (Small Language Model) apps |</p>
+<p><strong>Model Specifications:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Spec</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model</td>
+<td>gemma-4-e4b</td>
+</tr>
+<tr>
+<td>Quantization</td>
+<td>4-bit</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>8K tokens</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Performance Comparison:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Qwen 1.5B</th>
+<th>Gemma E4B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accuracy</td>
+<td>32.7%</td>
+<td>58.2%</td>
+</tr>
+<tr>
+<td>Speed (ms)</td>
+<td>2973</td>
+<td>4500</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>4K</td>
+<td>8K</td>
+</tr>
+<tr>
+<td>Reasoning</td>
+<td>Basic</td>
+<td>Advanced</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Scripts:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gemma-4-e4b-app-optimized-classifiers.py</code></td>
+<td>Optimized classifier</td>
+</tr>
+<tr>
+<td><code>gemma-4-e4b-app-reasoning2.py</code></td>
+<td>Reasoning classifier</td>
+</tr>
+<tr>
+<td><code>gemma-4-e4b-cybersec_analysis.py</code></td>
+<td>Cybersecurity analysis</td>
+</tr>
+<tr>
+<td><code>gemma-4-e4b-network_monitor.py</code></td>
+<td>Network monitoring</td>
+</tr>
+<tr>
+<td><code>gemma-4-e4b-test_llm_ISP_ticket_classifier.py</code></td>
+<td>ISP ticket classifier</td>
+</tr>
+<tr>
+<td><code>apps-standard.py</code></td>
+<td>Standard LLM apps</td>
+</tr>
+<tr>
+<td><code>apps-slm.py</code></td>
+<td>SLM (Small Language Model) apps</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Best Practices:</strong>
 1. Use for complex classification tasks
 2. Enable reasoning for transparency
@@ -3735,20 +3917,60 @@
 <p>Handles employee queries about policies, benefits, and procedures.</p>
 <h4 id="sales-funnel-ai-closer">Sales Funnel AI Closer<a class="headerlink" href="#sales-funnel-ai-closer" title="Permanent link">&para;</a></h4>
 <p>AI-powered sales automation for converting leads.</p>
-<p><strong>Key Scripts:</strong>
-| Script | Description |
-|--------|-------------|
-| <code>HR_manager_Approve_leave.py</code> | Leave approval automation |
-| <code>HR_Assistant.py</code> | Employee query chatbot |
-| <code>Link3_Sales_Funnel_AI_Closer.py</code> | Sales funnel automation |</p>
-<p><strong>Features:</strong>
-| Feature | Description |
-|---------|-------------|
-| Leave Processing | Auto-approve or flag for review |
-| Policy Q&amp;A | Instant answers to HR questions |
-| Lead Scoring | Prioritize high-value leads |
-| Response Generation | Personalized sales outreach |
-| Sentiment Analysis | Detect employee concerns |</p>
+<p><strong>Key Scripts:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HR_manager_Approve_leave.py</code></td>
+<td>Leave approval automation</td>
+</tr>
+<tr>
+<td><code>HR_Assistant.py</code></td>
+<td>Employee query chatbot</td>
+</tr>
+<tr>
+<td><code>Link3_Sales_Funnel_AI_Closer.py</code></td>
+<td>Sales funnel automation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Features:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leave Processing</td>
+<td>Auto-approve or flag for review</td>
+</tr>
+<tr>
+<td>Policy Q&amp;A</td>
+<td>Instant answers to HR questions</td>
+</tr>
+<tr>
+<td>Lead Scoring</td>
+<td>Prioritize high-value leads</td>
+</tr>
+<tr>
+<td>Response Generation</td>
+<td>Personalized sales outreach</td>
+</tr>
+<tr>
+<td>Sentiment Analysis</td>
+<td>Detect employee concerns</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Architecture:</strong>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>┌─────────────────────────────────────────────────────┐
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>│                    HR Assistant                      │
@@ -3774,21 +3996,74 @@
 <p>Monitors and manages SLA requirements in real-time.</p>
 <h4 id="erp-ai-approval">ERP AI Approval<a class="headerlink" href="#erp-ai-approval" title="Permanent link">&para;</a></h4>
 <p>Automated approval system integrated with ERP workflows.</p>
-<p><strong>SLA Tiers:</strong>
-| Tier | Response Time | Resolution Time | Examples |
-|------|---------------|-----------------|----------|
-| Critical | 1 hour | 4 hours | Complete outage |
-| High | 4 hours | 8 hours | Partial connectivity |
-| Medium | 8 hours | 24 hours | Performance issues |
-| Low | 24 hours | 72 hours | General inquiries |</p>
-<p><strong>Features:</strong>
-| Feature | Description |
-|---------|-------------|
-| Real-time Monitoring | Track SLA status continuously |
-| Auto Escalation | Automatic escalation when SLA at risk |
-| Approval Workflow | Intelligent routing of approvals |
-| Reporting | SLA compliance dashboards |
-| Integration | Works with existing ticketing systems |</p>
+<p><strong>SLA Tiers:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Response Time</th>
+<th>Resolution Time</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Critical</td>
+<td>1 hour</td>
+<td>4 hours</td>
+<td>Complete outage</td>
+</tr>
+<tr>
+<td>High</td>
+<td>4 hours</td>
+<td>8 hours</td>
+<td>Partial connectivity</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>8 hours</td>
+<td>24 hours</td>
+<td>Performance issues</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>24 hours</td>
+<td>72 hours</td>
+<td>General inquiries</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Features:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real-time Monitoring</td>
+<td>Track SLA status continuously</td>
+</tr>
+<tr>
+<td>Auto Escalation</td>
+<td>Automatic escalation when SLA at risk</td>
+</tr>
+<tr>
+<td>Approval Workflow</td>
+<td>Intelligent routing of approvals</td>
+</tr>
+<tr>
+<td>Reporting</td>
+<td>SLA compliance dashboards</td>
+</tr>
+<tr>
+<td>Integration</td>
+<td>Works with existing ticketing systems</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Architecture:</strong>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>┌─────────────┐     ┌─────────────┐     ┌─────────────┐
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>│   Tickets   │────▶│  SLA Check  │────▶│   Action    │
@@ -3804,21 +4079,64 @@
 <h3 id="8-enterprise-apps">8. Enterprise Apps<a class="headerlink" href="#8-enterprise-apps" title="Permanent link">&para;</a></h3>
 <p><strong>Location:</strong> <code>enterprise-apps/</code></p>
 <p><strong>Purpose:</strong> Production-ready applications for business operations, including model management, testing frameworks, and utility scripts.</p>
-<p><strong>Key Scripts:</strong>
-| Script | Description |
-|--------|-------------|
-| <code>model_use_class.py</code> | Model usage and management |
-| <code>test_classifier.py</code> | Classifier testing framework |
-| <code>test_one.py</code> | Single case testing |
-| <code>test_llm_ISP_ticket_classifier.py</code> | ISP ticket classifier tests |</p>
-<p><strong>Features:</strong>
-| Feature | Description |
-|---------|-------------|
-| Multi-model Support | Switch between Qwen and Gemma |
-| Usage Tracking | Monitor token consumption |
-| Performance Metrics | Track accuracy and latency |
-| Test Framework | Comprehensive testing suite |
-| Reporting | Generate detailed reports |</p>
+<p><strong>Key Scripts:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>model_use_class.py</code></td>
+<td>Model usage and management</td>
+</tr>
+<tr>
+<td><code>test_classifier.py</code></td>
+<td>Classifier testing framework</td>
+</tr>
+<tr>
+<td><code>test_one.py</code></td>
+<td>Single case testing</td>
+</tr>
+<tr>
+<td><code>test_llm_ISP_ticket_classifier.py</code></td>
+<td>ISP ticket classifier tests</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Features:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multi-model Support</td>
+<td>Switch between Qwen and Gemma</td>
+</tr>
+<tr>
+<td>Usage Tracking</td>
+<td>Monitor token consumption</td>
+</tr>
+<tr>
+<td>Performance Metrics</td>
+<td>Track accuracy and latency</td>
+</tr>
+<tr>
+<td>Test Framework</td>
+<td>Comprehensive testing suite</td>
+</tr>
+<tr>
+<td>Reporting</td>
+<td>Generate detailed reports</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Model Manager Usage:</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">model_use_class</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelManager</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
@@ -3896,12 +4214,37 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Performance Metrics:</strong>
-| Demo | Cases | Avg Accuracy | Avg Time |
-|------|-------|--------------|----------|
-| Mini (5) | 5 | 85% | 2.5s |
-| Small (10) | 10 | 78% | 3.1s |
-| Stress (55) | 55 | 58% | 4.5s |</p>
+<p><strong>Performance Metrics:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Demo</th>
+<th>Cases</th>
+<th>Avg Accuracy</th>
+<th>Avg Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mini (5)</td>
+<td>5</td>
+<td>85%</td>
+<td>2.5s</td>
+</tr>
+<tr>
+<td>Small (10)</td>
+<td>10</td>
+<td>78%</td>
+<td>3.1s</td>
+</tr>
+<tr>
+<td>Stress (55)</td>
+<td>55</td>
+<td>58%</td>
+<td>4.5s</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h3 id="10-mlops">10. MLOps<a class="headerlink" href="#10-mlops" title="Permanent link">&para;</a></h3>
 <p><strong>Location:</strong> <code>mlops/</code></p>
@@ -3945,14 +4288,37 @@
 </span></code></pre></div>
 <h4 id="4-automatic-retraining">4. Automatic Retraining<a class="headerlink" href="#4-automatic-retraining" title="Permanent link">&para;</a></h4>
 <p>Trigger retraining based on performance degradation.</p>
-<p><strong>Features:</strong>
-| Feature | Description |
-|---------|-------------|
-| Version Control | Track all model iterations |
-| Performance Tracking | Real-time accuracy monitoring |
-| Traffic Splitting | A/B test without downtime |
-| Auto-Retraining | Trigger training on degradation |
-| Rollback | Revert to previous model version |</p>
+<p><strong>Features:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Version Control</td>
+<td>Track all model iterations</td>
+</tr>
+<tr>
+<td>Performance Tracking</td>
+<td>Real-time accuracy monitoring</td>
+</tr>
+<tr>
+<td>Traffic Splitting</td>
+<td>A/B test without downtime</td>
+</tr>
+<tr>
+<td>Auto-Retraining</td>
+<td>Trigger training on degradation</td>
+</tr>
+<tr>
+<td>Rollback</td>
+<td>Revert to previous model version</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Customer Churn Prediction Example:</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mlops.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChurnPipeline</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
@@ -3966,18 +4332,52 @@
 <h3 id="11-smart-gift-ai-admin">11. Smart Gift AI Admin<a class="headerlink" href="#11-smart-gift-ai-admin" title="Permanent link">&para;</a></h3>
 <p><strong>Location:</strong> <code>smart-gift/</code></p>
 <p><strong>Purpose:</strong> AI-powered administration for the Smart Gift system, enabling intelligent gift matching, customer segmentation, and promotional automation.</p>
-<p><strong>Features:</strong>
-| Feature | Description |
-|---------|-------------|
-| Gift Matching | AI-powered product recommendations |
-| Customer Segmentation | Intelligent customer grouping |
-| Promotional Automation | Automated campaign management |
-| Analytics | Real-time performance tracking |</p>
-<p><strong>Key Scripts:</strong>
-| Script | Description |
-|--------|-------------|
-| <code>SmartGift_AI_Admin.py</code> | Main admin interface |
-| <code>slm_smartgift_admin.py</code> | SLM-based admin |</p>
+<p><strong>Features:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gift Matching</td>
+<td>AI-powered product recommendations</td>
+</tr>
+<tr>
+<td>Customer Segmentation</td>
+<td>Intelligent customer grouping</td>
+</tr>
+<tr>
+<td>Promotional Automation</td>
+<td>Automated campaign management</td>
+</tr>
+<tr>
+<td>Analytics</td>
+<td>Real-time performance tracking</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Scripts:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SmartGift_AI_Admin.py</code></td>
+<td>Main admin interface</td>
+</tr>
+<tr>
+<td><code>slm_smartgift_admin.py</code></td>
+<td>SLM-based admin</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Usage:</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">smartgift_admin</span><span class="w"> </span><span class="kn">import</span> <span class="n">SmartGiftAdmin</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>

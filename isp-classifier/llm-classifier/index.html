@@ -2793,16 +2793,16 @@
     style G fill:#ffccbc</code></pre>
 <h2 id="hybrid-approach">Hybrid Approach<a class="headerlink" href="#hybrid-approach" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>graph TD
-    subgraph Input["Input"]
+    subgraph Input [Input]
         A[Complaint]
     end
 
-    subgraph Fast_Path["Fast Path"]
+    subgraph Fast_Path [Fast Path]
         B[Rule Engine]
         B --&gt;|Match| C[ISP Code]
     end
 
-    subgraph AI_Path["AI Path"]
+    subgraph AI_Path [AI Path]
         D[LLM Call]
         D --&gt; E[Classification]
         E --&gt; F[Confidence]
@@ -2814,12 +2814,13 @@
     style C fill:#c8e6c9
     style F fill:#c8e6c9</code></pre>
 <h2 id="prompt-template">Prompt Template<a class="headerlink" href="#prompt-template" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>graph LR
-    A[System] --&gt;|Classify this complaint|
-    B[User] --&gt;|Complaint text|
-    C[Assistant] --&gt;|ISP Code + Reason|
+<pre class="mermaid"><code>flowchart LR
+    A[System] --&gt;|"Classify this complaint"| B[User]
+    B --&gt;|"Complaint text"| C[Assistant]
+    C --&gt;|"ISP Code + Reason"| D[Output]
 
-    style C fill:#c8e6c9</code></pre>
+    style C fill:#c8e6c9
+    style D fill:#c8e6c9</code></pre>
 <h2 id="response-format">Response Format<a class="headerlink" href="#response-format" title="Permanent link">&para;</a></h2>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ISP-002&quot;</span><span class="p">,</span>

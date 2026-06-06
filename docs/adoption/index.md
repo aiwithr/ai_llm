@@ -37,3 +37,8 @@ Do not stay in Pilot indefinitely. A pilot that has not graduated in 6 weeks is 
 - [Why AI Work Flow for Business?](../why-ai-work-flow.md) — the case for local-first
 - [Demo](../demo.md) — what the modules actually do
 - [Case studies](../case-studies/index.md) — real or representative walkthroughs
+- [Architecture](../architecture/index.md) — the five-layer stack that runs these phases
+
+## Next step
+
+Finished Discover? [Read the case studies](../case-studies/index.md) to see what other teams shipped. Then go to [Pilot](pilot.md).

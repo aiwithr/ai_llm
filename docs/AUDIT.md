@@ -263,6 +263,33 @@ Commit `4e0be5c` — *"A2: new IA - Get Started section, placeholder pages for A
 
 ---
 
+## 10. A3 follow-up
+
+A3 closed the adoption journey: 4 child pages + updated `adoption/index.md`, committed in `7c8f372` (5 files changed, 499 insertions).
+
+| # | Item | Status |
+| --- | --- | --- |
+| 1 | `docs/adoption/discover.md` — Phase 1 page (1 day, 6 steps, deliverable checklist) | ✅ Done in `7c8f372` |
+| 2 | `docs/adoption/pilot.md` — Phase 2 page (2–4 weeks, 5 steps, mermaid, deliverable checklist) | ✅ Done in `7c8f372` |
+| 3 | `docs/adoption/build.md` — Phase 3 page (4–8 weeks, 4 parallel workstreams, definition of done) | ✅ Done in `7c8f372` |
+| 4 | `docs/adoption/scale.md` — Phase 4 page (3–6 months, 3 jobs, month-by-month trajectory, deliverable checklist) | ✅ Done in `7c8f372` |
+| 5 | `docs/adoption/index.md` — added "Next step" callout pointing to case studies | ✅ Done in `7c8f372` |
+| 6 | Fix A3-introduced cross-section links | ✅ Done in `7c8f372` (3 fixes: `../../sla-system/classifier.md` → `../sla-system/classifier.md`; `../../sla-llm-assistant.md` link dropped because no English page exists at that path; `../../ROADMAP.md` → `../ROADMAP.md`) |
+| 7 | Update `ROADMAP.md` decision log with A3 commit | ✅ Done in `7c8f372` follow-up |
+| 8 | Update this `AUDIT.md` with A3 status | ✅ Done in `7c8f372` follow-up |
+
+### A3 build verification
+
+After A3, `mkdocs build --clean` produces **0 new warnings** from A3 pages. Remaining 10 warnings breakdown:
+
+- 3 pre-existing in `from-rules-to-ai.md` (`rag-qwen.md`, `reasoning-importance.md`, `enterprise-apps.md` — filename-rename orphans; A5 / A7 work)
+- 4 in `architecture/index.md` (`layers.md`, `data-flow.md`, `security.md`, `../reference/python-api.md` — A4 + A7 work)
+- 3 in `case-studies/index.md` (`isp-support.md`, `bank-it.md`, `factory-it.md` — A6 work)
+
+**A3 status:** Complete. Adoption journey is end-to-end and links cleanly into case studies + architecture. A4 next.
+
+---
+
 ## 9. Sign-off
 
 - [x] Nav walked end-to-end

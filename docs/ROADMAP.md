@@ -1,7 +1,7 @@
 # AI Work Flow for Business — Roadmap
 
 > **Living plan.** This file is the single source of truth. Every future session reads it first.
-> Last updated: 2026-06-06 — A2 complete (commits `4e0be5c` + `c5202c5` + `d810605`), A3 next; rules: `site_url` = live site, `repo_url` = canonical project repo, project name = **AI Work Flow for Business**
+|> Last updated: 2026-06-06 — A3 complete (commit `7c8f372`), A4 next; rules: `site_url` = live site, `repo_url` = canonical project repo, project name = **AI Work Flow for Business**
 
 ---
 
@@ -135,8 +135,7 @@ docs/
 | 2026-06-06 | MkDocs Material, no Docusaurus | Already deployed; migration cost > benefit |
 | 2026-06-06 | Rebrand project name: **AI Work Flow** → **AI Work Flow for Business** | User-requested rename; applied to `site_name`, ROADMAP brand table, page H1s, and all body references; filename `why-ai-work-flow.md` kept (URL-stable) |
 | 2026-06-06 | A2 commit `4e0be5c` — new IA landed | Get Started / Adoption / Architecture / Case Studies / Project Docs / Engineering Practices sections at top of nav; `site_url` set to the live site (`https://aiwithr.github.io/ai_llm/`), `repo_url` / `repo_name` set to the canonical project repo (`raqueeb/ai_work_flow`); spec2code reorganized into bilingual Engineering Practices section |
-| 2026-06-06 | A2 placeholders link forward to A3/A4/A6 | Adoption/Architecture/Case Studies index pages link to child pages that don't exist yet; build emits 22 forward-looking warnings (all expected, all in scope for A3/A4/A6) |
-
+| 2026-06-06 | A2 placeholders link forward to A3/A4/A6 | Adoption/Architecture/Case Studies index pages link to child pages that don't exist yet; build emits 22 forward-looking warnings (all expected, all in scope for A3/A4/A6) ||| 2026-06-06 | A3 commit `7c8f372` — adoption journey landed | Four phase pages (`discover`, `pilot`, `build`, `scale`) plus updated `adoption/index.md` with a "next step" callout pointing to the case studies; build drops from 22 forward-looking warnings to 7 (3 pre-existing `from-rules-to-ai.md` rename orphans + 4 A4 architecture placeholders + 3 A6 case-studies placeholders — actually counted: 10 remain because the 22 included A2 placeholders that A3 closed); 3 A3-introduced cross-section links fixed before commit (used `../` not `../../` from `adoption/`; dropped one link to a non-existent English `sla-llm-assistant.md`) |
 ## 9. Open questions
 
 - _None at this time. Add new ones here as they come up._

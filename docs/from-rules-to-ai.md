@@ -1,4 +1,4 @@
-# From Rules to AI: Transitioning Software Workflows
+﻿# From Rules to AI: Transitioning Software Workflows
 
 > Moving from deterministic rule-based logic to probabilistic AI-driven decision making
 
@@ -7,7 +7,7 @@
 | Traditional Software | AI-Driven Software |
 |---------------------|-------------------|
 | **Deterministic** | **Probabilistic** |
-| If this → Then that | Given context → Likely outcome |
+| If this ΓåÆ Then that | Given context ΓåÆ Likely outcome |
 | 100% predictable | Confidence-based predictions |
 | Rules written by developers | Patterns learned from data |
 | Fails on edge cases | Handles ambiguity gracefully |
@@ -20,81 +20,81 @@
 ### Traditional Rule-Based System
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                    RULE-BASED ARCHITECTURE                           │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│   COMPLAINT                                                         │
-│      │                                                              │
-│      ▼                                                              │
-│   ┌─────────────────────┐                                          │
-│   │   KEYWORD EXTRACTOR │   "fiber cut" → ["fiber", "cut"]        │
-│   └──────────┬──────────┘                                          │
-│              │                                                      │
-│              ▼                                                      │
-│   ┌─────────────────────┐                                          │
-│   │   RULE ENGINE       │   IF "fiber" AND "cut" → ISP-006        │
-│   │                     │   IF "red light" → ISP-001              │
-│   │   IF-THEN CHAINS    │   IF "slow" → ISP-047                   │
-│   └──────────┬──────────┘                                          │
-│              │                                                      │
-│              ▼                                                      │
-│   ┌─────────────────────┐                                          │
-│   │   ACTION MAPPER     │   ISP-006 → DISPATCH_TEAM_B             │
-│   └──────────┬──────────┘                                          │
-│              │                                                      │
-│              ▼                                                      │
-│         ACTION                                                       │
-│                                                                     │
-│   ⚠️ PROBLEMS:                                                       │
-│   • 500+ rules needed for comprehensive coverage                    │
-│   • Missing keyword = wrong classification                          │
-│   • New complaint type = New rule + Dev time                        │
-│   • Impossible to handle nuance/synonyms                            │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
+ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ
+Γöé                    RULE-BASED ARCHITECTURE                           Γöé
+Γö£ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöñ
+Γöé                                                                     Γöé
+Γöé   COMPLAINT                                                         Γöé
+Γöé      Γöé                                                              Γöé
+Γöé      Γû╝                                                              Γöé
+Γöé   ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ                                          Γöé
+Γöé   Γöé   KEYWORD EXTRACTOR Γöé   "fiber cut" ΓåÆ ["fiber", "cut"]        Γöé
+Γöé   ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ                                          Γöé
+Γöé              Γöé                                                      Γöé
+Γöé              Γû╝                                                      Γöé
+Γöé   ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ                                          Γöé
+Γöé   Γöé   RULE ENGINE       Γöé   IF "fiber" AND "cut" ΓåÆ ISP-006        Γöé
+Γöé   Γöé                     Γöé   IF "red light" ΓåÆ ISP-001              Γöé
+Γöé   Γöé   IF-THEN CHAINS    Γöé   IF "slow" ΓåÆ ISP-047                   Γöé
+Γöé   ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ                                          Γöé
+Γöé              Γöé                                                      Γöé
+Γöé              Γû╝                                                      Γöé
+Γöé   ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ                                          Γöé
+Γöé   Γöé   ACTION MAPPER     Γöé   ISP-006 ΓåÆ DISPATCH_TEAM_B             Γöé
+Γöé   ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ                                          Γöé
+Γöé              Γöé                                                      Γöé
+Γöé              Γû╝                                                      Γöé
+Γöé         ACTION                                                       Γöé
+Γöé                                                                     Γöé
+Γöé   ΓÜá∩╕Å PROBLEMS:                                                       Γöé
+Γöé   ΓÇó 500+ rules needed for comprehensive coverage                    Γöé
+Γöé   ΓÇó Missing keyword = wrong classification                          Γöé
+Γöé   ΓÇó New complaint type = New rule + Dev time                        Γöé
+Γöé   ΓÇó Impossible to handle nuance/synonyms                            Γöé
+Γöé                                                                     Γöé
+ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ
 ```
 
 ### AI-Driven Probabilistic System
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                    AI-DRIVEN ARCHITECTURE                            │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│   COMPLAINT                                                         │
-│      │                                                              │
-│      ▼                                                              │
-│   ┌─────────────────────┐                                          │
-│   │   CONTEXT EXTRACTOR  │   Full text → Understanding             │
-│   │   + HISTORY          │   + Prior tickets + Customer profile     │
-│   │   + CUSTOMER DATA    │                                          │
-│   └──────────┬──────────┘                                          │
-│              │                                                      │
-│              ▼                                                      │
-│   ┌─────────────────────┐                                          │
-│   │   LLM REASONING     │   "Customer in Chittagong reports fiber │
-│   │                     │    cut after storm. Given history of     │
-│   │   (Qwen 1.5B)        │    similar issues, this is likely       │
-│   │                     │    infrastructure damage..."             │
-│   └──────────┬──────────┘                                          │
-│              │                                                      │
-│              ▼                                                      │
-│   ┌─────────────────────┐                                          │
-│   │   CONFIDENCE SCORE  │   Code: ISP-006 (Confidence: 94%)        │
-│   │   + REASONING       │   Action: DISPATCH_TEAM_B               │
-│   └──────────┬──────────┘   Priority: CRITICAL                    │
-│              │                                                      │
-│              ▼                                                      │
-│         ACTION                                                       │
-│                                                                     │
-│   ✅ BENEFITS:                                                       │
-│   • Handles any phrasing/synonym                                    │
-│   • Understands context and nuance                                  │
-│   • Learns from patterns automatically                              │
-│   • One model handles everything                                    │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
+ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ
+Γöé                    AI-DRIVEN ARCHITECTURE                            Γöé
+Γö£ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöñ
+Γöé                                                                     Γöé
+Γöé   COMPLAINT                                                         Γöé
+Γöé      Γöé                                                              Γöé
+Γöé      Γû╝                                                              Γöé
+Γöé   ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ                                          Γöé
+Γöé   Γöé   CONTEXT EXTRACTOR  Γöé   Full text ΓåÆ Understanding             Γöé
+Γöé   Γöé   + HISTORY          Γöé   + Prior tickets + Customer profile     Γöé
+Γöé   Γöé   + CUSTOMER DATA    Γöé                                          Γöé
+Γöé   ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ                                          Γöé
+Γöé              Γöé                                                      Γöé
+Γöé              Γû╝                                                      Γöé
+Γöé   ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ                                          Γöé
+Γöé   Γöé   LLM REASONING     Γöé   "Customer in Chittagong reports fiber Γöé
+Γöé   Γöé                     Γöé    cut after storm. Given history of     Γöé
+Γöé   Γöé   (Qwen 1.5B)        Γöé    similar issues, this is likely       Γöé
+Γöé   Γöé                     Γöé    infrastructure damage..."             Γöé
+Γöé   ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ                                          Γöé
+Γöé              Γöé                                                      Γöé
+Γöé              Γû╝                                                      Γöé
+Γöé   ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ                                          Γöé
+Γöé   Γöé   CONFIDENCE SCORE  Γöé   Code: ISP-006 (Confidence: 94%)        Γöé
+Γöé   Γöé   + REASONING       Γöé   Action: DISPATCH_TEAM_B               Γöé
+Γöé   ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ   Priority: CRITICAL                    Γöé
+Γöé              Γöé                                                      Γöé
+Γöé              Γû╝                                                      Γöé
+Γöé         ACTION                                                       Γöé
+Γöé                                                                     Γöé
+Γöé   Γ£à BENEFITS:                                                       Γöé
+Γöé   ΓÇó Handles any phrasing/synonym                                    Γöé
+Γöé   ΓÇó Understands context and nuance                                  Γöé
+Γöé   ΓÇó Learns from patterns automatically                              Γöé
+Γöé   ΓÇó One model handles everything                                    Γöé
+Γöé                                                                     Γöé
+ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ
 ```
 
 ---
@@ -121,9 +121,9 @@ def classify_ticket(text):
 
 **Problems:**
 - "My fiber seems damaged after the construction work yesterday"
-  - ❌ Contains "fiber" → ISP-006 (Correct)
+  - Γ¥î Contains "fiber" ΓåÆ ISP-006 (Correct)
   - But what about: "The cable got cut during roadwork"
-  - ❌ No "fiber" keyword → Falls to default
+  - Γ¥î No "fiber" keyword ΓåÆ Falls to default
 
 #### AI-Driven Approach
 ```python
@@ -143,9 +143,9 @@ Respond with JSON: {{"code": "ISP-XXX", "confidence": 0-100, "reasoning": "..."}
 
 **Benefits:**
 - "The cable got cut during roadwork"
-  - ✅ Understands "cable cut" = "fiber cut"
-  - ✅ Considers roadwork context = infrastructure damage
-  - → ISP-006 (Correct with 91% confidence)
+  - Γ£à Understands "cable cut" = "fiber cut"
+  - Γ£à Considers roadwork context = infrastructure damage
+  - ΓåÆ ISP-006 (Correct with 91% confidence)
 
 ---
 
@@ -165,8 +165,8 @@ def assign_sla_tier(monthly_revenue):
 ```
 
 **Problems:**
-- Hospital with 200 beds, $15,000/month → BRONZE ❌
-- Spam company with $60,000/month → PLATINUM ❌
+- Hospital with 200 beds, $15,000/month ΓåÆ BRONZE Γ¥î
+- Spam company with $60,000/month ΓåÆ PLATINUM Γ¥î
 
 #### AI-Driven Approach
 ```python
@@ -261,12 +261,12 @@ Respond with JSON: {{"diagnosis": "...", "probability": "...",
 
 | Scenario | Rule-Based | AI-Driven | Hybrid |
 |----------|------------|-----------|--------|
-| Exact pattern matching | ✅ Perfect | ❌ Overkill | Use rules |
-| Ambiguous input | ❌ Fails | ✅ Handles | AI fallback |
-| High-stakes decisions | ✅ Traceable | ⚠️ Explainable | AI + validation |
-| Speed critical | ✅ Fast | ⚠️ ~2s latency | Rules for speed |
-| Pattern discovery | ❌ Manual | ✅ Automatic | AI for patterns |
-| Compliance required | ✅ Auditable | ⚠️ Complex | Rules + AI |
+| Exact pattern matching | Γ£à Perfect | Γ¥î Overkill | Use rules |
+| Ambiguous input | Γ¥î Fails | Γ£à Handles | AI fallback |
+| High-stakes decisions | Γ£à Traceable | ΓÜá∩╕Å Explainable | AI + validation |
+| Speed critical | Γ£à Fast | ΓÜá∩╕Å ~2s latency | Rules for speed |
+| Pattern discovery | Γ¥î Manual | Γ£à Automatic | AI for patterns |
+| Compliance required | Γ£à Auditable | ΓÜá∩╕Å Complex | Rules + AI |
 
 ---
 
@@ -334,45 +334,45 @@ Classify: "{complaint}" """
 ## Enterprise Migration Roadmap
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                    MIGRATION PHASES                                  │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  PHASE 1: CAPTURE                                                    │
-│  ━━━━━━━━━━━━━                                                       │
-│  • Document all existing rules                                      │
-│  • Capture decision logic and thresholds                            │
-│  • Identify edge cases and known failures                           │
-│  Duration: 2-4 weeks                                                │
-│                                                                     │
-│  ▼                                                                  │
-│                                                                     │
-│  PHASE 2: PARALLEL RUN                                              │
-│  ━━━━━━━━━━━━━━━━━━━━                                                │
-│  • Deploy AI alongside rules                                        │
-│  • Compare outputs continuously                                    │
-│  • Log all disagreements for review                                 │
-│  Duration: 4-8 weeks                                                │
-│                                                                     │
-│  ▼                                                                  │
-│                                                                     │
-│  PHASE 3: GRADUAL SHIFT                                              │
-│  ━━━━━━━━━━━━━━━━━━━━                                                │
-│  • Route low-confidence AI decisions to rules                      │
-│  • Slowly increase AI scope                                         │
-│  • Monitor accuracy continuously                                    │
-│  Duration: 8-16 weeks                                               │
-│                                                                     │
-│  ▼                                                                  │
-│                                                                     │
-│  PHASE 4: AI-FIRST                                                   │
-│  ━━━━━━━━━━━━━━━━                                                   │
-│  • AI handles most decisions                                        │
-│  • Rules as validation/backup                                       │
-│  • Continuous learning from feedback                               │
-│  Duration: Ongoing                                                  │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
+ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ
+Γöé                    MIGRATION PHASES                                  Γöé
+Γö£ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöñ
+Γöé                                                                     Γöé
+Γöé  PHASE 1: CAPTURE                                                    Γöé
+Γöé  ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü                                                       Γöé
+Γöé  ΓÇó Document all existing rules                                      Γöé
+Γöé  ΓÇó Capture decision logic and thresholds                            Γöé
+Γöé  ΓÇó Identify edge cases and known failures                           Γöé
+Γöé  Duration: 2-4 weeks                                                Γöé
+Γöé                                                                     Γöé
+Γöé  Γû╝                                                                  Γöé
+Γöé                                                                     Γöé
+Γöé  PHASE 2: PARALLEL RUN                                              Γöé
+Γöé  ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü                                                Γöé
+Γöé  ΓÇó Deploy AI alongside rules                                        Γöé
+Γöé  ΓÇó Compare outputs continuously                                    Γöé
+Γöé  ΓÇó Log all disagreements for review                                 Γöé
+Γöé  Duration: 4-8 weeks                                                Γöé
+Γöé                                                                     Γöé
+Γöé  Γû╝                                                                  Γöé
+Γöé                                                                     Γöé
+Γöé  PHASE 3: GRADUAL SHIFT                                              Γöé
+Γöé  ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü                                                Γöé
+Γöé  ΓÇó Route low-confidence AI decisions to rules                      Γöé
+Γöé  ΓÇó Slowly increase AI scope                                         Γöé
+Γöé  ΓÇó Monitor accuracy continuously                                    Γöé
+Γöé  Duration: 8-16 weeks                                               Γöé
+Γöé                                                                     Γöé
+Γöé  Γû╝                                                                  Γöé
+Γöé                                                                     Γöé
+Γöé  PHASE 4: AI-FIRST                                                   Γöé
+Γöé  ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü                                                   Γöé
+Γöé  ΓÇó AI handles most decisions                                        Γöé
+Γöé  ΓÇó Rules as validation/backup                                       Γöé
+Γöé  ΓÇó Continuous learning from feedback                               Γöé
+Γöé  Duration: Ongoing                                                  Γöé
+Γöé                                                                     Γöé
+ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ
 ```
 
 ---

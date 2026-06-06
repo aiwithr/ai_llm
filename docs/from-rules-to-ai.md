@@ -407,9 +407,15 @@ python traditional_vs_ai_workflow.py
 
 ## Next Steps
 
-- **[RAG with Qwen](rag-qwen.md)** - Enhance AI with domain knowledge
-- **[Reasoning Importance](reasoning-importance.md)** - Why AI reasoning matters
-- **[Enterprise Applications](enterprise-apps.md)** - Production examples
+- **[Qwen + RAG](qwen-rag/index.md)** — enhance AI with domain knowledge
+- **[Why Reasoning Matters](ai-development/reasoning.md)** — why AI reasoning is the hard part
+- **[Enterprise Apps](enterprise-apps/index.md)** — production examples and the Model Use class
+
+## Where this fits
+
+- New here? Start with the [adoption journey](adoption/index.md) — Discover → Pilot → Build → Scale.
+- Want the moving parts? Read [Architecture → Layers](architecture/layers.md) and [Architecture → Data flow](architecture/data-flow.md).
+- Comparing tools? See [Qwen + RAG](qwen-rag/index.md) and [Gemma E4B → SLM apps](gemma-e4b/slm-apps.md).
 
 ---
 

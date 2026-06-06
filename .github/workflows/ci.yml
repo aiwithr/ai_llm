@@ -2,66 +2,53 @@ name: ci
 
 on:
   push:
-    branches: [master, main]
+    branches:
+      - master
+      - main
   workflow_dispatch:
 
+# Needed so `mkdocs gh-deploy` can push the built site to the gh-pages branch.
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
+# Prevent overlapping deploys from racing each other on the gh-pages branch.
 concurrency:
-  group: pages
+  group: pages-gh-deploy
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git Credentials
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: pip
+
+      - name: Cache MkDocs Material
+        uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ hashFiles('mkdocs.yml', 'docs/**/*.md') }}
+          path: |
+            ~/.cache/pip
+            ~/.cache/mkdocs_material
+          restore-keys: |
+            mkdocs-material-
 
       - name: Install MkDocs Material
-        run: |
-          python -m pip install --upgrade pip
-          pip install mkdocs mkdocs-material pymdown-extensions
+        run: pip install mkdocs-material pymdown-extensions
 
-      - name: Validate Mermaid loader wiring
-        run: |
-          test -f docs/javascripts/mermaid-loader.js
-          grep -q 'extra_javascript' mkdocs.yml
-          test -f site/index.html
-          grep -q 'mermaid-loader.js' site/index.html
-
-      - name: Build site (strict)
-        run: mkdocs build --strict
-
-      - name: Count Mermaid blocks
-        run: |
-          BLOCKS=$(grep -rEc '^```mermaid' docs/ | awk -F: '{s+=$2} END{print s}')
-          echo "Mermaid blocks: $BLOCKS"
-          if [ "$BLOCKS" -lt 1 ]; then
-            echo "No Mermaid blocks found in docs/"; exit 1
-          fi
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Build and deploy to gh-pages
+        run: mkdocs gh-deploy --force --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

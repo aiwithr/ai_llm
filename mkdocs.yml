@@ -1,7 +1,7 @@
-site_name: Enterprise AI Automations Using Small LLM Documentation
-site_url: https://github.io/raqueeb/ai_work_flow
-repo_url: https://github.com/raqueeb/ai_work_flow
-repo_name: raqueeb/ai_work_flow
+﻿site_name: Enterprise AI Automations Using Small LLM Documentation
+site_url: https://aiwithr.github.io/ai_llm
+repo_url: https://github.com/aiwithr/ai_llm
+repo_name: aiwithr/ai_llm
 site_author: রকিবুল হাসান
 site_description: >-
    রোড টু হাইটেক ইন্ডাস্ট্রি: এআই নিয়ে কাজ
@@ -35,9 +35,11 @@ theme:
     - 404.html
   include_search_page: true
   search_index_only: true
-  
+
 extra_css:
   - stylesheets/extra.css
+extra_javascript:
+  - javascripts/mermaid-loader.js
 
 plugins:
   - blog
@@ -120,10 +122,12 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Overview: overview.md
+  - Executive Summary: PROJECT_SUMMARY.md
+  - বাংলা - সামারি: PROJECT_SUMMARY_bangla.md
 
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   # AI-DEVELOPMENT
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   - "AI-Driven Development":
     - "Overview": "ai-development/index.md"
     - "AI Software Life Cycle": "ai-development/sdlc.md"
@@ -131,17 +135,17 @@ nav:
     - "Citizen Developer Guide": "ai-development/citizen-developers.md"
     - "বাংলা - AI ডেভেলপমেন্ট": "bangla/ai-development/index.md"
 
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   # GETTING STARTED
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   - "Getting Started":
     - "Overview": "getting-started/index.md"
     - "Talk to LM Studio": "getting-started/talk-to-llm.md"
     - "বাংলা - শুরু করুন": "bangla/getting-started/index.md"
 
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   # ISP CLASSIFIER
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   - "ISP Classifier":
     - "Overview": "isp-classifier/index.md"
     - "Baseline Classifier": "isp-classifier/baseline.md"
@@ -149,17 +153,17 @@ nav:
     - "Classifier Comparison": "isp-classifier/comparison.md"
     - "বাংলা - ISP Classifier": "bangla/isp-classifier/index.md"
 
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   # ISP REASONING
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   - "ISP Reasoning":
     - "Overview": "isp-classifier-reasoning/index.md"
     - "AI Reasoning": "isp-classifier-reasoning/reasoning.md"
     - "বাংলা - ISP Reasoning": "bangla/isp-classifier-reasoning/index.md"
 
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   # QWEN + RAG
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   - "Qwen + RAG":
     - "Overview": "qwen-rag/index.md"
     - "Qwen RAG Demo": "qwen-rag/qwen-rag-demo.md"
@@ -167,18 +171,18 @@ nav:
     - "Vector Storage": "qwen-rag/vector-storage.md"
     - "বাংলা - Qwen RAG": "bangla/qwen-rag/index.md"
 
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   # GEMMA E4B
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   - "Gemma E4B":
     - "Overview": "gemma-e4b/index.md"
     - "Standard Apps": "gemma-e4b/standard-apps.md"
     - "SLM Apps": "gemma-e4b/slm-apps.md"
     - "বাংলা - Gemma E4B": "bangla/gemma-e4b/index.md"
 
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   # HR ASSISTANT
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   - "HR Assistant":
     - "Overview": "hr-assistant/index.md"
     - "HR Manager": "hr-assistant/hr-manager.md"
@@ -186,26 +190,26 @@ nav:
     - "Sales Funnel": "hr-assistant/sales-funnel.md"
     - "বাংলা - HR Assistant": "bangla/hr-assistant/index.md"
 
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   # SLA SYSTEM
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   - "SLA System":
     - "Overview": "sla-system/index.md"
     - "SLA Classifier": "sla-system/classifier.md"
     - "ERP Approval": "sla-system/erp-approval.md"
     - "বাংলা - SLA System": "bangla/sla-system/index.md"
 
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   # SMART GIFT AI
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   - "Smart Gift AI":
     - "Overview": "smart-gift/index.md"
     - "Admin Panel": "smart-gift/admin.md"
     - "বাংলা - Smart Gift": "bangla/smart-gift/index.md"
 
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   # LLM DEMOS
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   - "LLM Demos":
     - "Overview": "llm-demos/index.md"
     - "LM Demos": "llm-demos/lm-demos.md"
@@ -214,17 +218,17 @@ nav:
     - "Stress Test": "llm-demos/stress-test.md"
     - "বাংলা - LLM Demos": "bangla/llm-demos/index.md"
 
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   # ENTERPRISE APPS
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   - "Enterprise Apps":
     - "Overview": "enterprise-apps/index.md"
     - "Model Use Class": "enterprise-apps/model-use.md"
     - "বাংলা - Enterprise Apps": "bangla/enterprise-apps/index.md"
 
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   # MLOps
-  # ══════════════════════════════════════════════════════
+  # ============================================================
   - "MLOps":
     - "Overview": "mlops/index.md"
     - "Churn Prediction": "mlops/churn-prediction.md"
@@ -235,6 +239,6 @@ nav:
     - "বাংলা - MLOps": "bangla/mlops/index.md"
 
   # ══════════════════════════════════════════════════════
-  # REFERENCE
+  # SPEC2CODE
   # ══════════════════════════════════════════════════════
-  - "বাংলা - রেফারেন্স": "bangla/reference/index.md"
+  - "স্পেসিফিকেশন থেকে কোড": "spec2code/index.md"

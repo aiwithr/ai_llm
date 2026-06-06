@@ -1,0 +1,52 @@
+# MkDocs build output
+/site/
+
+# MkDocs search index artifact (regenerated on build)
+/docs/search/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# OS
+*.lnk
+*.tmp
+
+# Editor / Puku
+.puku/
+
+# Local secrets
+.env
+.env.local
+
+# Old deployment artifacts
+push.bat
+extract*.ps1
+extract*.out
+
+# Node / Mermaid validation (local-only, regenerated on demand)
+node_modules/
+debug-parse.js
+test-mermaid.js
+test-out.txt
+debug-out.txt
+validate-mermaid.js
+validate-out.txt
+verify-mermaid.ps1
+html2md.ps1
+mkdocs.yml.org
+

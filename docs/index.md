@@ -15,7 +15,7 @@ It is built for teams that need AI assistance but cannot send customer data, net
     An enterprise deploys a small, open-source AI model (like Llama 3) inside its private local network to act as a security firewall. When a user asks a question:
 
     1. The local model performs a private database search.
-    2. It strips away all sensitive information â€” customer names, IP addresses, internal IDs â€” and replaces them with generic tokens.
+    2. It strips away all sensitive information like customer names, IP addresses, internal IDs and replaces them with generic tokens.
     3. Only the anonymized, abstract logic problem is sent to an enterprise-grade cloud API (Azure OpenAI, AWS Bedrock) that is legally bound by a zero-data-retention policy.
     4. The cloud LLM returns a structured response to the local network.
     5. The local gateway reinserts the real data before presenting the final answer to the user.

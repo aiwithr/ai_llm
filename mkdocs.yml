@@ -1,7 +1,7 @@
 ﻿site_name: AI Work Flow Docs
 site_url: https://aiwithr.github.io/ai_llm/
-repo_url: https://github.com/aiwithr/ai_llm
-repo_name: aiwithr/ai_llm
+repo_url: https://github.com/raqueeb/ai_work_flow
+repo_name: raqueeb/ai_work_flow
 site_author: রকিবুল হাসান
 site_description: >-
    Enterprise automation, without the cloud. Local LLMs, real workflows, no data leaving your network.

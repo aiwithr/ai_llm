@@ -245,7 +245,7 @@ The folder has 6 well-structured pages but `index.md` is a single index — fine
 | # | Item | Status |
 | --- | --- | --- |
 | 1 | Commit the three restored files (`index.md`, `PROJECT_SUMMARY.md`, `from-rules-to-ai.md`) along with `ROADMAP.md` and `AUDIT.md` | ✅ Done in `6871c59` |
-| 2 | Fix `site_url` and `repo_url` in `mkdocs.yml` to match the actual deployed location (`https://aiwithr.github.io/ai_llm/`) | ✅ Done in `4e0be5c` |
+| 2 | Fix `site_url` (live site) and `repo_url` (canonical code repo) in `mkdocs.yml` | ✅ Done in `4e0be5c` for `site_url`; corrected to `raqueeb/ai_work_flow` for `repo_url` / `repo_name` (live site is on `aiwithr` GitHub Pages, but the canonical project repo is `raqueeb/ai_work_flow`) |
 | 3 | Reorganize spec2code into a bilingual section | ✅ Done in `4e0be5c` (English + Bangla children under "Engineering Practices") |
 | 4 | Begin new IA: `why-ai-work-flow.md`, `demo.md`, and the `adoption/`, `architecture/`, `case-studies/` trees per `ROADMAP.md` §6 | ✅ Done in `4e0be5c` (top-level + index pages; child pages land in A3/A4/A6) |
 

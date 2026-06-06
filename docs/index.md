@@ -1,16 +1,26 @@
-# AI Work Flow for Business
+﻿# AI Work Flow for Business
 
 > **Enterprise automation, without the cloud.**
 > Local LLMs, real workflows, no data leaving your network.
 
-AI Work Flow for Business is a working library of patterns and reference implementations for using **local language models** to automate real enterprise operations — ISP support, bank IT, factory floor handovers, and more.
+AI Work Flow for Business is a working library of patterns and reference implementations for using **local language models** to automate real enterprise operations â€” ISP support, bank IT, factory floor handovers, and more.
 
 It is built for teams that need AI assistance but cannot send customer data, network logs, or internal documents to a public API.
 
 ---
-!!! info Can We Avoid "Cloud LLMs"?
+!!! info "Can we avoid 'Cloud LLMs'?"
 
-    Sometimes ==NO==. To safely use cloud LLMs without exposing sensitive business data, implement a hybrid "local gateway" architecture. In this setup, an enterprise deploys a small, open-source AI model (like Llama 3) inside its private local network to act as a security firewall. When a user asks a question, this local model performs a private database search, strips away all sensitive information—such as customer names, IP addresses, or internal IDs—and replaces them with generic tokens. Only the completely anonymized, abstract logic problem is sent to an enterprise-grade cloud API (like Azure OpenAI or AWS Bedrock) that is legally bound by a zero-data-retention policy. Once the cloud LLM generates a smart, structured response, it is sent back inside the local network, where the local gateway securely reinserts the real data before presenting the final answer to the user.
+    Sometimes ==NO==. To safely use cloud LLMs without exposing sensitive business data, implement a hybrid **"local gateway"** architecture.
+
+    An enterprise deploys a small, open-source AI model (like Llama 3) inside its private local network to act as a security firewall. When a user asks a question:
+
+    1. The local model performs a private database search.
+    2. It strips away all sensitive information â€” customer names, IP addresses, internal IDs â€” and replaces them with generic tokens.
+    3. Only the anonymized, abstract logic problem is sent to an enterprise-grade cloud API (Azure OpenAI, AWS Bedrock) that is legally bound by a zero-data-retention policy.
+    4. The cloud LLM returns a structured response to the local network.
+    5. The local gateway reinserts the real data before presenting the final answer to the user.
+
+    The cloud LLM never sees the raw, sensitive data.
 
 ## Start here
 

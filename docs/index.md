@@ -1,7 +1,7 @@
 ﻿# AI Work Flow for Business
 
 > **Enterprise automation, without the cloud.**
-> Local LLMs, real workflows, no data leaving your network.
+> Local LLMs, real workflows, no data leaving your network. ==আর কখন ক্লাউড ব্যবহার করা যাবে, সেটাও আলাপ হবে এখানে, বাংলায়==।
 
 AI Work Flow for Business is a working library of patterns and reference implementations for using **local language models** to automate real enterprise operations â€” ISP support, bank IT, factory floor handovers, and more.
 

@@ -24,7 +24,7 @@ flowchart LR
 
 ## When to use this
 
-Use the four phases when you are evaluating AI Work Flow for a **new team or workflow**. If you already have a working local-LLM prototype, jump to [Build](build.md). If you have one team in production and want to expand, jump to [Scale](scale.md).
+Use the four phases when you are evaluating AI Work Flow for Business for a **new team or workflow**. If you already have a working local-LLM prototype, jump to [Build](build.md). If you have one team in production and want to expand, jump to [Scale](scale.md).
 
 ## What you should NOT do
 
@@ -34,6 +34,6 @@ Do not stay in Pilot indefinitely. A pilot that has not graduated in 6 weeks is 
 
 ## See also
 
-- [Why AI Work Flow?](../why-ai-work-flow.md) — the case for local-first
+- [Why AI Work Flow for Business?](../why-ai-work-flow.md) — the case for local-first
 - [Demo](../demo.md) — what the modules actually do
 - [Case studies](../case-studies/index.md) — real or representative walkthroughs

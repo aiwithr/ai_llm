@@ -1,6 +1,6 @@
 # Architecture
 
-AI Work Flow has a deliberately small set of layers. The whole point is that you can run it on one server and reason about the whole system.
+AI Work Flow for Business has a deliberately small set of layers. The whole point is that you can run it on one server and reason about the whole system.
 
 ```mermaid
 flowchart TB
@@ -77,6 +77,6 @@ flowchart TB
 
 ## See also
 
-- [Why AI Work Flow?](../why-ai-work-flow.md) — the case for this architecture
+- [Why AI Work Flow for Business?](../why-ai-work-flow.md) — the case for this architecture
 - [Adoption journey → Build](../adoption/build.md) — how to put this in production
 - [Reference → Python API](../reference/python-api.md) — code-level details (forthcoming)

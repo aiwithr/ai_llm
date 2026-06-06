@@ -255,7 +255,7 @@ Commit `4e0be5c` — *"A2: new IA - Get Started section, placeholder pages for A
 
 - New: `docs/why-ai-work-flow.md`, `docs/demo.md`, `docs/adoption/index.md`, `docs/architecture/index.md`, `docs/case-studies/index.md`
 - Rewritten: `docs/index.md` (Home page with grid cards, mermaid flowchart, module table, quick-start)
-- Modified: `mkdocs.yml` — fixed `site_name` → "AI Work Flow Docs", `site_url` / `repo_url` / `repo_name` → `aiwithr/ai_llm`, rewrote `site_description` in English, added "Get Started" / "Adoption" / "Architecture" / "Case Studies" / "Project Docs" / "Engineering Practices" sections at top of nav, kept existing module sections intact
+- Modified: `mkdocs.yml` — fixed `site_name` → "AI Work Flow for Business Docs" (rebranded from "AI Work Flow Docs"), `site_url` / `repo_url` / `repo_name` → `aiwithr/ai_llm` (later corrected: `repo_url` / `repo_name` → `raqueeb/ai_work_flow`, the canonical project repo), rewrote `site_description` in English, added "Get Started" / "Adoption" / "Architecture" / "Case Studies" / "Project Docs" / "Engineering Practices" sections at top of nav, kept existing module sections intact
 
 ### Build verification
 

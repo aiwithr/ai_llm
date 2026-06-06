@@ -1,6 +1,6 @@
-# Why AI Work Flow?
+# Why AI Work Flow for Business?
 
-There are many ways to add AI to enterprise operations. This page explains the specific problem **AI Work Flow** is designed to solve, and why a local-first design is the right answer for that problem.
+There are many ways to add AI to enterprise operations. This page explains the specific problem **AI Work Flow for Business** is designed to solve, and why a local-first design is the right answer for that problem.
 
 ---
 
@@ -43,7 +43,7 @@ The catch: local models in 2026 are smaller (1B–4B parameters) than the best c
 
 ## What this project is
 
-AI Work Flow is a set of **reference implementations** that show how to deploy local models against specific, well-defined enterprise workflows. Each module:
+AI Work Flow for Business is a set of **reference implementations** that show how to deploy local models against specific, well-defined enterprise workflows. Each module:
 
 - Has a clear, narrow scope (one workflow, one output).
 - Uses a small model (Qwen 2.5 1.5B by default).
@@ -68,7 +68,7 @@ The current modules are:
 
 ## Who should use this
 
-You should consider AI Work Flow if **all** of these are true:
+You should consider AI Work Flow for Business if **all** of these are true:
 
 - You handle regulated or sensitive operational data.
 - You have a workflow that is well-defined enough that structured output makes sense.

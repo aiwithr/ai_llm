@@ -1,9 +1,9 @@
-# AI Work Flow
+# AI Work Flow for Business
 
 > **Enterprise automation, without the cloud.**
 > Local LLMs, real workflows, no data leaving your network.
 
-AI Work Flow is a working library of patterns and reference implementations for using **local language models** to automate real enterprise operations — ISP support, bank IT, factory floor handovers, and more.
+AI Work Flow for Business is a working library of patterns and reference implementations for using **local language models** to automate real enterprise operations — ISP support, bank IT, factory floor handovers, and more.
 
 It is built for teams that need AI assistance but cannot send customer data, network logs, or internal documents to a public API.
 
@@ -13,7 +13,7 @@ It is built for teams that need AI assistance but cannot send customer data, net
 
 <div class="grid cards" markdown>
 
--   :material-rocket-launch:{ .lg .middle } **[Why AI Work Flow?](why-ai-work-flow.md)**
+-   :material-rocket-launch:{ .lg .middle } **[Why AI Work Flow for Business?](why-ai-work-flow.md)**
 
     ---
 

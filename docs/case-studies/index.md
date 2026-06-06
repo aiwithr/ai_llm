@@ -1,6 +1,6 @@
 # Case studies
 
-Concrete walkthroughs of AI Work Flow deployed against a real workflow. Each case study follows the same structure: the team, the problem, the chosen workflow, what shipped, and what was learned.
+Concrete walkthroughs of AI Work Flow for Business deployed against a real workflow. Each case study follows the same structure: the team, the problem, the chosen workflow, what shipped, and what was learned.
 
 ## Available case studies
 

@@ -1,6 +1,6 @@
 # Demo — what you can build today
 
-This page shows **concrete, runnable examples** of AI Work Flow modules. Every example uses **Qwen 2.5 1.5B** running locally on LM Studio, returning structured output, and being integrated with an existing system.
+This page shows **concrete, runnable examples** of AI Work Flow for Business modules. Every example uses **Qwen 2.5 1.5B** running locally on LM Studio, returning structured output, and being integrated with an existing system.
 
 > All examples are illustrative. The real implementations live in their respective module pages.
 

@@ -1,116 +1,92 @@
-﻿# Enterprise AI Automations Documentation
+# AI Work Flow
 
-Welcome to the Enterprise AI Automations documentation. This site is built for ISP/Service Company and enterprise teams who want to understand how local LLMs can replace rule-based systems and act as the "brain" behind everyday applications. But, we want to start with baby steps.
+> **Enterprise automation, without the cloud.**
+> Local LLMs, real workflows, no data leaving your network.
 
-All guides here use **local LLM setups** via LM Studio, keeping your data private and your work to be delivered fast.
+AI Work Flow is a working library of patterns and reference implementations for using **local language models** to automate real enterprise operations — ISP support, bank IT, factory floor handovers, and more.
 
-## System Overview
+It is built for teams that need AI assistance but cannot send customer data, network logs, or internal documents to a public API.
 
-The following diagram shows how all components connect in the Enterprise AI system:
+---
 
-```mermaid
-flowchart TD
-    A[Customer / User] --> B[Frontend Application]
-    B --> C[Python Scripts / API Layer]
-    C --> D[LM Studio + Local LLM]
-    D --> E[Structured Response]
-    E --> F[Business Logic]
-    F --> G[Output Action]
-    
-    style A fill:#e3f2fd
-    style D fill:#fff3e0
-    style G fill:#c8e6c9
-```
+## Start here
 
-## Documentation Architecture
+<div class="grid cards" markdown>
+
+-   :material-rocket-launch:{ .lg .middle } **[Why AI Work Flow?](why-ai-work-flow.md)**
+
+    ---
+
+    What this project is, who it is for, and why a local-first design matters.
+
+-   :material-play-circle:{ .lg .middle } **[See it run](demo.md)**
+
+    ---
+
+    Concrete examples of what you can automate today with a 1.5B-parameter local model.
+
+-   :material-map:{ .lg .middle } **[Adoption journey](adoption/index.md)**
+
+    ---
+
+    A four-phase path from "what is this" to running in production across 5+ teams.
+
+-   :material-sitemap:{ .lg .middle } **[Architecture](architecture/index.md)**
+
+    ---
+
+    How the layers fit together: LM Studio, FastAPI, ChromaDB, the modules on top.
+
+</div>
+
+## Who this is for
+
+| Audience | What you get |
+| --- | --- |
+| **ISP / telco operations** (NOC, field ops, support) | Complaint classification, ticket routing, runbook Q&A |
+| **Bank IT teams** | Internal helpdesk triage, network ops log analysis, SOP lookup |
+| **Factory operations** | Shift handover summarization, anomaly flagging, maintenance ticket drafts |
+| **University IT** *(later phase)* | Lab scheduling helpdesk, admissions Q&A |
+
+If you handle sensitive operational data, this site is for you.
+
+## How it works
 
 ```mermaid
 flowchart LR
-    A[Documentation] --> B[Getting Started]
-    A --> C[ISP Classifier]
-    A --> D[Qwen + RAG]
-    A --> E[Gemma E4B]
-    A --> F[HR Assistant]
-    A --> G[MLOps]
-    
-    B --> H[Setup Guide]
-    C --> I[Classification Workflows]
-    D --> J[RAG Architecture]
-    E --> K[Model Comparison]
-    F --> L[Leave Management]
-    G --> M[Churn Prediction]
-    
-    style A fill:#e8eaf6
-    style H fill:#c8e6c9
-    style I fill:#c8e6c9
-    style J fill:#c8e6c9
-    style K fill:#c8e6c9
-    style L fill:#c8e6c9
-    style M fill:#c8e6c9
+    A[Your data] --> B[Local LLM<br/>Qwen 2.5 1.5B<br/>or Gemma 3 4B]
+    B --> C[Structured output]
+    C --> D[Your existing<br/>tools and workflows]
+
+    style A fill:#e3f2fd
+    style B fill:#fff3e0
+    style D fill:#c8e6c9
 ```
 
-## Data Flow Sequence
+No data leaves your network. No API keys. No vendor lock-in. The same Python code that runs on your laptop runs on your server.
 
-```mermaid
-sequenceDiagram
-    participant U as User
-    participant A as Application
-    participant L as LLM
-    participant O as Output
-    
-    U->>A: Submit Request
-    A->>L: API Call to LM Studio
-    L-->>A: LLM Response
-    A->>A: Process & Structure
-    A-->>U: Formatted Output
-```
+## What's in the box
 
-## Project Structure
+| Module | What it does | Doc |
+| --- | --- | --- |
+| ISP Classifier | Routes customer complaints by topic and priority | [docs](isp-classifier/index.md) |
+| SLA System | Evaluates SLA breaches and ERP approvals | [docs](sla-system/index.md) |
+| Qwen + RAG | Retrieval-augmented answers over your runbooks | [docs](qwen-rag/index.md) |
+| HR Assistant | Leave, attendance, and HR FAQ automation | [docs](hr-assistant/index.md) |
+| Smart Gift AI | Recommendation engine on top of a local LLM | [docs](smart-gift/index.md) |
+| MLOps | Model registry, monitoring, A/B testing, retraining | [docs](mlops/index.md) |
+| LLM Demos | Working examples of patterns (hierarchy, mini-quick, stress test) | [docs](llm-demos/index.md) |
 
-```mermaid
-graph TD
-    A[Enterprise AI Workflows] --> B[ISP Classifier]
-    A --> C[Qwen + RAG]
-    A --> D[Gemma E4B]
-    A --> E[HR Assistant]
-    A --> F[MLOps]
-    
-    B --> B1[Rule-based]
-    B --> B2[LLM-enhanced]
-    B --> B3[Reasoning]
-    
-    C --> C1[Knowledge Base]
-    C --> C2[Vector Search]
-    
-    D --> D1[Classification]
-    D --> D2[Analysis]
-    
-    style A fill:#f3e5f5
-    style B1 fill:#c8e6c9
-    style C1 fill:#c8e6c9
-```
+## Project plan
 
-## Quick Navigation
+This is an active project. See [ROADMAP.md](ROADMAP.md) for the locked decisions, audience, and the eight-session docs plan currently in progress.
 
-| Section | Description | Model |
-|---------|-------------|-------|
-| [Getting Started](getting-started/index.md) | Setup LM Studio and first script | Qwen 2.5 |
-| [ISP Classifier](isp-classifier/index.md) | Customer complaint classification | Qwen |
-| [Qwen + RAG](qwen-rag/index.md) | Knowledge-augmented responses | Qwen 2.5 |
-| [Gemma E4B](gemma-e4b/index.md) | Advanced classification | Gemma 4-bit |
-| [HR Assistant](hr-assistant/index.md) | Leave and employee management | Qwen |
-| [MLOps](mlops/index.md) | Churn prediction pipeline | Gemma |
+Current status: **A2** (new information architecture + Why + Demo pages). See [AUDIT.md](AUDIT.md) for the current site audit.
 
-## Key Technologies
+## Quick start
 
-- **LM Studio**: Local LLM runtime with API server
-- **Qwen 2.5 1.5B**: Fast, efficient for most tasks
-- **Gemma 4 E4B**: Higher quality for complex reasoning
-- **ChromaDB**: Vector database for RAG
-- **FastAPI/Flask**: API framework
+1. Install [LM Studio](https://lmstudio.ai/) and load **Qwen 2.5 1.5B Instruct** (or **Gemma 3 4B** for harder reasoning).
+2. Start the local server on `http://localhost:1234/v1`.
+3. Open the [Getting Started](getting-started/index.md) guide and run your first script.
 
-## Getting Help
-
-- Check the [Getting Started](getting-started/index.md) guide for setup instructions
-- Review individual module documentation for specific use cases
-- Refer to Python scripts in the repository for implementation details
+That's it. No cloud account, no API key, no telemetry.

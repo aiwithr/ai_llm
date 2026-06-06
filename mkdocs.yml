@@ -1,10 +1,10 @@
-﻿site_name: Enterprise AI Automations Using Small LLM Documentation
-site_url: https://github.io/raqueeb/ai_work_flow
-repo_url: https://github.com/raqueeb/ai_work_flow
-repo_name: raqueeb/ai_work_flow
+﻿site_name: AI Work Flow Docs
+site_url: https://aiwithr.github.io/ai_llm/
+repo_url: https://github.com/aiwithr/ai_llm
+repo_name: aiwithr/ai_llm
 site_author: রকিবুল হাসান
 site_description: >-
-   রোড টু হাইটেক ইন্ডাস্ট্রি: এআই নিয়ে কাজ
+   Enterprise automation, without the cloud. Local LLMs, real workflows, no data leaving your network.
 copyright: "সৃজনশীল লাইসেন্সিং ২০২৪ - ২০২৬ &copy; রকিবুল হাসান"
 edit_uri: ""
 
@@ -120,12 +120,45 @@ markdown_extensions:
   - pymdownx.tilde
 
 nav:
-  - Home: index.md
-  - Overview: overview.md
-  - Executive Summary: PROJECT_SUMMARY.md
-  - বাংলা - সামারি: PROJECT_SUMMARY_bangla.md
-  - "রুলস থেকে AI-তে": "from-rules-to-ai.md"
-  - "বাংলা - রুলস থেকে AI": "bangla/from-rules-to-ai.md"
+  # ============================================================
+  # GET STARTED (new top-level entry point)
+  # ============================================================
+  - "Get Started":
+    - "Home": "index.md"
+    - "Why AI Work Flow?": "why-ai-work-flow.md"
+    - "Demo": "demo.md"
+    - "Quick Start": "getting-started/index.md"
+    - "Talk to LM Studio": "getting-started/talk-to-llm.md"
+
+  # ============================================================
+  # ADOPTION (new in A3)
+  # ============================================================
+  - "Adoption":
+    - "Overview": "adoption/index.md"
+
+  # ============================================================
+  # ARCHITECTURE (new in A4)
+  # ============================================================
+  - "Architecture":
+    - "Overview": "architecture/index.md"
+
+  # ============================================================
+  # CASE STUDIES (new in A6)
+  # ============================================================
+  - "Case Studies":
+    - "Overview": "case-studies/index.md"
+
+  # ============================================================
+  # PROJECT DOCS (legacy / detail pages)
+  # ============================================================
+  - "Project Docs":
+    - "Overview": "overview.md"
+    - "Executive Summary": "PROJECT_SUMMARY.md"
+    - "বাংলা - সামারি": "PROJECT_SUMMARY_bangla.md"
+    - "রুলস থেকে AI-তে": "from-rules-to-ai.md"
+    - "বাংলা - রুলস থেকে AI": "bangla/from-rules-to-ai.md"
+    - "ROADMAP": "ROADMAP.md"
+    - "AUDIT": "AUDIT.md"
 
   # ============================================================
   # AI-DEVELOPMENT
@@ -136,14 +169,6 @@ nav:
     - "Why Reasoning Matters": "ai-development/reasoning.md"
     - "Citizen Developer Guide": "ai-development/citizen-developers.md"
     - "বাংলা - AI ডেভেলপমেন্ট": "bangla/ai-development/index.md"
-
-  # ============================================================
-  # GETTING STARTED
-  # ============================================================
-  - "Getting Started":
-    - "Overview": "getting-started/index.md"
-    - "Talk to LM Studio": "getting-started/talk-to-llm.md"
-    - "বাংলা - শুরু করুন": "bangla/getting-started/index.md"
 
   # ============================================================
   # ISP CLASSIFIER
@@ -241,6 +266,8 @@ nav:
     - "বাংলা - MLOps": "bangla/mlops/index.md"
 
   # ══════════════════════════════════════════════════════
-  # SPEC2CODE
+  # SPEC2CODE (bilingual section)
   # ══════════════════════════════════════════════════════
-  - "স্পেসিফিকেশন থেকে কোড": "spec2code/index.md"
+  - "Engineering Practices":
+    - "Spec to Code": "spec2code/index.md"
+    - "স্পেসিফিকেশন থেকে কোড": "spec2code/index.md"

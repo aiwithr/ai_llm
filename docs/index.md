@@ -3,7 +3,7 @@
 > **Enterprise automation, without the cloud.**
 > Local LLMs, real workflows, no data leaving your network. ==আর কখন ক্লাউড ব্যবহার করা যাবে, সেটাও আলাপ হবে এখানে, বাংলায়==।
 
-AI Work Flow for Business is a working library of patterns and reference implementations for using **local language models** to automate real enterprise operations â€” ISP support, bank IT, factory floor handovers, and more.
+AI Work Flow for Business is a working library of patterns and reference implementations for using **local language models** to automate real enterprise operations, ISP support, bank IT, factory floor handovers, and more.
 
 It is built for teams that need AI assistance but cannot send customer data, network logs, or internal documents to a public API.
 
@@ -103,3 +103,7 @@ Current status: **A2** (new information architecture + Why + Demo pages). See [A
 3. Open the [Getting Started](getting-started/index.md) guide and run your first script.
 
 That's it. No cloud account, no API key, no telemetry.
+
+!!! question "কথা বলতে চাচ্ছেন?"
+
+    আমাকে Whataspp এ মেসেজ করতে পারেন: [+8801713095767](https://wa.me/+8801713095767)। আমি যেহেতু রোবট, কল থেকে মেসেজেই অভ্যস্ত৷। আমার সব আলাপ [মিডিয়াম](https://medium.com/@raqueeb), [ফেসবুক](https://www.facebook.com/raqueeb) এবং [লিংকডইনে](https://www.linkedin.com/in/raqueeb/) পাবেন।

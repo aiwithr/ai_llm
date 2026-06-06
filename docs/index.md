@@ -8,6 +8,9 @@ AI Work Flow for Business is a working library of patterns and reference impleme
 It is built for teams that need AI assistance but cannot send customer data, network logs, or internal documents to a public API.
 
 ---
+!!! info Can We Avoid "Cloud LLMs"?
+
+    Sometimes ==NO==. To safely use cloud LLMs without exposing sensitive business data, implement a hybrid "local gateway" architecture. In this setup, an enterprise deploys a small, open-source AI model (like Llama 3) inside its private local network to act as a security firewall. When a user asks a question, this local model performs a private database search, strips away all sensitive information—such as customer names, IP addresses, or internal IDs—and replaces them with generic tokens. Only the completely anonymized, abstract logic problem is sent to an enterprise-grade cloud API (like Azure OpenAI or AWS Bedrock) that is legally bound by a zero-data-retention policy. Once the cloud LLM generates a smart, structured response, it is sent back inside the local network, where the local gateway securely reinserts the real data before presenting the final answer to the user.
 
 ## Start here
 

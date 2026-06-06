@@ -290,6 +290,30 @@ After A3, `mkdocs build --clean` produces **0 new warnings** from A3 pages. Rema
 
 ---
 
+## 11. A4 follow-up
+
+A4 closed the architecture section: 3 new child pages under `docs/architecture/`, committed in `00d1240` (3 files changed, 478 insertions). `architecture/index.md` was already complete (5-layer mermaid + table + child links + see-also block), so no edits to it were required.
+
+| # | Item | Status |
+| --- | --- | --- |
+| 1 | `docs/architecture/layers.md` — 5-layer contract (Edge / Application / Workflow / Core / Infrastructure): what each layer is, what it is NOT, where typical changes go; 8-row "where does a typical change go?" table; "what this page is NOT" closer; see-also block | ✅ Done in `00d1240` |
+| 2 | `docs/architecture/data-flow.md` — end-to-end mermaid sequenceDiagram (operator → Edge → Application → Workflow → Core → LM Studio) with 11 numbered steps; boundary-crossings table; "what NEVER leaves your network" list (prompts, responses, RAG chunks, audit logs); typed-function contract (Core `ChatRequest`/`ChatResult` Pydantic models, Workflow `classify_complaint` example); 2 worked examples with mermaid sequenceDiagrams (A: ISP classifier with no RAG; B: Qwen RAG with retrieval + source filter); "what this page is NOT" closer; see-also block | ✅ Done in `00d1240` |
+| 3 | `docs/architecture/security.md` — 3-attacker threat model (curious operator, compromised application server, malicious prompt) with explicit "can do" / "cannot do" for each; ASCII network-placement diagram (operator / application / inference / retrieval subnets, no internet egress on the latter two, allow-list firewall); 14-field audit log table (request_id, actor, tenant, module, model, input/output, latency, tokens, agreement_score, outcome, timestamp) with explicit "what is NOT logged" list (secrets, raw PII text); 5 prompt-injection mitigations (typed output schema as primary defence, server-side system prompt, retrieval source filter, agreement-rate monitoring, per-tenant log namespacing); model provenance (pinned version, SHA-256 in deploy record, frozen eval set re-run, no runtime model download); explicit "what we don't defend against" closer (insider with shell, physical access, side-channel extraction, model-internal bugs, social engineering); "what this page is NOT" closer; see-also block | ✅ Done in `00d1240` |
+| 4 | `mkdocs.yml` nav update for the 3 new pages | ⏸ Not needed — `architecture/index.md` is the only nav entry for this section; the 3 child pages are linked from it but not listed in the top-level nav. Consistent with the same pattern used in `adoption/` and `case-studies/`. |
+| 5 | Update `ROADMAP.md` decision log with A4 commit | ✅ Done in this follow-up commit. Also fixed the A3 row formatting glitch (was `||| 2026-06-06 | A3 ...` with no leading `|` and no blank-line separator — replaced with a proper `| 2026-06-06 | A3 ...` row plus a blank line, and the new A4 row appended in the same style). |
+
+### A4 build verification
+
+After A4, `mkdocs build --clean` produces **0 new warnings** from the 3 new pages. Remaining 7 warnings breakdown:
+
+- 3 pre-existing in `from-rules-to-ai.md` (`rag-qwen.md`, `reasoning-importance.md`, `enterprise-apps.md` — filename-rename orphans; A5 / A7 work)
+- 1 in `architecture/index.md` (`../reference/python-api.md` — A7 work, intentional placeholder)
+- 3 in `case-studies/index.md` (`isp-support.md`, `bank-it.md`, `factory-it.md` — A6 work)
+
+**A4 status:** Complete. Architecture section has all 3 child pages (layers, data-flow, security); `architecture/index.md` continues to render cleanly and link to its children. The 3 architecture placeholders in the build are closed. A5 next (module pages brought into the new IA).
+
+---
+
 ## 9. Sign-off
 
 - [x] Nav walked end-to-end

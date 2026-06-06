@@ -242,10 +242,24 @@ The folder has 6 well-structured pages but `index.md` is a single index — fine
 
 ## 8. Action items for A2
 
-1. **Commit the three restored files** (`index.md`, `PROJECT_SUMMARY.md`, `from-rules-to-ai.md`) along with `ROADMAP.md` and `AUDIT.md`. Done in this commit.
-2. **Fix `site_url` and `repo_url`** in `mkdocs.yml` to match the actual deployed location (`https://aiwithr.github.io/ai_llm/`).
-3. **Reorganize spec2code** into a bilingual section.
-4. **Begin new IA**: introduce `why-ai-work-flow.md`, `demo.md`, and the `adoption/`, `architecture/`, `case-studies/`, `reference/` trees per `ROADMAP.md` §6.
+| # | Item | Status |
+| --- | --- | --- |
+| 1 | Commit the three restored files (`index.md`, `PROJECT_SUMMARY.md`, `from-rules-to-ai.md`) along with `ROADMAP.md` and `AUDIT.md` | ✅ Done in `6871c59` |
+| 2 | Fix `site_url` and `repo_url` in `mkdocs.yml` to match the actual deployed location (`https://aiwithr.github.io/ai_llm/`) | ✅ Done in `4e0be5c` |
+| 3 | Reorganize spec2code into a bilingual section | ✅ Done in `4e0be5c` (English + Bangla children under "Engineering Practices") |
+| 4 | Begin new IA: `why-ai-work-flow.md`, `demo.md`, and the `adoption/`, `architecture/`, `case-studies/` trees per `ROADMAP.md` §6 | ✅ Done in `4e0be5c` (top-level + index pages; child pages land in A3/A4/A6) |
+
+### A2 commit summary
+
+Commit `4e0be5c` — *"A2: new IA - Get Started section, placeholder pages for Adoption/Architecture/Case Studies, fixed site metadata, bilingual spec2code"*. 7 files changed, 519 insertions, 118 deletions.
+
+- New: `docs/why-ai-work-flow.md`, `docs/demo.md`, `docs/adoption/index.md`, `docs/architecture/index.md`, `docs/case-studies/index.md`
+- Rewritten: `docs/index.md` (Home page with grid cards, mermaid flowchart, module table, quick-start)
+- Modified: `mkdocs.yml` — fixed `site_name` → "AI Work Flow Docs", `site_url` / `repo_url` / `repo_name` → `aiwithr/ai_llm`, rewrote `site_description` in English, added "Get Started" / "Adoption" / "Architecture" / "Case Studies" / "Project Docs" / "Engineering Practices" sections at top of nav, kept existing module sections intact
+
+### Build verification
+
+`mkdocs build --clean` runs in 2.81 s and produces the site. The 22 build warnings are all forward-looking — links to A3/A4/A6 child pages that don't exist yet — and will be resolved as those phases land. Three pre-existing `from-rules-to-ai.md` warnings point to old filenames (`rag-qwen.md`, `reasoning-importance.md`, `enterprise-apps.md`) that were renamed during the module reorganization; these land in A5.
 
 ---
 

@@ -1,7 +1,7 @@
 # AI Work Flow Docs — Roadmap
 
 > **Living plan.** This file is the single source of truth. Every future session reads it first.
-> Last updated: 2026-06-06
+> Last updated: 2026-06-06 — A2 complete (commit `4e0be5c`), A3 next
 
 ---
 
@@ -133,6 +133,8 @@ docs/
 | 2026-06-06 | University case study deferred | Bank + Factory cover regulated + industrial; university adds marginal signal in Phase A |
 | 2026-06-06 | ISP, Bank, Factory case studies in A6 | One per primary audience segment |
 | 2026-06-06 | MkDocs Material, no Docusaurus | Already deployed; migration cost > benefit |
+| 2026-06-06 | A2 commit `4e0be5c` — new IA landed | Get Started / Adoption / Architecture / Case Studies / Project Docs / Engineering Practices sections at top of nav; site metadata fixed (site_name, site_url, repo_url, repo_name → aiwithr/ai_llm); spec2code reorganized into bilingual Engineering Practices section |
+| 2026-06-06 | A2 placeholders link forward to A3/A4/A6 | Adoption/Architecture/Case Studies index pages link to child pages that don't exist yet; build emits 22 forward-looking warnings (all expected, all in scope for A3/A4/A6) |
 
 ## 9. Open questions
 

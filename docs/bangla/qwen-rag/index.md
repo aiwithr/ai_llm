@@ -172,6 +172,6 @@ Access করুন: http://localhost:8501
 
 ## সম্পর্কিত ডকুমেন্টেশন
 
-- [শুরু করুন](../getting-started/index.md)
+- [শুরু করুন](../../getting-started/index.md)
 - [ISP Classifier](../isp-classifier/index.md)
 - [Enterprise Apps](../enterprise-apps/index.md)

@@ -300,7 +300,6 @@ python traditional_vs_ai_workflow.py
 ## পরবর্তী পদক্ষেপ
 
 - **[Qwen দিয়ে RAG](../qwen-rag/index.md)** - ডোমেইন নলেজ দিয়ে AI বাড়ান
-- **[Reasoning গুরুত্ব](../ai-development/reasoning.md)** - AI রিজনিং কেন গুরুত্বপূর্ণ
 - **[এন্টারপ্রাইজ অ্যাপস](../enterprise-apps/index.md)** - প্রোডাকশন উদাহরণ
 
 ---

@@ -1,100 +1,38 @@
-# সহজ আলাপ
+# Project Overview
 
-## কেন এই প্রজেক্ট?
+This documentation site is for teams who want to use small, local language models to solve real, everyday work problems - leave approvals, expense claims, IT helpdesk tickets, lead routing, inventory alerts, invoice approvals, meeting room booking, and new employee onboarding.
 
-এই ডকুমেন্টেশন প্রজেক্টের মূল উদ্দেশ্য হলো **নন-টেকনিক্যাল মানুষদের** জন্য AI এবং SLM (Small Language Model) এর সুযোগ তুলে ধরা।
+## Who is this for
 
-## পুরাতো ও নতুন স্টাইল / Old vs New Approach
+The site is for two groups of readers.
 
-```mermaid
-flowchart LR
-    subgraph NEW[নতুন পদ্ধতি]
-        A1[নন-টেকনিক্যাল মানুষ] --> A2[AI Tool]
-        A2 --> A3[মিনিটে ফলাফল]
-        A2 --> A4[নিজের প্রয়োজনমতো কাস্টমাইজ]
-    end
+The first group is **corporate decision makers** - team leads, operations managers, HR, finance, IT, and sales operations. They are not building AI. They are trying to decide whether local AI is realistic for their team, where to start a pilot, and how to scale once a pilot is working.
 
-    subgraph OLD[পুরাতন পদ্ধতি]
-        B1[নন-টেকনিক্যাল মানুষ] --> B2[IT টিম]
-        B2 --> B3[৩ মাস অপেক্ষা]
-        B3 -.->|যা এল তা দরকারের সাথে মেলে না| B1
-    end
-```
+The second group is **engineers and analysts** who will actually wire the systems up. They want to see the architecture layers, the data flow, the security model, and the reference prompts and patterns.
 
-## AI এর সুবিধা / AI Benefits
+## What you will find here
 
-| আগে থেকে দক্ষতা | ছিল | ছিল না |
-|------------------|-----|--------|
-| AI এর সাহায্যে | আরো দ্রুত | একদম নতুন সুযোগ |
-| সময় বাঁচায় | হ্যাঁ | হ্যাঁ |
+The site is organised in five top-level sections.
 
-## যে কাজে AI সাহায্য করতে পারে / Use Cases
+- **Get Started** - the 5-minute quick start, the 30-minute model run, and the demo index
+- **Adoption** - the four-phase adoption journey (Discover, Pilot, Build, Scale) with entry and exit criteria for each
+- **Architecture** - the system layers, data flow, and security model that ties the modules together
+- **Case Studies** - worked examples of the journey in three different industries
+- **Project Docs** - this overview, the executive summary, the roadmap, and the audit history
 
-```mermaid
-flowchart TB
-    UC[AI ব্যবহারকারী] --> HR[HR]
-    UC --> ACC[Accounts]
-    UC --> LOG[Logistics]
-    UC --> EDU[Education]
+Below those sit the 12 modules (ISP Classifier, ISP Reasoning, Qwen + RAG, Gemma E4B, HR Assistant, SLA System, Smart Gift, LLM Demos, Enterprise Apps, MLOps, AI Software Life Cycle, and Engineering Practices).
 
-    HR --> H1[কোন সেক্টর?]
-    H1 --> H2[অনবোর্ডিং ট্র্যাকিং]
-    H1 --> H3[ইনভয়েস ম্যানেজমেন্ট]
+## Reading order if you are new
 
-    EDU --> E1[কোন সেক্টর?]
-    E1 --> E2[অনবোর্ডিং ট্র্যাকিং]
-    E1 --> E3[ইনভয়েস ম্যানেজমেন্ট]
-    E1 --> E4[ডেলিভারি ট্র্যাকিং]
-    E1 --> E5[স্টুডেন্ট প্রগ্রেস মনিটরিং]
-    E1 --> E6[কাস্টম টুল তৈরি]
-```
+If you are new, read in this order.
 
-## সিস্টেম আর্কিটেকচার / System Architecture
+1. [Why AI Work Flow](index.md) - the case for local, small models
+2. [Demo](demo.md) - a working example
+3. [Adoption Overview](adoption/index.md) - the four-phase journey
+4. [Architecture Overview](architecture/index.md) - the system layers
 
-```mermaid
-flowchart LR
-    DL[Data Layer] --> AL[API Layer]
-    PL[Processing Layer] --> AL
-    FE[Frontend] --> AL
-    AL --> W[Worker - নন-টেকনিক্যাল ব্যবহারকারী]
-    AL --> AI[AI Tool - Claude Code / VS Code with Continue]
-    DL --> DB[(Local Database)]
-    DL --> FS[File System]
-```
+If you want a deeper look at the engineering side, continue with the [Architecture Layers](architecture/layers.md), [Data Flow](architecture/data-flow.md), and [Security](architecture/security.md) pages.
 
-## শুরু করুন / Quick Start
+## Bangla version
 
-- **AI Tool বাছাই করুন** — Claude Code, Cursor, Continue, বা Windsurf
-- **নিজের সমস্যা বলুন** — সহজ বাংলায় বা ইংরেজিতে
-- **ফলাফল পরীক্ষা করুন** — নিজের ল্যাপটপে চালান
-- **আবশ্যক হলে IT সাহায্য নিন** — শুধু ইন্টিগ্রেশনের জন্য
-
-## প্রযুক্তি স্ট্যাক / Tech Stack
-
-- **LLM**: Gemma 2B, Qwen, Llama (Local)
-- **Framework**: Python, React
-- **Database**: SQLite, PostgreSQL
-- **Documentation**: MkDocs (Material theme)
-- **Deployment**: GitHub Pages
-
-## ইন্টিগ্রেশনের জন্য
-
-## গুরুত্বপূর্ণ বিষয় / Key Points
-
-> **এটা ধরতে পারলে খেলা পাল্টে যাবে**
-
-AI টেকনিক্যাল মানুষের চেয়ে নন-টেকনিক্যাল মানুষদের বেশি সাহায্য করবে। এটা একটা আশীর্বাদের মতো।
-
-এই কথাটা বললে সবাই হাসে। যারা আমাকে গুরু মানে তারাও আমার পাগলামিকে প্রশয় দেয়। হাসার কারণটা বুঝি। আমরা ভাবি AI মানেই কোড, সার্ভার, ডেটা সায়েন্স। মানে টেকনিক্যাল মানুষের জিনিস।
-
-নন-টেকনিক্যাল মানুষ এটা দিয়ে কী করবে?
-
-হুম। থিঙ্ক অ্যাগেইন। একজন সফটওয়্য্যার ডেভেলপার আগেও কোড লিখতে পারতেন। AI আসার পরে তিনি আরো দ্রুত লিখতে পারছেন। তার দক্ষতা বাড়ল, সময় বাঁচল। ভালো হলো সবার জন্য। কিন্তু একজন HR ম্যানেজার যিনি কোড জানেন না - তিনি আগে কী করতেন? IT টিমের কাছে যেতেন। বলতেন একটা ছোট টুল লাগবে - নতুন মানুষকে অনবোর্ডিং ট্র্যাক করার জন্য। IT বলত - সিরিয়ালে আসেন মিয়া, তিন মাস লাগবে। তিন মাস পরে যা আসত সেটা আবার তাঁর দরকারের সাথে মেলাতে আরেকটা পিচডি লাগবে। এখন সেই HR ম্যানেজার Claude Code খুলে বলতে পারেন - "আমার একটা টুল দরকার যেটায় নতুন কর্মীর নাম, জয়েনিং ডেট, কোন ডকুমেন্ট জমা দিয়েছে, কোনটা বাকি - এগুলো দেখা যাবে।" AI সেটা বানিয়ে দেবে। ওটা নিজের ল্যাপটপে সুন্দর চলবে। সিস্টেমে চালাতে হয়তোবা দরকার IT এ ইন্টিগ্রেশন, তবে তিন মাস লাগবে না। এটাই পার্থক্য।
-
-টেকনিক্যাল মানুষ আগেও পারতেন, এখন আরো ভালো পারছেন। কিন্তু নন-টেকনিক্যাল মানুষ আগে পারতেনই না। এখন পারছেন। এটা দক্ষতা বৃদ্ধি না - এটা সম্পূর্ণ নতুন সুযোগ। একটা আশির্বাদ। টেকনিক্যাল মানুষদের আর তেল দিতে হবে না।
-
-তবে, আমি কখনো তেল খেতাম না। আসল কথা হচ্ছে, একজন অ্যাকাউন্টস ম্যানেজার জানেন ইনভয়েস কোথায় আটকায়। একজন লজিস্টিকস অফিসার জানেন কোন ডেলিভারিতে বারবার সমস্যা হয়। একজন স্কুলে প্রিন্সিপাল জানেন কোন ছাত্র কোন বিষয়ে পিছিয়ে পড়ছে। এই জ্ঞানটা সবচেয়ে দামি। কিন্তু আগে এই জ্ঞানকে কাজে লাগানোর জন্য একজন ডেভেলপার লাগত।
-
-এখন আর লাগে না। আর সেই কারণেই নন-টেকনিক্যাল মানুষের জন্য AI-এর সুযোগটা অনেক বড়। তাঁরা হঠাৎ এমন একটা ক্ষমতা পেয়েছেন যেটা আগে শুধু টেকনিক্যাল মানুষের কাছে ছিল। হেসে নিন আপাতত। বরং আমি বলবো - এটা ধরতে পারলে খেলা পাল্টে যাবে।
-
-আগে শুধু টেকনিক্যাল মানুষের কাছে ছিল। হেসে নিন আপাতত। বরং আমি বলবো - এটা ধরতে পারলে খেলা পাল্টে যাবে।
+A Bangla version of this overview is available at [bangla/overview.md](bangla/overview.md). The full site is mirrored in Bangla where the source content is Bangla-first; the English pages are mirrored on a per-module basis.

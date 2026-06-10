@@ -110,4 +110,4 @@ At month 6 you have a real platform, not a hack. The alternative — trying to b
 - [ ] Fine-tune workflow documented, with a "no, you do not need a fine-tune" gate
 - [ ] 5+ teams running their own workflows without a dedicated platform engineer
 
-When all eight are checked, you have a programme, not a project. The next phase is [Phase C — Distribution](../ROADMAP.md#phase-c--distribution) in the [roadmap](../ROADMAP.md): Docker images, `pip install ai-work-flow`, case-study videos, and the first external pilot.
+When all eight are checked, you have a programme, not a project. The next phase is [Phase C — Distribution](../ROADMAP.md#phase-c-distribution) in the [roadmap](../ROADMAP.md): Docker images, `pip install ai-work-flow`, case-study videos, and the first external pilot.

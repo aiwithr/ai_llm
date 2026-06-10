@@ -94,7 +94,7 @@ No data leaves your network. No API keys. No vendor lock-in. The same Python cod
 
 This is an active project. See [ROADMAP.md](ROADMAP.md) for the locked decisions, audience, and the eight-session docs plan currently in progress.
 
-Current status: **A2** (new information architecture + Why + Demo pages). See [AUDIT.md](AUDIT.md) for the current site audit.
+Current status: **A2** (new information architecture + Why + Demo pages). The earlier A1 audit is archived at `archive/AUDIT-2026-06-06.md` for historical reference.
 
 ## Quick start
 

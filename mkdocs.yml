@@ -8,6 +8,9 @@ site_description: >-
 copyright: "সৃজনশীল লাইসেন্সিং ২০২৪ - ২০২৬ &copy; রকিবুল হাসান"
 edit_uri: ""
 
+exclude_docs: |
+  archive/
+
 theme:
   name: material
   language: bn
@@ -165,7 +168,6 @@ nav:
     - "রুলস থেকে AI-তে": "from-rules-to-ai.md"
     - "বাংলা - রুলস থেকে AI": "bangla/from-rules-to-ai.md"
     - "ROADMAP": "ROADMAP.md"
-    - "AUDIT": "AUDIT.md"
 
   # ============================================================
   # AI-DEVELOPMENT

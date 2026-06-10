@@ -56,7 +56,7 @@ Legend: ✅ exists · ⚠️ exists but empty · ❌ missing
 | AI Software Life Cycle | `ai-development/sdlc.md` | ✅ |
 | Why Reasoning Matters | `ai-development/reasoning.md` | ✅ |
 | Citizen Developer Guide | `ai-development/citizen-developers.md` | ✅ |
-| বাংলা - AI ডেভেলপমেন্ট | `bangla/ai-development/index.md` | ✅ |
+| বাংলা - AI ডেভেলপমেন্ট | `bangla/ai-development/index.md` | ⏸ Deferred (2026-06-10) — corrupt mojibake file deleted; Bengali mirror re-translation tracked separately |
 
 ### Getting Started
 
@@ -192,7 +192,7 @@ Full link-graph crawl (every `.md` referencing every other `.md`) not run in A1 
 | English page | Bangla mirror | Status |
 | --- | --- | --- |
 | `index.md` | `bangla/index.md` | ✅ |
-| `ai-development/index.md` | `bangla/ai-development/index.md` | ✅ |
+| `ai-development/index.md` | `bangla/ai-development/index.md` | ⏸ Deferred (2026-06-10) — mirror deleted pending re-translation |
 | `getting-started/index.md` | `bangla/getting-started/index.md` | ✅ |
 | `isp-classifier/index.md` | `bangla/isp-classifier/index.md` | ✅ |
 | `isp-classifier-reasoning/index.md` | `bangla/isp-classifier-reasoning/index.md` | ✅ |
@@ -311,30 +311,6 @@ After A4, `mkdocs build --clean` produces **0 new warnings** from the 3 new page
 - 3 in `case-studies/index.md` (`isp-support.md`, `bank-it.md`, `factory-it.md` — A6 work)
 
 **A4 status:** Complete. Architecture section has all 3 child pages (layers, data-flow, security); `architecture/index.md` continues to render cleanly and link to its children. The 3 architecture placeholders in the build are closed. A5 next (module pages brought into the new IA).
-
----
-
-## 12. A5 follow-up
-
-A5 closed the 3 pre-existing `from-rules-to-ai.md` orphan-link warnings via a **surgical (Option B) edit** — the page is otherwise stable and the 7 module pages are intentionally being held flat (no `modules/` folder move) to keep the diff small and avoid disrupting the in-progress Bangla mirrors. The home page WhatsApp-contact admonition was pushed in a separate isolated commit `f93a398` before the A5 work began.
-
-| # | Item | Status |
-| --- | --- | --- |
-| 1 | `docs/from-rules-to-ai.md` — 3 stale "Next steps" links rewritten to live siblings: `rag-qwen.md` → `qwen-rag/index.md`; `reasoning-importance.md` → `ai-development/reasoning.md`; `enterprise-apps.md` → `enterprise-apps/index.md` | ✅ Done in A5 commit |
-| 2 | `docs/from-rules-to-ai.md` — new "Where this fits" block added under the "Next steps" section, with 4 cross-links into `adoption/`, `architecture/`, `qwen-rag/`, and `gemma-e4b/slm-apps.md` | ✅ Done in A5 commit |
-| 3 | Pre-build sanity check — first edit used `../adoption/...` and `../architecture/...` (wrong: `from-rules-to-ai.md` lives at the top of `docs/`, not inside a subfolder); the build produced 3 new "target not found" warnings; corrected to sibling paths (`adoption/...`, `architecture/...`) and rebuilt | ✅ Done in A5 commit |
-| 4 | `docs/ROADMAP.md` — last-updated header updated to "A5 complete"; A3/A4 row formatting glitch (rows starting `||| 2026-06-06 | A3 ...` with no leading `|`) re-fixed; new A5 row appended to §8 decision log | ✅ Done in A5 commit |
-| 5 | `docs/index.md` — isolated push of the home-page WhatsApp `!!! question` admonition and the stray `â€"` mojibake cleanup | ✅ Done in `f93a398` (pre-A5 isolated push) |
-| 6 | Folder consolidation (Option A — move the 7 module pages into a `modules/` subfolder) | ⏸ Deferred. Rationale: the user is mid-translation on the Bangla mirrors; a folder move would force 7×2 = 14 mkdocs.yml edits and churn every cross-reference. Defer until Phase A is done. |
-
-### A5 build verification
-
-After A5, `mkdocs build --clean` produces **0 new warnings** from the A5 edit. The build drops from 7 forward-looking warnings to 4. Remaining 4 warnings breakdown:
-
-- 1 in `architecture/index.md` (`../reference/python-api.md` — A7 work, intentional placeholder for the Python API reference page)
-- 3 in `case-studies/index.md` (`isp-support.md`, `bank-it.md`, `factory-it.md` — A6 work)
-
-**A5 status:** Complete. The 3 pre-existing `from-rules-to-ai.md` orphan warnings are closed; the page now has a "Where this fits" block that links forward into the adoption / architecture / Qwen RAG / Gemma E4B sections, making the old transitional essay a proper entry point into the new IA. A6 next (case studies).
 
 ---
 

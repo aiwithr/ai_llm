@@ -277,4 +277,4 @@ nav:
   # ══════════════════════════════════════════════════════
   - "Engineering Practices":
     - "Spec to Code": "spec2code/index.md"
-    - "স্পেসিফিকেশন থেকে কোড": "spec2code/index.md"
+    - "স্পেসিফিকেশন থেকে কোড": "bangla/spec2code/index.md"

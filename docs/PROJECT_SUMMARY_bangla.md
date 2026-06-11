@@ -487,5 +487,11 @@ python app-classifier1.py
 
 ---
 
+!!! note "আমাদের এই টুলকিট আপনারা বাংলায় পড়তে পারেন"
+
+    আমাদের এই টুলকিট আপনারা বাংলায় পড়তে পারেন এই লিংক থেকে: [bangla/index.md](bangla/index.md)। সেখানে প্রতিটা মডিউলের বাংলা মিরর আছে - ISP ক্লাসিফায়ার, RAG, HR অ্যাসিস্ট্যান্ট, SLA সিস্টেম, MLOps এবং আরও অনেক কিছু। যেটা আপনার দরকার, সেটা পড়ুন, নিজের টিমের সাথে শেয়ার করুন।
+
+---
+
 **রিপোজিটরি:** [https://github.com/raqueeb/ai_work_flow](https://github.com/raqueeb/ai_work_flow)  
 **ডকুমেন্টেশন:** [https://aiwithr.github.io/ai_llm/](https://aiwithr.github.io/ai_llm/)

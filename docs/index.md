@@ -1,26 +1,60 @@
 ﻿# AI Work Flow for Business
 
-> **Enterprise automation, without the cloud.**
-> Local LLMs, real workflows, no data leaving your network. ==আর কখন ক্লাউড ব্যবহার করা যাবে, সেটাও আলাপ হবে এখানে, বাংলায়==।
+> **Local for sensitive data. Cloud for everything else.**
+> Reference patterns for using LLMs in enterprise operations, with a clear policy for when to keep data on-prem and when a cloud model is the right call.
 
-AI Work Flow for Business is a working library of patterns and reference implementations for using **local language models** to automate real enterprise operations, ISP support, bank IT, factory floor handovers, and more.
+AI Work Flow for Business is a working library of patterns and reference implementations for using language models in real enterprise operations: ISP support, bank IT, factory floor handovers, HR helpdesks, network log triage, and more. The default is **local models on your own network** for anything that touches customer data, network logs, internal SOPs, or HR records. For non-sensitive workloads (public documentation, anonymized analytics, third-party SaaS output that has already been sanitized) the same code can target a cloud endpoint through a **local gateway** that scrubs the prompt before it leaves your network.
 
-It is built for teams that need AI assistance but cannot send customer data, network logs, or internal documents to a public API.
+This site is not "no cloud, ever." It is **local-first by policy, cloud-allowed when the data permits it.**
+
+!!! note "আমাদের এই টুলকিট আপনারা বাংলায় পড়তে পারেন"
+
+    এই সাইটের বাংলা মিরর আছে [bangla/index.md](bangla/index.md)-এ। প্রতিটা মডিউলের বাংলা ভার্সন আলাদাভাবে পড়তে পারবেন, একই কন্টেন্ট, কথার ধাঁচে।
 
 ---
-## Can we avoid Cloud LLMs?
+## The decision: local or cloud?
 
-Sometimes **no**. To safely use cloud LLMs without exposing sensitive business data, implement a hybrid **"local gateway"** architecture.
+Run this against the workload before you pick a model:
 
-An enterprise deploys a small, open-source AI model (like Llama 3) inside its private local network to act as a security firewall. When a user asks a question:
+| If the data is... | Default | Why |
+| --- | --- | --- |
+| Customer PII, network logs, internal SOPs, HR records, payment data | **Local** | Regulated. Legal will block anything else. |
+| Anonymized telemetry, public docs, third-party SaaS output, code review | **Cloud acceptable** | No PII; cloud models are stronger and the cost is fine. |
+| Mixed: some sensitive fields embedded in a larger request | **Local gateway** | Local model scrubs, then cloud is called on the sanitized version. |
 
-1. The local model performs a private database search.
-2. It strips away all sensitive information like customer names, IP addresses, internal IDs and replaces them with generic tokens.
-3. Only the anonymized, abstract logic problem is sent to an enterprise-grade cloud API (Azure OpenAI, AWS Bedrock) that is legally bound by a zero-data-retention policy.
-4. The cloud LLM returns a structured response to the local network.
-5. The local gateway reinserts the real data before presenting the final answer to the user.
+The third row is the common case. The local gateway pattern is what this site actually recommends for most enterprises that think they want a cloud LLM.
 
-The cloud LLM never sees the raw, sensitive data.
+## How the local gateway works
+
+A small open-source model (Qwen 2.5 1.5B or Gemma 3 4B) runs inside your private network as a security firewall in front of an optional cloud API.
+
+```mermaid
+flowchart LR
+    subgraph Local["Your network"]
+        U[Operator question] --> L[Local LLM<br/>Qwen 1.5B / Gemma 4B]
+        L --> S[Strip PII:<br/>names, IPs, IDs → tokens]
+        S --> C[Local cache:<br/>runbooks, SOPs, past tickets]
+    end
+    S -- "if non-sensitive" --> X{Cloud allowed?}
+    X -- "no" --> R[Local response]
+    X -- "yes" --> A[Cloud LLM<br/>Azure OpenAI / Bedrock]
+    A -- "structured JSON" --> R
+    R --> V[Re-insert real data<br/>+ return to user]
+
+    style Local fill:#e3f2fd
+    style A fill:#fff3e0
+    style V fill:#c8e6c9
+```
+
+Five steps, regardless of which path the request takes:
+
+1. The local model performs the private database search (runbook lookup, ticket history, employee record).
+2. It strips PII — customer names, IP addresses, internal IDs — and replaces them with generic tokens.
+3. A policy check decides: is the now-anonymized request safe to send to a cloud endpoint under your zero-data-retention contract?
+4. The cloud LLM (if allowed) returns a structured response. The local model does the same if the request stayed on-prem.
+5. The local gateway re-inserts the real data before the user sees the answer.
+
+The cloud LLM never sees the raw sensitive data. The local LLM is always the one your operators talk to. Neither is a black box.
 
 ## Start here
 
@@ -61,22 +95,9 @@ The cloud LLM never sees the raw, sensitive data.
 | **Factory operations** | Shift handover summarization, anomaly flagging, maintenance ticket drafts |
 | **University IT** *(later phase)* | Lab scheduling helpdesk, admissions Q&A |
 
-If you handle sensitive operational data, this site is for you.
+If you handle sensitive operational data, **start local**. If your workload is mostly non-sensitive and you just want strong models, **the local-gateway pattern still gives you the same code path with cloud endpoints on the back end.** Either way, this site is for you.
 
-## How it works
-
-```mermaid
-flowchart LR
-    A[Your data] --> B[Local LLM<br/>Qwen 2.5 1.5B<br/>or Gemma 3 4B]
-    B --> C[Structured output]
-    C --> D[Your existing<br/>tools and workflows]
-
-    style A fill:#e3f2fd
-    style B fill:#fff3e0
-    style D fill:#c8e6c9
-```
-
-No data leaves your network. No API keys. No vendor lock-in. The same Python code that runs on your laptop runs on your server.
+The same Python code that runs on your laptop runs on your server, and the same code targets either a local LM Studio endpoint or a cloud endpoint by changing one URL. The local LLM is always the one your operators talk to — cloud endpoints are an internal implementation detail behind the gateway.
 
 ## What's in the box
 
@@ -89,6 +110,10 @@ No data leaves your network. No API keys. No vendor lock-in. The same Python cod
 | Smart Gift AI | Recommendation engine on top of a local LLM | [docs](smart-gift/index.md) |
 | MLOps | Model registry, monitoring, A/B testing, retraining | [docs](mlops/index.md) |
 | LLM Demos | Working examples of patterns (hierarchy, mini-quick, stress test) | [docs](llm-demos/index.md) |
+| Enterprise Apps | End-to-end apps: bank IT helpdesk, factory handover, ISP support | [docs](enterprise-apps/index.md) |
+| AI Development | SDLC, reasoning techniques, citizen-developer patterns | [docs](ai-development/index.md) |
+| Architecture | How the five layers fit: LM Studio, FastAPI, ChromaDB, modules | [docs](architecture/index.md) |
+| Reference | Python API, configuration, troubleshooting | [docs](reference/index.md) |
 
 ## Project plan
 
@@ -102,7 +127,7 @@ Current status: **A2** (new information architecture + Why + Demo pages). The ea
 2. Start the local server on `http://localhost:1234/v1`.
 3. Open the [Getting Started](getting-started/index.md) guide and run your first script.
 
-That's it. No cloud account, no API key, no telemetry.
+That's it for the local path. **If you want to add a cloud endpoint for non-sensitive requests later**, flip the base URL in your `.env` from `http://localhost:1234/v1` to your Azure OpenAI / Bedrock endpoint, set `LOCAL_GATEWAY_ALLOW_CLOUD=true`, and the rest of the code is unchanged.
 
 !!! question "কথা বলতে চাচ্ছেন?"
 

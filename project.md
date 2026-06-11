@@ -59,7 +59,7 @@ To onboard a new model / harness / machine, follow this exact sequence:
 | Source Markdown under `docs/` | ✅ Yes | All paths are relative. Bengali and English are siblings under `docs/`. |
 | `site/` directory | ⚠️ Build artifact | Regenerate with `python -m mkdocs build`. Do not edit; do not commit (`.gitignore` excludes it). |
 | `C:\Users\...\AppData\Local\Temp\commit*.txt` patterns in history | ❌ No | Those are local-only paths used for `git commit -F` on Windows due to PowerShell parser quirks. Do not hard-code them on a new machine — write your commit message to whatever temp location your shell handles, or use a here-doc. |
-| `docs/blog/_research/`, `docs/reference/`, `scripts/` | ❌ Untracked | Exist on disk but are not in git. See §10 below. |
+| `docs/reference/`, `scripts/` | ❌ Untracked | Exist on disk but are not in git. See §10 below. |
 
 ### Model-agnostic principles (the rules of the road)
 
@@ -424,14 +424,21 @@ What does **not** work well:
 
 ## 11. What's untracked / deferred (do not be alarmed)
 
-Three directories exist on disk but are **not** in git and are **not** in
+Two directories exist on disk but are **not** in git and are **not** in
 the build:
 
 | Path | Why untracked | Plan |
 | --- | --- | --- |
-| `docs/blog/_research/` | Draft blog posts, not yet ready. | Will be added when a post is ready to publish. |
 | `docs/reference/` | A7 reference material (CLI, Python API, prompts, benchmarks, glossary, conventions). `python-api.md` is the source of the 1 known build warning. | Will be added with `mkdocs.yml` nav entries when A7 lands. |
 | `scripts/` | Local build / lint / data-prep scripts. Machine-specific. | Will be reorganized into the code repo (`raqueeb/ai_work_flow`) in Phase B. |
+
+A third directory, `docs/blog/_research/`, **is** in git (added
+2026-06-11 in commit `d170e91`). It holds 7 scraped drafts from
+`varickagents.com/blog/`. They are tracked as research material only —
+the `blog` plugin only scans `docs/blog/posts/`, so `_research/` does
+not show up on the live site. Promote a file to `posts/` with proper
+frontmatter (date, title, authors, summary, tags) when it's ready to
+publish.
 
 A fourth directory, `docs/archive/`, **is** in git and contains historical
 documents that are excluded from the build via `mkdocs.yml` →

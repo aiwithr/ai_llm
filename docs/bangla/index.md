@@ -105,6 +105,10 @@ flowchart LR
 
 ব্যস। কোনো ক্লাউড অ্যাকাউন্ট নেই, কোনো API কী নেই, কোনো টেলিমেট্রি নেই।
 
+!!! note "আমাদের এই টুলকিট আপনারা বাংলায় পড়তে পারেন"
+
+    আমাদের এই টুলকিট আপনারা বাংলায় পড়তে পারেন — [PROJECT_SUMMARY_bangla.md](../PROJECT_SUMMARY_bangla.md) ফাইলে এক্সিকিউটিভ সামারি, টেক স্ট্যাক, আর ডিপ্লয়মেন্ট চেকলিস্ট আছে। সেখান থেকে যেকোনো মডিউলে যাও — ISP ক্লাসিফায়ার, RAG, HR অ্যাসিস্ট্যান্ট, SLA সিস্টেম, MLOps।
+
 !!! question "কথা বলতে চাচ্ছেন?"
 
     আমাকে WhatsApp-এ মেসেজ করতে পারেন: [+8801713095767](https://wa.me/+8801713095767)। আমি যেহেতু রোবট, কল থেকে মেসেজেই অভ্যস্ত৷ আমার সব আলাপ [Medium](https://medium.com/@raqueeb), [Facebook](https://www.facebook.com/raqueeb) এবং [LinkedIn](https://www.linkedin.com/in/raqueeb/)-এ পাবেন। এর পাশাপাশি [YouTube](https://www.youtube.com/@raqueeb)-এ ভিডিও দেখতে পারেন।

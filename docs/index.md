@@ -30,18 +30,19 @@ A small open-source model (Qwen 2.5 1.5B or Gemma 3 4B) runs inside your private
 
 ```mermaid
 flowchart LR
-    subgraph Local["Your network"]
-        U[Operator question] --> L[Local LLM<br/>Qwen 1.5B / Gemma 4B]
-        L --> S[Strip PII:<br/>names, IPs, IDs → tokens]
-        S --> C[Local cache:<br/>runbooks, SOPs, past tickets]
+    subgraph local_net[Your network]
+        U[Operator question] --> L[Local LLM: Qwen 1.5B or Gemma 4B]
+        L --> S[Strip PII: names, IPs, IDs]
+        S --> T[tokens]
+        S --> C[Local cache: runbooks, SOPs, tickets]
     end
-    S -- "if non-sensitive" --> X{Cloud allowed?}
-    X -- "no" --> R[Local response]
-    X -- "yes" --> A[Cloud LLM<br/>Azure OpenAI / Bedrock]
-    A -- "structured JSON" --> R
-    R --> V[Re-insert real data<br/>+ return to user]
+    S --> X{Cloud allowed?}
+    X -- no --> R[Local response]
+    X -- yes --> A[Cloud LLM: Azure OpenAI or Bedrock]
+    A -- structured JSON --> R
+    R --> V[Re-insert real data and return to user]
 
-    style Local fill:#e3f2fd
+    style local_net fill:#e3f2fd
     style A fill:#fff3e0
     style V fill:#c8e6c9
 ```

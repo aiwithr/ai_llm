@@ -48,7 +48,7 @@ Ask the legal/security team three questions, in writing:
 2. **What classes may go to a third-party API under a DPA?** (often: anonymized, de-identified, or public)
 3. **What is the cost of a breach, in money and reputation?**
 
-If (1) covers your workflow and (3) is non-trivial, local LLM is structurally cheaper than building a hybrid gateway. If (2) covers your workflow comfortably, a hosted API is probably faster and good enough — and you should re-read [the hybrid-gateway note](../index.md#can-we-avoid-cloud-llms) on the home page.
+If (1) covers your workflow and (3) is non-trivial, local LLM is structurally cheaper than building a hybrid gateway. If (2) covers your workflow comfortably, a hosted API is probably faster and good enough — and you should re-read [the hybrid-gateway note](../index.md#the-decision-local-or-cloud) on the home page.
 
 ---
 

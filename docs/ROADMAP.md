@@ -90,6 +90,16 @@ docs/
 └── ROADMAP.md                   (this file)
 ```
 
+**Quality bar (frozen, applies to every commit from A7 onward).**
+`py -m mkdocs build --strict 2>&1` must return `$LASTEXITCODE = 0` and print 0
+`WARNING -` lines. This is the docs equivalent of `val_bpb` — one computable
+signal, lower-is-better-or-zero, deterministic, runnable in ~6 s. A7 proved the
+loop: 16 broken-internal-anchor warnings → diagnose → surgical fix → 0. Rule:
+do not merge a docs commit that increases the WARNING count or breaks the
+strict build. The only acceptable "warnings" in the log are pre-existing
+(Material for MkDocs 2.0 deprecation notice, "pages not in nav" info for
+`AUDIT.md` / `bangla/` / `blog/`); all real `WARNING -` lines must be zero.
+
 ## 7. Phase Plan
 
 ### Phase A — Docs site overhaul (current)
@@ -103,7 +113,7 @@ docs/
 | **A5** | Module pages brought into new IA, summary cards, fixed links | — |
 | **A6** | `case-studies/{isp-support,bank-it,factory-it}.md` | — |
 | **A7** | `reference/{cli,python-api,prompts,benchmarks,glossary,conventions}.md` | — |
-| **A8** | Bengali mirrors of A2–A7 English pages | — |
+| **A8** | Bengali mirrors of A2–A7 English pages. **Scope rule:** only touch `docs/bangla/` and the Bengali entries in `mkdocs.yml`. Never edit the English pages, `AUDIT.md`, or the IA diagram above — if a mirror needs a change to an English page, log it as a finding instead. | — |
 
 ### Phase B — Code repo (`raqueeb/ai_work_flow`)
 

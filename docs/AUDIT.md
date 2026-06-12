@@ -339,6 +339,75 @@ The 3 `case-studies/index.md` warnings (`isp-support.md`, `bank-it.md`, `factory
 
 ---
 
+## 13. A7 follow-up — reference section
+
+The Reference section is the second IA contract from the A1 audit. The case studies (A6) show **what** the project ships; the Reference section shows **how the pieces fit** for an engineer who is integrating, extending, or evaluating a Workflow module.
+
+### What shipped in this commit
+
+7 pages under `docs/reference/`:
+
+| # | File | Role | Audience |
+|---|------|------|----------|
+| 0 | `reference/index.md` | Landing page. 6-row page table, ASCII flow diagram, stability section, see-also. | All readers; entry point to the section. |
+| 1 | `reference/python-api.md` | The typed contracts every module exposes: `ChatRequest` / `ChatResult` (Core), the `run()` Workflow contract, the three module contracts (`TriageRequest` / `RAGRequest` / `ShiftNote`), FastAPI integration, versioning. | Engineers integrating a module, or extending one with a new output type. |
+| 2 | `reference/cli.md` | The `aiwf` CLI: top-level command, the five subcommands (`doctor`, `isp-classify`, `rag-ask`, `summarize-shift`, `bench`), env vars, config file. | Operators and CI users. |
+| 3 | `reference/prompts.md` | The exact system prompts for triage / RAG / shift summary / code-mixed Bengali, with the design rationale and the failure modes each prompt handles. | Engineers tuning prompts, or reviewers auditing prompt changes. |
+| 4 | `reference/benchmarks.md` | The five frozen eval sets (ISP triage / bank RAG / factory summary / prompt injection / code-mixed Bengali), the eval-set contract, the bar, the report format, how to add a new set. | Engineers adding modules, or operators checking regression. |
+| 5 | `reference/glossary.md` | Alphabetised terms with a one-sentence definition and a "First used in" link to the canonical usage. | All readers, especially newcomers. |
+| 6 | `reference/conventions.md` | Repo layout, naming, env vars, config file format, audit log format, log format, prompt storage, eval set storage, versioning, "what we don't do". | Anyone writing code, prompts, eval sets, or audit-log consumers. |
+
+### Cross-linking
+
+Every page ends with a "See also" block that links to the other Reference pages and to the relevant case study. The glossary uses the "First used in" pattern to connect a term to the page that defines it canonically. The case studies now link to Reference pages where the contracts they use in production are documented (e.g., `case-studies/isp-support.md` → `reference/python-api.md` → `reference/prompts.md`).
+
+### A7 build verification
+
+After A7, `mkdocs build --strict` produces **0 new warnings** from the 7 new pages and closes the 1 remaining baseline warning from A6 (the `reference/python-api.md` link from `architecture/index.md`, which now resolves).
+
+Specifically:
+
+- 16 broken internal anchor warnings in the first strict-build attempt (A7 produced cross-references using em-dash slugs and number-stripped slugs that didn't match MkDocs Material's slugifier output). Resolved by:
+  - Renaming the h2 sections in `python-api.md` to remove the number prefix and use simpler titles (`## The typed contracts`, `## The LM Studio client`, `## The Workflow.run() contract`, `## The module contracts`, `## The application boundary`, `## Versioning`). This produces the clean slugs the glossary and CLI were already referencing.
+  - Keeping the number prefixes in `conventions.md`, `prompts.md`, and `benchmarks.md` headings (the `1.`, `2.`, etc. give useful ordering in the rendered TOC) and updating the 18 cross-page links to include the number prefix.
+  - Fixing 4 double-dash em-dash slugs in the `python-api.md` module section headers (`sla_system.classifier`, `qwen_rag.answer`, `factory_summary.summarize`) — the slugifier drops periods and converts em-dash to single dash, producing `#sla_systemclassifier-tier-1-complaint-triage` (single dash, underscore preserved) rather than the double-dash slug the CLI and prompts pages were using.
+- The only "Warning" line that appears in the build log is the pre-existing **Material for MkDocs 2.0 deprecation notice** (printed by the theme itself, not a `WARNING -` line) and the pre-existing **"pages exist in the docs directory, but are not included in the nav"** list (AUDIT.md, bangla/, blog/). Neither is a real warning.
+- Build time: 6.16 seconds. `$LASTEXITCODE = 0`.
+
+### Site structure after A7
+
+```
+docs/
+├── reference/                  ← NEW in A7
+│   ├── index.md                (landing)
+│   ├── python-api.md
+│   ├── cli.md
+│   ├── prompts.md
+│   ├── benchmarks.md
+│   ├── glossary.md
+│   └── conventions.md
+├── case-studies/               (A6)
+├── architecture/
+├── ...
+```
+
+`mkdocs.yml` Reference nav section (between Case Studies and Project Docs):
+
+```yaml
+- Reference:
+    - reference/index.md
+    - reference/python-api.md
+    - reference/cli.md
+    - reference/prompts.md
+    - reference/benchmarks.md
+    - reference/glossary.md
+    - reference/conventions.md
+```
+
+**A7 status:** Complete. The Reference section is shipped with 7 pages, full cross-linking, and a 0-warning strict build. The site now has 4 of the 5 IA contracts from the A1 audit (Architecture / Reference / Case Studies / Project Docs), with only `adoption/` (Build / Operate / Scale) remaining as the explicit A-series deliverable.
+
+---
+
 ## 9. Sign-off
 
 - [x] Nav walked end-to-end

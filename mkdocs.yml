@@ -162,6 +162,18 @@ nav:
     - "Factory IT operations": "case-studies/factory-it.md"
 
   # ============================================================
+  # REFERENCE (new in A7)
+  # ============================================================
+  - "Reference":
+    - "Overview": "reference/index.md"
+    - "Python API": "reference/python-api.md"
+    - "CLI": "reference/cli.md"
+    - "Prompts": "reference/prompts.md"
+    - "Benchmarks": "reference/benchmarks.md"
+    - "Glossary": "reference/glossary.md"
+    - "Conventions": "reference/conventions.md"
+
+  # ============================================================
   # PROJECT DOCS (legacy / detail pages)
   # ============================================================
   - "Project Docs":

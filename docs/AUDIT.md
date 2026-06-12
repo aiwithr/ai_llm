@@ -314,6 +314,31 @@ After A4, `mkdocs build --clean` produces **0 new warnings** from the 3 new page
 
 ---
 
+## 12. A6 follow-up — case studies
+
+A6 closes the Case Studies section of the new IA. Three new pages under `docs/case-studies/`, each one a written-up account of a real (anonymized) deployment mapped to a step in the adoption journey.
+
+| # | Item | Status |
+| --- | --- | --- |
+| 1 | `docs/case-studies/isp-support.md` — ISP/telco tier-1 complaint classification. Qwen 2.5 1.5B + FastAPI triage service, engineer-in-the-loop. Maps to [Discover](adoption/discover.md) + [Pilot](adoption/pilot.md) + early [Build](adoption/build.md). Covers: the team and the problem, what shipped (with mermaid deployment diagram), the bar (95% category agreement, ≤ 3 s p95), 90-day measured numbers (91.3% / 2.6 s / 8.7% override), 3 failure modes (code-mixed Bengali-English input, P1 over-prioritization, shared-host latency), and 4 lessons learned. | ✅ Done in this commit |
+| 2 | `docs/case-studies/bank-it.md` — Bank internal IT helpdesk with RAG over SOPs. Qwen 2.5 1.5B + ChromaDB hybrid retrieval (BM25 + vector). Maps to [Pilot](adoption/pilot.md) → [Build](adoption/build.md) → early [Scale](adoption/scale.md). Covers: data-residency constraint as the driver (not technical enthusiasm), what shipped (Teams bot with RAG + triage front door, mermaid diagram), the bar (90% triage / 80% RAG correctness / 0% hallucinated content), 60-day numbers (93.1% / 84.0% / 0% / 41% self-service deflection), 3 failure modes (stale/duplicate SOPs, Bengali proper-noun embeddings, one prompt-injection success in load test), and 4 lessons including "RAG quality is a data-quality problem, not a model problem". | ✅ Done in this commit |
+| 3 | `docs/case-studies/factory-it.md` — Garment-factory shift handover summarization + anomaly flagging. Qwen 2.5 1.5B with a strict 5-field typed schema and a containment-check validator. Maps to deep [Build](adoption/build.md) (24/7 uptime, observability). Covers: handwritten notes as the input problem, what shipped (tablet + 15-min worker + SQLite FTS5 + web UI, mermaid diagram), the bar (95% summarization / 0% hallucinated fields / 100% safety-incident recall), 75-day numbers (97.2% / 0% / 100% on n=8 / 99.4% LLM uptime), 3 failure modes (Bengali on-screen keyboard, parallel-system coexistence, one near-miss safety incident that almost got severity-1'd), and 4 lessons including "the model is the easy 20%; the tablet, keyboard, language, and trust are the hard 80%". | ✅ Done in this commit |
+| 4 | `docs/case-studies/index.md` — table updated: the three "Forthcoming (A6)" markers replaced with "In production" status; other prose unchanged. | ✅ Done in this commit |
+| 5 | `mkdocs.yml` nav — Case Studies section expanded from 1 entry (Overview) to 4 entries (Overview + 3 case studies). Consistent with the pattern used in the `architecture/` section (Overview + child pages listed in nav, but children not duplicated in the section landing page). | ✅ Done in this commit |
+| 6 | `ROADMAP.md` decision log — A6 row appended. | ✅ Done in this commit |
+
+### A6 build verification
+
+After A6, `mkdocs build --strict` produces **0 new warnings** from the 3 new pages. Remaining baseline shrinks from 4 forward-looking warnings to 1:
+
+- 1 in `architecture/index.md` (`../reference/python-api.md` — A7 work, the only remaining placeholder)
+
+The 3 `case-studies/index.md` warnings (`isp-support.md`, `bank-it.md`, `factory-it.md`) are closed because the target files now exist. The 3 pre-existing `from-rules-to-ai.md` filename-rename orphans were already closed in A5 (`b2aeb66`).
+
+**A6 status:** Complete. Case Studies section has all 3 child pages mapped to the three locked audience verticals (ISP / Bank / Factory); `case-studies/index.md` continues to render cleanly and link to all three. A7 next (reference pages: cli, python-api, prompts, benchmarks, glossary, conventions).
+
+---
+
 ## 9. Sign-off
 
 - [x] Nav walked end-to-end

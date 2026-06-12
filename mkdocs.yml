@@ -157,6 +157,9 @@ nav:
   # ============================================================
   - "Case Studies":
     - "Overview": "case-studies/index.md"
+    - "ISP support triage": "case-studies/isp-support.md"
+    - "Bank IT helpdesk": "case-studies/bank-it.md"
+    - "Factory IT operations": "case-studies/factory-it.md"
 
   # ============================================================
   # PROJECT DOCS (legacy / detail pages)

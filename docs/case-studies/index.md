@@ -6,9 +6,9 @@ Concrete walkthroughs of AI Work Flow for Business deployed against a real workf
 
 | Case study | Industry | Workflow | Status |
 | --- | --- | --- | --- |
-| [ISP support triage](isp-support.md) | ISP / telco | Complaint classification + ticket routing | Forthcoming (A6) |
-| [Bank IT helpdesk](bank-it.md) | Bank | Internal ticket triage + RAG over SOPs | Forthcoming (A6) |
-| [Factory IT operations](factory-it.md) | Factory | Shift handover summarization + anomaly flagging | Forthcoming (A6) |
+| [ISP support triage](isp-support.md) | ISP / telco | Complaint classification + ticket routing | In production |
+| [Bank IT helpdesk](bank-it.md) | Bank | Internal ticket triage + RAG over SOPs | In production |
+| [Factory IT operations](factory-it.md) | Factory | Shift handover summarization + anomaly flagging | In production |
 
 ## Why these three
 

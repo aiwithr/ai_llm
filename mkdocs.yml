@@ -142,6 +142,7 @@ nav:
     - "Pilot": "adoption/pilot.md"
     - "Build": "adoption/build.md"
     - "Scale": "adoption/scale.md"
+    - "বাংলা - গ্রহণযাত্রা": "bangla/adoption/index.md"
 
   # ============================================================
   # ARCHITECTURE (new in A4)
@@ -151,6 +152,7 @@ nav:
     - "Layers": "architecture/layers.md"
     - "Data Flow": "architecture/data-flow.md"
     - "Security": "architecture/security.md"
+    - "বাংলা - আর্কিটেকচার": "bangla/architecture/index.md"
 
   # ============================================================
   # CASE STUDIES (new in A6)
@@ -160,6 +162,7 @@ nav:
     - "ISP support triage": "case-studies/isp-support.md"
     - "Bank IT helpdesk": "case-studies/bank-it.md"
     - "Factory IT operations": "case-studies/factory-it.md"
+    - "বাংলা - কেস স্টাডিজ": "bangla/case-studies/index.md"
 
   # ============================================================
   # REFERENCE (new in A7)
@@ -172,6 +175,7 @@ nav:
     - "Benchmarks": "reference/benchmarks.md"
     - "Glossary": "reference/glossary.md"
     - "Conventions": "reference/conventions.md"
+    - "বাংলা - রেফারেন্স": "bangla/reference/index.md"
 
   # ============================================================
   # PROJECT DOCS (legacy / detail pages)
@@ -192,6 +196,7 @@ nav:
     - "AI Software Life Cycle": "ai-development/sdlc.md"
     - "Why Reasoning Matters": "ai-development/reasoning.md"
     - "Citizen Developer Guide": "ai-development/citizen-developers.md"
+    - "বাংলা - AI ডেভেলপমেন্ট": "bangla/ai-development/index.md"
 
   # ============================================================
   # ISP CLASSIFIER

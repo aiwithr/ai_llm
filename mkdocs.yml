@@ -142,7 +142,7 @@ nav:
     - "Pilot": "adoption/pilot.md"
     - "Build": "adoption/build.md"
     - "Scale": "adoption/scale.md"
-    - "বাংলা - গ্রহণযাত্রা":
+    - "বাংলা - অ্যাডপশন":
       - "সূচিপত্র": "bangla/adoption/index.md"
       - "ডিসকাভারি": "bangla/adoption/discover.md"
       - "পাইলট": "bangla/adoption/pilot.md"

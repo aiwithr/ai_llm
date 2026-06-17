@@ -142,7 +142,12 @@ nav:
     - "Pilot": "adoption/pilot.md"
     - "Build": "adoption/build.md"
     - "Scale": "adoption/scale.md"
-    - "বাংলা - গ্রহণযাত্রা": "bangla/adoption/index.md"
+    - "বাংলা - গ্রহণযাত্রা":
+      - "সূচিপত্র": "bangla/adoption/index.md"
+      - "আবিষ্কার": "bangla/adoption/discover.md"
+      - "পাইলট": "bangla/adoption/pilot.md"
+      - "বিল্ড": "bangla/adoption/build.md"
+      - "স্কেল": "bangla/adoption/scale.md"
 
   # ============================================================
   # ARCHITECTURE (new in A4)

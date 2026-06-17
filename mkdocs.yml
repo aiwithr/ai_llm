@@ -143,7 +143,7 @@ nav:
     - "Build": "adoption/build.md"
     - "Scale": "adoption/scale.md"
     - "বাংলা - অ্যাডপশন":
-      - "সূচিপত্র": "bangla/adoption/index.md"
+      - "কিভাবে, কোথায়?": "bangla/adoption/index.md"
       - "ডিসকাভারি": "bangla/adoption/discover.md"
       - "পাইলট": "bangla/adoption/pilot.md"
       - "বিল্ড": "bangla/adoption/build.md"

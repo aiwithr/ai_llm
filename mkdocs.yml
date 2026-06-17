@@ -142,12 +142,14 @@ nav:
     - "Pilot": "adoption/pilot.md"
     - "Build": "adoption/build.md"
     - "Scale": "adoption/scale.md"
+    - "Forward Deployed Engineering": "adoption/fde.md"
     - "বাংলা - অ্যাডপশন":
-      - "কিভাবে, কোথায়?": "bangla/adoption/index.md"
+      - "কিভাবে, কোথায়?": "bangla/adoption/index.md"
       - "ডিসকাভারি": "bangla/adoption/discover.md"
       - "পাইলট": "bangla/adoption/pilot.md"
       - "বিল্ড": "bangla/adoption/build.md"
       - "স্কেল": "bangla/adoption/scale.md"
+      - "ফরওয়ার্ড ডিপ্লয়েড ইঞ্জিনিয়ারিং": "bangla/adoption/fde.md"
 
   # ============================================================
   # ARCHITECTURE (new in A4)
@@ -157,7 +159,11 @@ nav:
     - "Layers": "architecture/layers.md"
     - "Data Flow": "architecture/data-flow.md"
     - "Security": "architecture/security.md"
-    - "বাংলা - আর্কিটেকচার": "bangla/architecture/index.md"
+    - "বাংলা - আর্কিটেকচার":
+      - "ওভারভিউ": "bangla/architecture/index.md"
+      - "লেয়ার": "bangla/architecture/layers.md"
+      - "ডেটা ফ্লো": "bangla/architecture/data-flow.md"
+      - "সিকিউরিটি": "bangla/architecture/security.md"
 
   # ============================================================
   # CASE STUDIES (new in A6)
@@ -167,7 +173,11 @@ nav:
     - "ISP support triage": "case-studies/isp-support.md"
     - "Bank IT helpdesk": "case-studies/bank-it.md"
     - "Factory IT operations": "case-studies/factory-it.md"
-    - "বাংলা - কেস স্টাডিজ": "bangla/case-studies/index.md"
+    - "বাংলা - কেস স্টাডিজ":
+      - "ওভারভিউ": "bangla/case-studies/index.md"
+      - "ISP সাপোর্ট": "bangla/case-studies/isp-support.md"
+      - "ব্যাংক IT": "bangla/case-studies/bank-it.md"
+      - "ফ্যাক্টরি IT": "bangla/case-studies/factory-it.md"
 
   # ============================================================
   # REFERENCE (new in A7)
@@ -180,7 +190,14 @@ nav:
     - "Benchmarks": "reference/benchmarks.md"
     - "Glossary": "reference/glossary.md"
     - "Conventions": "reference/conventions.md"
-    - "বাংলা - রেফারেন্স": "bangla/reference/index.md"
+    - "বাংলা - রেফারেন্স":
+      - "ওভারভিউ": "bangla/reference/index.md"
+      - "Python API": "bangla/reference/python-api.md"
+      - "CLI": "bangla/reference/cli.md"
+      - "প্রম্পট": "bangla/reference/prompts.md"
+      - "বেঞ্চমার্ক": "bangla/reference/benchmarks.md"
+      - "গ্লসারি": "bangla/reference/glossary.md"
+      - "কনভেনশন": "bangla/reference/conventions.md"
 
   # ============================================================
   # PROJECT DOCS (legacy / detail pages)

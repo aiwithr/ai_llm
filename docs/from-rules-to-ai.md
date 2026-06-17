@@ -407,9 +407,9 @@ python traditional_vs_ai_workflow.py
 
 ## Next Steps
 
-- **[RAG with Qwen](rag-qwen.md)** - Enhance AI with domain knowledge
-- **[Reasoning Importance](reasoning-importance.md)** - Why AI reasoning matters
-- **[Enterprise Applications](enterprise-apps.md)** - Production examples
+- **[RAG with Qwen](qwen-rag/index.md)** - Enhance AI with domain knowledge
+- **[Reasoning Importance](ai-development/reasoning.md)** - Why AI reasoning matters
+- **[Enterprise Applications](enterprise-apps/index.md)** - Production examples
 
 ---
 

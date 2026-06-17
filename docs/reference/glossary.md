@@ -75,6 +75,12 @@ A frozen, hand-labelled set of cases used to grade a module. Eval sets are check
 
 ## F
 
+**FDE (Forward Deployed Engineer)**
+An engineer embedded with a customer to ship custom AI agents on the customer's own data and infrastructure. FDEs are the role that emerged from cloud-model companies (Palantir, OpenAI, Anthropic); in local-LLM enterprises they are essential because there is no SaaS escape hatch for the data — the model has to run on the customer's hardware, the FDE has to be on the customer's site, and the handoff is the deliverable. The four phases in [adoption](../adoption/index.md) are the FDE playbook, written in operational language.
+*First used in:* [Adoption: Forward Deployed Engineering](../adoption/fde.md)
+
+---
+
 **Frozen eval set**
 An eval set that is not edited after it is merged. The cases, the gold labels, the bar — all of it is fixed. This is what makes a number reproducible. If the set is edited, the old number is no longer comparable to the new one.
 *First used in:* [Reference: benchmarks: the eval set contract](benchmarks.md#3-the-eval-set-contract)

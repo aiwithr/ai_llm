@@ -417,3 +417,67 @@ docs/
 - [ ] **User review needed before A2**
 
 **A1 status:** Complete. Three blockers resolved (files restored), `ROADMAP.md` and `AUDIT.md` written. Awaiting user review to unlock A2.
+
+---
+
+## 14. A8 follow-up — strict build green + Bangla nav expansion (2026-06-17)
+
+**Baseline correction.** The 2026-06-13 §13 row claimed "0 new warnings" after A7. The actual strict-build baseline on 2026-06-17 was **4 `WARNING -` lines**:
+
+1. `from-rules-to-ai.md` → `rag-qwen.md` (target is `qwen-rag/index.md`)
+2. `from-rules-to-ai.md` → `reasoning-importance.md` (target is `ai-development/reasoning.md`)
+3. `from-rules-to-ai.md` → `enterprise-apps.md` (target is `enterprise-apps/index.md`)
+4. `bangla/adoption/scale.md` → `../ROADMAP.md` (parent-link bug; correct path is `../../ROADMAP.md`)
+
+All four were in scope for A5 / A6 / A7 work but were missed in the original A5 sweep (see ROADMAP.md 2026-06-07 row — only 3 of 4 `from-rules-to-ai.md` orphans were closed; the 4th, the link in the English `from-rules-to-ai.md` to `rag-qwen.md`, was not). The bangla/adoption link was a pre-existing path bug that strict build finally surfaced.
+
+**Fixes applied (2026-06-17, 5 edits, 1 file + 1 file + 1 file).** All four WARNING - lines resolved. `python -m mkdocs build --strict` now returns exit 0 with 0 real `WARNING -` lines. The only remaining build message is the Material for MkDocs 2.0 deprecation notice, which ROADMAP.md §6 explicitly excludes from the "0 warnings" gate.
+
+---
+
+## 15. A9 — Forward Deployed Engineering chapter added (2026-06-17)
+
+**Deliverable.** One new chapter (`docs/adoption/fde.md`, ~250 lines) plus its Bengali mirror (`docs/bangla/adoption/fde.md`, ~300 lines). 2 new `mkdocs.yml` nav entries. 4 cross-link edits (`docs/adoption/index.md` phase table + new FDE-lens section; `docs/adoption/discover.md` Audit-phase callout; `docs/bangla/adoption/index.md` 5-column table row + new FDE-lens section; `docs/reference/glossary.md` new FDE entry under `## F`).
+
+**Why this chapter.** The four-phase journey (Discover → Pilot → Build → Scale) is the operations playbook, but the book never named the *role* that runs all four phases. The rest of the AI industry calls that role the **Forward Deployed Engineer (FDE)** — the senior engineer embedded with the customer who ships a custom AI system on the customer's own hardware and hands it over before they leave. The local-LLM constraint (data must stay on-prem) makes the FDE *mandatory* rather than optional: there is no SaaS escape hatch, so someone has to be on-site, and "someone on-site" is the FDE. Naming the role gives the existing four phases an industry label, makes the case studies (ISP / Bank / Factory) recognisable as FDE engagements, and gives a hiring rubric to a team about to spend on the first embedded hire.
+
+**Methodology mapping.** The FDE playbook is **Audit → Evals → Deployment**, which maps 1:1 to our four phases:
+
+| FDE step     | Our phase      | Deliverable                                  |
+| ------------ | -------------- | -------------------------------------------- |
+| Audit        | Discover       | 1-page memo: yes / no / yes-but             |
+| Evals        | Pilot          | Frozen eval set + bar; shadow-mode sign-off   |
+| Deployment   | Build + Scale  | Service deployed, handoff memo signed         |
+
+This 1:1 map is the chapter's organising principle — it is the reason the FDE chapter belongs in `adoption/` and not in `reference/`.
+
+**Cross-link edits.**
+- `docs/adoption/index.md`: added a 5th row to the phase table (`5. FDE → fde.md`); added a new "FDE lens" section explaining the role and linking to the chapter.
+- `docs/adoption/discover.md`: added a callout framing Discover as the FDE's first step (Audit), with a forward link to `fde.md` and the names of the two artefacts the FDE adds to the memo (customer-side sponsor signature, receiving-engineer name).
+- `docs/bangla/adoption/index.md`: added a 5th row to the 5-column Bengali table (`FDE` row with ১২ সপ্তাহ duration + হস্তান্তর মেমো exit criterion); added a Bengali "FDE দৃষ্টিভঙ্গি" section mirroring the English one.
+- `docs/reference/glossary.md`: added `**FDE (Forward Deployed Engineer)**` entry under `## F` (alphabetically before `Frozen eval set`), with the one-sentence definition + "First used in" link to `adoption/fde.md`.
+
+**Verification.** `python -m mkdocs build --strict` still returns exit 0 with 0 real `WARNING -` lines after the chapter + nav + cross-links. The forward links to `fde.md` from `adoption/index.md` and `bangla/adoption/index.md` and `discover.md` would have surfaced any orphan target at build time; they all resolve. `## F` glossary anchor was already there from A7 (the section existed with only "Frozen eval set"); the new FDE entry is the only addition in that letter-section. AUDIT.md §6 (and the §14 row above) set the "0 real warnings" gate; §15 keeps that gate.
+
+**Path-fix pass (still 2026-06-17).** First strict-build run after the chapter landed emitted 3 WARNING - lines, all of them parent-link bugs from pages sitting two directories deep:
+
+1. `docs/reference/glossary.md` → `adoption/index.md` resolved to `reference/adoption/index.md` (wrong; needs `../adoption/index.md`).
+2. `docs/reference/glossary.md` → `adoption/fde.md` resolved to `reference/adoption/fde.md` (wrong; needs `../adoption/fde.md`).
+3. `docs/bangla/adoption/fde.md` → `../ROADMAP.md` resolved to `bangla/ROADMAP.md` (wrong; needs `../../ROADMAP.md` — the English mirror of the same pattern was already fixed in A8).
+
+All three fixed in 3 edits to 2 files. Second strict-build run returns exit 0 with 0 real `WARNING -` lines.
+
+**Bangla nav expansion.** On the same date, three `mkdocs.yml` Bangla subsections that previously listed only `index.md` were expanded to surface their on-disk child pages:
+
+| Subsection | Children added | Total entries |
+| --- | --- | --- |
+| `বাংলা - আর্কিটেকচার` | `layers.md`, `data-flow.md`, `security.md` | 4 |
+| `বাংলা - কেস স্টাডিজ` | `isp-support.md`, `bank-it.md`, `factory-it.md` | 4 |
+| `বাংলা - রেফারেন্স` | `python-api.md`, `cli.md`, `prompts.md`, `benchmarks.md`, `glossary.md`, `conventions.md` | 7 |
+
+**12 new nav entries total.** The English `from-rules-to-ai.md` "Next Steps" links were the only pages referencing the orphans, so the 12 nav entries + 4 link fixes are the full diff for this audit round.
+
+**A8 still open.** The `বাংলা - AI ডেভেলপমেন্ট` subsection remains index-only: the on-disk `docs/bangla/ai-development/index.md` was deleted on 2026-06-10 (67 KB mojibake) and three child pages (`citizen-developers.md`, `reasoning.md`, `sdlc.md`) exist on disk but are not yet wired into nav. The audit's prior ⏸ Deferred status for that subsection stands — A8 mirror work for that section needs a fresh translation pass, not just a nav entry.
+
+**Strict-build status after this section:** 0 real WARNING - lines, exit 0, build time ~5 s. A8 mirror content (actual translation, not just nav wiring) is the next open work item.
+

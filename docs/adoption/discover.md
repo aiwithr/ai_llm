@@ -22,6 +22,8 @@ If you already have a working local-LLM prototype, skip this page and go to [Bui
 
 It is one engineer, one day, one workflow, one laptop, one clear answer. The whole point of Discover is that the cost of saying "no" stays low. If the answer is "no, this workflow is the wrong workflow", the cost is a day. If the answer is "no, this workflow was the wrong workflow" six weeks into a pilot, the cost is two months of an engineer's time and a demotivated team.
 
+> **FDE lens:** Discover is the FDE's first step — **Audit**. The 1-day pre-mortem is the FDE playbook accelerated by an order of magnitude. The FDE adds two things on top of the memo: a sponsor's signature from the *customer's* side, and the name of the customer's engineer who will receive the handoff. See [FDE chapter](fde.md) for the full FDE methodology (Audit → Evals → Deployment) and why local-LLM enterprises need the FDE role to be filled.
+
 ---
 
 ## Step 1 — pick one real workflow (30 min)

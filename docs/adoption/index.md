@@ -21,6 +21,13 @@ flowchart LR
 | **2. Pilot** | "Can we ship one workflow in 2 weeks?" | [pilot.md](pilot.md) |
 | **3. Build** | "How do we put it in production?" | [build.md](build.md) |
 | **4. Scale** | "How do we roll out to 5+ teams?" | [scale.md](scale.md) |
+| **5. FDE** | "What is the role that runs all four phases?" | [fde.md](fde.md) |
+
+## The FDE lens
+
+The four phases are the operations playbook. The role that runs them is the **Forward Deployed Engineer (FDE)** — the senior engineer embedded with the customer who ships the first working system on the customer's own hardware and hands it over before they leave. FDE is the word the rest of the AI industry uses for this job, and it is the role a local-LLM programme *cannot do without*: the data-residency constraint forces someone on-site, and "someone on-site" is the FDE.
+
+[FDE chapter (5)](fde.md) is the lens that ties the four phases to the rest of the industry. It maps **Audit → Discover**, **Evals → Pilot**, **Deployment → Build + Scale**, and explains why the on-prem constraint makes the FDE mandatory rather than optional. Read it after Discover, before you hire.
 
 ## When to use this
 

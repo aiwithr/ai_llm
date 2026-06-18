@@ -1,61 +1,69 @@
 ﻿# AI Work Flow for Business
 
-> **Local for sensitive data. Cloud for everything else.**
-> Reference patterns for using LLMs in enterprise operations, with a clear policy for when to keep data on-prem and when a cloud model is the right call.
+> **Adopt AI in your business. Keep your data on your network.**
+> A short landing page in English and বাংলা. For the long version, see the chapters below.
 
-AI Work Flow for Business is a working library of patterns and reference implementations for using language models in real enterprise operations: ISP support, bank IT, factory floor handovers, HR helpdesks, network log triage, and more. The default is **local models on your own network** for anything that touches customer data, network logs, internal SOPs, or HR records. For non-sensitive workloads (public documentation, anonymized analytics, third-party SaaS output that has already been sanitized) the same code can target a cloud endpoint through a **local gateway** that scrubs the prompt before it leaves your network.
+AI Work Flow for Business is a working library of patterns and reference implementations for using language models in real enterprise operations. The default is **local models on your own network** for anything that touches customer data, network logs, internal SOPs, or HR records. For non-sensitive workloads the same code can target a cloud endpoint through a **local gateway** that scrubs the prompt before it leaves your network.
 
 This site is not "no cloud, ever." It is **local-first by policy, cloud-allowed when the data permits it.**
 
-!!! note "আমাদের এই টুলকিট আপনারা বাংলায় পড়তে পারেন"
+!!! tip "One sentence, two languages"
 
-    এই সাইটের বাংলা মিরর আছে [bangla/index.md](bangla/index.md)-এ। প্রতিটা মডিউলের বাংলা ভার্সন আলাদাভাবে পড়তে পারবেন, একই কন্টেন্ট, কথার ধাঁচে।
+    **English:** *Adopt AI in your business, keep your data on your network, and use a Forward Deployed Engineer (FDE) to make the rollout real.*
+    **বাংলা:** *ব্যবসায় AI আনুন, ডেটা নিজের নেটওয়ার্কে রাখুন, আর রোলআউট বাস্তব করতে একজন Forward Deployed Engineer (FDE) নিয়োগ করুন।*
 
 ---
+
+## The core idea
+
+| English | বাংলা |
+| --- | --- |
+| Sensitive data stays on your network. | সংবেদনশীল ডেটা আপনার নেটওয়ার্কেই থাকে। |
+| A small local LLM answers first. | একটি ছোট লোকাল LLM আগে উত্তর দেয়। |
+| The cloud is only used for sanitized text. | ক্লাউড শুধু ঝাড়াই-করা টেক্সটের জন্য ব্যবহৃত হয়। |
+| A Forward Deployed Engineer runs the rollout. | Forward Deployed Engineer (FDE) রোলআউটটি পরিচালনা করেন। |
+
+---
+
 ## The decision: local or cloud?
 
-Run this against the workload before you pick a model:
-
-| If the data is... | Default | Why |
+| If the data is... | English default | বাংলায় ডিফল্ট |
 | --- | --- | --- |
-| Customer PII, network logs, internal SOPs, HR records, payment data | **Local** | Regulated. Legal will block anything else. |
-| Anonymized telemetry, public docs, third-party SaaS output, code review | **Cloud acceptable** | No PII; cloud models are stronger and the cost is fine. |
-| Mixed: some sensitive fields embedded in a larger request | **Local gateway** | Local model scrubs, then cloud is called on the sanitized version. |
+| Customer PII, network logs, internal SOPs, HR records, payment data | **Local** — regulated, legal will block anything else | **লোকাল** — নিয়ন্ত্রিত, আইনি দল অন্যটা বন্ধ করবে |
+| Anonymized telemetry, public docs, third-party SaaS output, code review | **Cloud acceptable** — no PII, stronger model, fine cost | **ক্লাউড চলবে** — কোনো PII নেই, মডেল শক্তিশালী, খরচ সহনীয় |
+| Mixed: some sensitive fields in a larger request | **Local gateway** — local scrubs, then cloud on sanitized text | **লোকাল গেটওয়ে** — লোকাল ঝাড়ায়, তারপর ক্লাউডে পাঠায় |
 
-The third row is the common case. The local gateway pattern is what this site actually recommends for most enterprises that think they want a cloud LLM.
-
-## How the local gateway works
-
-A small open-source model (Qwen 2.5 1.5B or Gemma 3 4B) runs inside your private network as a security firewall in front of an optional cloud API.
+The third row is the common case. The local gateway is the pattern this site recommends for most enterprises.
 
 ```mermaid
 flowchart LR
-    subgraph local_net[Your network]
-        U[Operator question] --> L[Local LLM: Qwen 1.5B or Gemma 4B]
-        L --> S[Strip PII: names, IPs, IDs]
-        S --> T[tokens]
-        S --> C[Local cache: runbooks, SOPs, tickets]
-    end
+    U[Operator question] --> L[Local LLM: Qwen 1.5B or Gemma 4B]
+    L --> S[Strip PII + cache lookup]
     S --> X{Cloud allowed?}
     X -- no --> R[Local response]
     X -- yes --> A[Cloud LLM: Azure OpenAI or Bedrock]
     A -- structured JSON --> R
-    R --> V[Re-insert real data and return to user]
-
-    style local_net fill:#e3f2fd
+    R --> V[Re-insert real data, return to user]
+    style L fill:#e3f2fd
     style A fill:#fff3e0
     style V fill:#c8e6c9
 ```
 
-Five steps, regardless of which path the request takes:
+---
 
-1. The local model performs the private database search (runbook lookup, ticket history, employee record).
-2. It strips PII — customer names, IP addresses, internal IDs — and replaces them with generic tokens.
-3. A policy check decides: is the now-anonymized request safe to send to a cloud endpoint under your zero-data-retention contract?
-4. The cloud LLM (if allowed) returns a structured response. The local model does the same if the request stayed on-prem.
-5. The local gateway re-inserts the real data before the user sees the answer.
+## How a Forward Deployed Engineer helps your business
 
-The cloud LLM never sees the raw sensitive data. The local LLM is always the one your operators talk to. Neither is a black box.
+| Step | English (what the FDE does) | বাংলা (FDE কী করেন) |
+| --- | --- | --- |
+| **Audit** | Walks your data flows, finds what is sensitive, picks the local/cloud split. | আপনার ডেটা প্রবাহ ঘুরে দেখেন, সংবেদনশীল অংশ চিহ্নিত করেন, লোকাল-ক্লাউড ভাগাভাগি ঠিক করেন। |
+| **Evals** | Builds offline test sets, measures accuracy, picks the model size. | অফলাইন টেস্ট সেট বানান, নির্ভুলতা মাপেন, মডেলের সাইজ ঠিক করেন। |
+| **Deployment** | Ships the gateway, monitors it, retrains, and hands it back to your team. | গেটওয়ে চালু করেন, মনিটর করেন, পুনঃপ্রশিক্ষণ দেন, শেষে আপনার দলের হাতে ফেরত দেন। |
+
+!!! info "Why an FDE is mandatory for local-LLM businesses"
+
+    Local-first AI is not "install LM Studio and walk away." It is a **deployment** of a small, regulated model into a real workflow, with evals, monitoring, retraining, and a human in the loop. A Forward Deployed Engineer owns that loop end-to-end. Without one, the project stalls at the demo.
+
+Read the full chapter: [adoption/fde.md](adoption/fde.md). The four phases in [adoption/index.md](adoption/index.md) are the FDE playbook: discover → pilot → scale → build.
 
 ## Start here
 
@@ -73,6 +81,12 @@ The cloud LLM never sees the raw sensitive data. The local LLM is always the one
 
     Concrete examples of what you can automate today with a 1.5B-parameter local model.
 
+-   :material-account-hard-hat:{ .lg .middle } **[What is an FDE?](adoption/fde.md)**
+
+    ---
+
+    The Forward Deployed Engineer role: audit, evals, deployment, and handover.
+
 -   :material-map:{ .lg .middle } **[Adoption journey](adoption/index.md)**
 
     ---
@@ -89,38 +103,14 @@ The cloud LLM never sees the raw sensitive data. The local LLM is always the one
 
 ## Who this is for
 
-| Audience | What you get |
-| --- | --- |
-| **ISP / telco operations** (NOC, field ops, support) | Complaint classification, ticket routing, runbook Q&A |
-| **Bank IT teams** | Internal helpdesk triage, network ops log analysis, SOP lookup |
-| **Factory operations** | Shift handover summarization, anomaly flagging, maintenance ticket drafts |
-| **University IT** *(later phase)* | Lab scheduling helpdesk, admissions Q&A |
-
-If you handle sensitive operational data, **start local**. If your workload is mostly non-sensitive and you just want strong models, **the local-gateway pattern still gives you the same code path with cloud endpoints on the back end.** Either way, this site is for you.
-
-The same Python code that runs on your laptop runs on your server, and the same code targets either a local LM Studio endpoint or a cloud endpoint by changing one URL. The local LLM is always the one your operators talk to — cloud endpoints are an internal implementation detail behind the gateway.
-
-## What's in the box
-
-| Module | What it does | Doc |
+| Audience | English — what you get | বাংলা — আপনি যা পান |
 | --- | --- | --- |
-| ISP Classifier | Routes customer complaints by topic and priority | [docs](isp-classifier/index.md) |
-| SLA System | Evaluates SLA breaches and ERP approvals | [docs](sla-system/index.md) |
-| Qwen + RAG | Retrieval-augmented answers over your runbooks | [docs](qwen-rag/index.md) |
-| HR Assistant | Leave, attendance, and HR FAQ automation | [docs](hr-assistant/index.md) |
-| Smart Gift AI | Recommendation engine on top of a local LLM | [docs](smart-gift/index.md) |
-| MLOps | Model registry, monitoring, A/B testing, retraining | [docs](mlops/index.md) |
-| LLM Demos | Working examples of patterns (hierarchy, mini-quick, stress test) | [docs](llm-demos/index.md) |
-| Enterprise Apps | End-to-end apps: bank IT helpdesk, factory handover, ISP support | [docs](enterprise-apps/index.md) |
-| AI Development | SDLC, reasoning techniques, citizen-developer patterns | [docs](ai-development/index.md) |
-| Architecture | How the five layers fit: LM Studio, FastAPI, ChromaDB, modules | [docs](architecture/index.md) |
-| Reference | Python API, configuration, troubleshooting | [docs](reference/index.md) |
+| **ISP / telco operations** (NOC, field ops, support) | Complaint classification, ticket routing, runbook Q&A | অভিযোগ শ্রেণিবিন্যাস, টিকিট রাউটিং, রানবুক প্রশ্ন-উত্তর |
+| **Bank IT teams** | Internal helpdesk triage, network log analysis, SOP lookup | ইন্টারনাল হেল্পডেস্ক, নেটওয়ার্ক লগ বিশ্লেষণ, SOP লুকআপ |
+| **Factory operations** | Shift handover summarization, anomaly flagging, maintenance drafts | শিফট হ্যান্ডওভার সারাংশ, অসঙ্গতি চিহ্নিতকরণ, মেইনটেন্যান্স ড্রাফট |
+| **University IT** *(later phase)* | Lab scheduling helpdesk, admissions Q&A | ল্যাব শিডিউলিং হেল্পডেস্ক, ভর্তি সংক্রান্ত প্রশ্ন-উত্তর |
 
-## Project plan
-
-This is an active project. See [ROADMAP.md](ROADMAP.md) for the locked decisions, audience, and the eight-session docs plan currently in progress.
-
-Current status: **A2** (new information architecture + Why + Demo pages). The earlier A1 audit is archived at `archive/AUDIT-2026-06-06.md` for historical reference.
+If you handle sensitive operational data, **start local**. If your workload is mostly non-sensitive and you just want strong models, the local-gateway pattern still gives you the same code path with cloud endpoints on the back end. Either way, this site is for you.
 
 ## Quick start
 

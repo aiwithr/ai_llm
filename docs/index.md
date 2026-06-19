@@ -1,7 +1,13 @@
 ﻿# AI Work Flow for Business
 
 > **Adopt AI in your business. Keep your data on your network.**
+> **A Forward Deployed Engineer (FDE) makes the rollout real** — they audit your data, build evals, and ship the gateway. Read the full [FDE chapter](adoption/fde.md).
 > A short landing page in English and বাংলা. For the long version, see the chapters below.
+
+!!! info "Read this page in your language"
+
+    This page is **bilingual** — every section is in English and বাংলা side by side.
+    If you prefer to read the **whole site in বাংলা**, start at [**বাংলা - হোম**](bangla/index.md).
 
 AI Work Flow for Business is a working library of patterns and reference implementations for using language models in real enterprise operations. The default is **local models on your own network** for anything that touches customer data, network logs, internal SOPs, or HR records. For non-sensitive workloads the same code can target a cloud endpoint through a **local gateway** that scrubs the prompt before it leaves your network.
 
@@ -108,7 +114,8 @@ Read the full chapter: [adoption/fde.md](adoption/fde.md). The four phases in [a
 | **ISP / telco operations** (NOC, field ops, support) | Complaint classification, ticket routing, runbook Q&A | অভিযোগ শ্রেণিবিন্যাস, টিকিট রাউটিং, রানবুক প্রশ্ন-উত্তর |
 | **Bank IT teams** | Internal helpdesk triage, network log analysis, SOP lookup | ইন্টারনাল হেল্পডেস্ক, নেটওয়ার্ক লগ বিশ্লেষণ, SOP লুকআপ |
 | **Factory operations** | Shift handover summarization, anomaly flagging, maintenance drafts | শিফট হ্যান্ডওভার সারাংশ, অসঙ্গতি চিহ্নিতকরণ, মেইনটেন্যান্স ড্রাফট |
-| **University IT** *(later phase)* | Lab scheduling helpdesk, admissions Q&A | ল্যাব শিডিউলিং হেল্পডেস্ক, ভর্তি সংক্রান্ত প্রশ্ন-উত্তর |
+
+**University IT, government, and other sectors** — see [Case Studies](case-studies/index.md) for the full audience map.
 
 If you handle sensitive operational data, **start local**. If your workload is mostly non-sensitive and you just want strong models, the local-gateway pattern still gives you the same code path with cloud endpoints on the back end. Either way, this site is for you.
 

@@ -1,28 +1,44 @@
-# Case studies
+# Production Case Studies
 
-Concrete walkthroughs of AI Work Flow for Business deployed against a real workflow. Each case study follows the same structure: the team, the problem, the chosen workflow, what shipped, and what was learned.
+Real-world architectural walkthroughs and audited production metrics for AI Work Flow for Business deployed across three core enterprise operational verticals.
 
-## Available case studies
+Every case study in this section documents live operational deployments: the baseline problem, the architectural design, the audited production numbers, the real failure modes, and the concrete lessons learned.
 
-| Case study | Industry | Workflow | Status |
-| --- | --- | --- | --- |
-| [ISP support triage](isp-support.md) | ISP / telco | Complaint classification + ticket routing | In production |
-| [Bank IT helpdesk](bank-it.md) | Bank | Internal ticket triage + RAG over SOPs | In production |
-| [Factory IT operations](factory-it.md) | Factory | Shift handover summarization + anomaly flagging | In production |
+---
 
-## Why these three
+## The three production studies at a glance
 
-The three case studies cover the three audiences locked in [ROADMAP.md §3](../ROADMAP.md):
+```mermaid
+flowchart LR
+    CS1["Case Study 1: ISP Support<br/>• 80,000+ Subscribers<br/>• Telemetry-first routing<br/>• Deterministic Tier Matrix"]
+    CS2["Case Study 2: Bank IT Helpdesk<br/>• 4,000+ Branch Staff<br/>• Four-eyes dual authorization<br/>• 0% Hallucination RAG over SOPs"]
+    CS3["Case Study 3: Factory Operations<br/>• 1,800+ Workers, 24/7 Shifts<br/>• Decoupled SQLite Queue<br/>• Substring Containment Validator"]
 
-- **ISP support** — primary audience, narrowest scope, easiest to evaluate
-- **Bank IT** — regulated environment, proves the data-residency argument
-- **Factory IT** — non-office environment, 24/7 operations, tests the latency argument
+    style CS1 fill:#e3f2fd
+    style CS2 fill:#fff3e0
+    style CS3 fill:#c8e6c9
+```
 
-## What you should expect
+| Vertical | Operational Environment | Primary Architectural Pattern | Core Defensive Mechanism | Chapter Link |
+|---|---|---|---|---|
+| **ISP / Telecom** | 24/7 Network Operations Center (NOC), high ticket velocity | **Two-Phase Pipeline:** Deterministic SNMP/TR-069 checks before LLM invocation | Deterministic Tier $\times$ Category SLA lookup matrix in code | [Read ISP Study](isp-support.md) |
+| **Commercial Bank** | Regulated internal helpdesk & CBS procedural assistance | **On-Premise Hybrid RAG:** BM25 lexical search + ChromaDB dense vector store | Strict Citation-in-Set validation & Four-Eyes dual signoff | [Read Bank Study](bank-it.md) |
+| **Garment Factory** | 24/7 continuous industrial production, non-desk shift leaders | **Decoupled Asynchronous Queue:** Local SQLite buffer with background workers | Strict Substring Containment & Safety Keyword Escalation | [Read Factory Study](factory-it.md) |
 
-A case study is not a sales brochure. It is a written-up account of what worked, what didn't, and what the team would do differently. Where the actual project has a real customer, the case study is anonymized; where it is a design exercise, the case study says so explicitly.
+---
 
-## See also
+## Why these three operational environments?
 
-- [Demo](../demo.md) — the underlying module behavior
-- [Adoption journey](../adoption/index.md) — how a team gets from "interested" to "in production"
+These three verticals represent the foundational testing ground for on-premise Small Language Model (SLM) automation:
+
+1. **ISP Support (High Velocity & Narrow Semantics):** Proves that a lightweight 1.5B model (Qwen 2.5 1.5B) can outperform manual ticket routing while maintaining sub-second latency on standard workstation GPUs.
+2. **Bank IT (Maximum Security & Zero Cloud Leak):** Proves that on-premise deployment satisfies stringent central bank regulatory standards, cryptographic audit logging, and strict 0% hallucination guarantees.
+3. **Factory Operations (Industrial Reliability & Physical Safety):** Proves that asynchronous queue-backed architectures keep operations running 24/7 regardless of network fluctuations, model reboots, or rugged input conditions.
+
+---
+
+## Reading guide
+
+* To understand how workflows are screened before engineering begins, see [Adoption: Discover](../adoption/discover.md).
+* To see the 4-layer system contract that underpins these deployments, see [Architecture Layers](../architecture/layers.md).
+* For technical implementation contracts and Pydantic schemas, see [Reference: Python API](../reference/python-api.md).

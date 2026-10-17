@@ -65,7 +65,7 @@ Reference সেকশন হলো স্পেক। ছোট, নির্�
 
 ---
 
-## স্টেবিলিটি
+## স্টেবিলিটি {: #stability }
 
 - **Typed contract** (Pydantic মডেল, [Python API](python-api.md)-এ) একটা major `module_version`-এর মধ্যে semver-stable। ফিল্ড যোগ হলে minor bump; ফিল্ড rename বা remove হলে major bump।
 - **CLI** ([CLI](cli.md)-তে) একটা major `aiwf` ভার্সনে semver-stable। ফ্ল্যাগ যোগ মানে minor bump; ফ্ল্যাগ rename বা remove মানে major bump।

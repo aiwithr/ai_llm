@@ -1,7 +1,7 @@
-﻿site_name: AI Work Flow for Business Docs
+site_name: AI Work Flow for Business Docs
 site_url: https://aiwithr.github.io/ai_llm/
-repo_url: https://github.com/raqueeb/ai_work_flow
-repo_name: raqueeb/ai_work_flow
+repo_url: https://github.com/aiwithr/ai_llm
+repo_name: aiwithr/ai_llm
 site_author: রকিবুল হাসান
 site_description: >-
    Enterprise automation, without the cloud. Local LLMs, real workflows, no data leaving your network.
@@ -132,6 +132,10 @@ nav:
     - "Demo": "demo.md"
     - "Quick Start": "getting-started/index.md"
     - "Talk to LM Studio": "getting-started/talk-to-llm.md"
+  - "বাংলা - শুরু করুন":
+    - "মূলপাতা": "bangla/index.md"
+    - "কেন AI Work Flow?": "bangla/why-ai-work-flow.md"
+    - "ডেমো": "bangla/demo.md"
 
   # ============================================================
   # ADOPTION (new in A3)
@@ -159,6 +163,7 @@ nav:
     - "Layers": "architecture/layers.md"
     - "Data Flow": "architecture/data-flow.md"
     - "Security": "architecture/security.md"
+    - "Workflow Orchestration": "architecture/workflows.md"
   - "বাংলা - আর্কিটেকচার":
     - "ওভারভিউ": "bangla/architecture/index.md"
     - "লেয়ার": "bangla/architecture/layers.md"
@@ -206,6 +211,7 @@ nav:
     - "Overview": "overview.md"
     - "Executive Summary": "PROJECT_SUMMARY.md"
     - "বাংলা - সামারি": "PROJECT_SUMMARY_bangla.md"
+    - "বাংলা - সহজ আলাপ": "bangla/overview.md"
     - "রুলস থেকে AI-তে": "from-rules-to-ai.md"
     - "বাংলা - রুলস থেকে AI": "bangla/from-rules-to-ai.md"
     - "ROADMAP": "ROADMAP.md"
@@ -218,7 +224,11 @@ nav:
     - "AI Software Life Cycle": "ai-development/sdlc.md"
     - "Why Reasoning Matters": "ai-development/reasoning.md"
     - "Citizen Developer Guide": "ai-development/citizen-developers.md"
-    - "বাংলা - AI ডেভেলপমেন্ট": "bangla/ai-development/index.md"
+  - "বাংলা - AI ডেভেলপমেন্ট":
+    - "ওভারভিউ": "bangla/ai-development/index.md"
+    - "AI সফটওয়্যার লাইফ সাইকেল": "bangla/ai-development/sdlc.md"
+    - "রিজনিং কেন গুরুত্বপূর্ণ": "bangla/ai-development/reasoning.md"
+    - "সিটিজেন ডেভেলপার গাইড": "bangla/ai-development/citizen-developers.md"
 
   # ============================================================
   # ISP CLASSIFIER

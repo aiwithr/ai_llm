@@ -7,7 +7,7 @@
 
 ---
 
-## ১. Triage
+## 1. Triage
 
 > **ব্যবহার করে:** `sla_system.classifier` ([case study](../../case-studies/isp-support.md))
 > **Output schema:** [`TriageOutput`](python-api.md#sla_systemclassifier-tier-1-complaint-triage)
@@ -58,7 +58,7 @@ category="other" and write the rationale explaining what is missing.
 
 ---
 
-## ২. RAG with citations
+## 2. RAG with citations
 
 > **ব্যবহার করে:** `qwen_rag.answer` ([case study](../../case-studies/bank-it.md))
 > **Output schema:** [`RAGOutput`](python-api.md#qwen_raganswer-rag-over-an-internal-corpus)
@@ -117,7 +117,7 @@ Return JSON that matches the schema:
 
 ---
 
-## ৩. Shift summary (strict schema)
+## 3. Shift summary (strict schema)
 
 > **ব্যবহার করে:** `factory_summary.summarize` ([case study](../../case-studies/factory-it.md))
 > **Output schema:** [`ShiftSummary`](python-api.md#factory_summarysummarize-shift-handover-summarization)
@@ -183,7 +183,7 @@ Hard rules:
 
 ---
 
-## ৪. Code-mixed Bengali-English handling
+## 4. Code-mixed Bengali-English handling
 
 > **ব্যবহার করে:** তিনটা মডিউলই, pre-processing rule হিসেবে
 > **থাকে:** `aiwf.core.bilingual`-এ
@@ -210,7 +210,7 @@ Operator-readable audit log field-এর জন্য (triage-র `rationale`, b
 
 ---
 
-## ৫. Prompt versioning
+## 5. Prompt versioning
 
 প্রতিটা prompt কোডবেসে একটা file-এ থাকে:
 

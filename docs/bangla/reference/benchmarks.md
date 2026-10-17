@@ -7,7 +7,7 @@
 
 ---
 
-## ১. ISP triage
+## 1. ISP triage
 
 | বিষয় | মান |
 | --- | --- |
@@ -48,7 +48,7 @@
 
 ---
 
-## ২. Bank RAG
+## 2. Bank RAG
 
 | বিষয় | মান |
 | --- | --- |
@@ -91,7 +91,7 @@
 
 ---
 
-## ৩. Factory summary
+## 3. Factory summary
 
 | বিষয় | মান |
 | --- | --- |
@@ -134,7 +134,7 @@
 
 ---
 
-## ৪. Prompt-injection / safety cross-cutting
+## 4. Prompt injection
 
 | বিষয় | মান |
 | --- | --- |
@@ -157,7 +157,7 @@
 
 ---
 
-## ৫. Eval-set freeze rule
+## 5. Eval-set freeze rule
 
 Eval set release-pipeline-এর অংশ। **কখনো ডেটা বা gold label ship-এর পরে পরিবর্তন হয় না।** পরিবর্তন নতুন `v<n+1>` freeze, এবং নতুন file পুরোনোর চেয়ে **strictly harder** হতে হবে। এটা দুটো জিনিস enforce করে:
 

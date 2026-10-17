@@ -1,7 +1,7 @@
 # Reference — Glossary
 
 > **Audience:** anyone reading the docs who hits a term they don't recognise.
-> **Conventions:** one sentence per term, then a link to the canonical page where it is used. Terms are alphabetised. Acronyms are spelled out on first use; if you don't know one, search the page (Ctrl+F).
+> **Conventions:** one concise definition per term, followed by a link to the canonical page where it is introduced or enforced. Terms are alphabetised. Acronyms are spelled out on first use; if you don't know one, search the page (Ctrl+F).
 
 ---
 
@@ -27,6 +27,10 @@ The short name for the deployment described in this site. The CLI is `aiwf`; the
 
 ## B
 
+**Banglish / Code-mixed**
+Natural conversational text mixing Bengali and English vocabulary, transliteration, or syntax (e.g. *"Net slow, router reset korlam"*). Handled directly by local SLM tokenizers without an error-prone pre-translation layer.
+*First used in:* [Case study: ISP support](../case-studies/isp-support.md)
+
 **Bar**
 A floor, not a target. A CISO-signed-off number that a metric must meet or exceed for a release to ship. The bar moves only when the CISO moves it.
 *First used in:* [Reference: benchmarks: the bar](benchmarks.md#4-the-bar-and-why-it-is-the-bar)
@@ -43,6 +47,10 @@ The third phase of the adoption journey. 24/7 uptime, observability, on-call. Th
 
 ## C
 
+**CBS (Core Banking System)**
+The core transactional banking engine (e.g. Temenos, Finacle). RAG workflows in banking must protect CBS procedures and follow strict citation boundaries.
+*First used in:* [Case study: bank IT](../case-studies/bank-it.md)
+
 **Citation-in-set**
 A property of an RAG response: every `citation.chunk_id` in the response must be in the `retrieval_trace` (the set of chunks the model was actually given). The validator rejects responses that fail this. 100% citation-in-set is the bank CISO's bar.
 *First used in:* [Reference: prompts: RAG with citations](prompts.md#2-rag-with-citations)
@@ -54,6 +62,14 @@ A substring test applied to fields of a `ShiftSummary`: at least 90% of the toke
 ---
 
 ## D
+
+**Dead-letter queue (DLQ)**
+A storage buffer for unprocessable or persistently failing workflow events. In local SLM workflows, payloads that fail schema or business validation twice are shunted to a DLQ for operator review.
+*First used in:* [Architecture: workflow orchestration](../architecture/workflows.md)
+
+**Deterministic routing**
+Workflow routing decisions based entirely on verified data (telemetry, SNMP alarms, database tables) rather than LLM guesses. The model only analyzes inputs when deterministic rules cannot resolve the state.
+*First used in:* [Case study: ISP support](../case-studies/isp-support.md)
 
 **Discover (phase)**
 The first phase of the adoption journey. The team identifies a problem, runs a feasibility study, decides if a model is the right tool. No production deployment.
@@ -79,7 +95,9 @@ A frozen, hand-labelled set of cases used to grade a module. Eval sets are check
 An engineer embedded with a customer to ship custom AI agents on the customer's own data and infrastructure. FDEs are the role that emerged from cloud-model companies (Palantir, OpenAI, Anthropic); in local-LLM enterprises they are essential because there is no SaaS escape hatch for the data — the model has to run on the customer's hardware, the FDE has to be on the customer's site, and the handoff is the deliverable. The four phases in [adoption](../adoption/index.md) are the FDE playbook, written in operational language.
 *First used in:* [Adoption: Forward Deployed Engineering](../adoption/fde.md)
 
----
+**Four-Eyes Principle**
+A dual-authorization security control requiring two separate humans (maker and checker) before high-impact actions (e.g. database schema migrations, password resets, financial queries) can execute.
+*First used in:* [Case study: bank IT](../case-studies/bank-it.md)
 
 **Frozen eval set**
 An eval set that is not edited after it is merged. The cases, the gold labels, the bar — all of it is fixed. This is what makes a number reproducible. If the set is edited, the old number is no longer comparable to the new one.
@@ -91,6 +109,7 @@ An eval set that is not edited after it is merged. The cases, the gold labels, t
 
 **Golden path**
 The recommended way to deploy, including the model choice, the prompt, the validators, the eval set, and the bar. The "non-golden path" is allowed but the case studies do not document it.
+*First used in:* [Adoption: overview](../adoption/index.md)
 
 ---
 
@@ -99,6 +118,10 @@ The recommended way to deploy, including the model choice, the prompt, the valid
 **Hallucinated content**
 In an RAG response, any claim that is not in a cited retrieved passage. The bar is 0%. The validator enforces it. A response that says "the system requires X" without a citation is a hallucination, even if X is true.
 *First used in:* [Reference: prompts: RAG with citations](prompts.md#2-rag-with-citations)
+
+**Hybrid search**
+The combination of lexical keyword search (BM25) and dense vector embeddings to maximize retrieval precision across technical acronyms, account IDs, and colloquial Bengali-English questions.
+*First used in:* [Case study: bank IT](../case-studies/bank-it.md)
 
 ---
 
@@ -112,6 +135,10 @@ A local inference server. The site assumes the model runs on LM Studio, accessib
 
 ## M
 
+**Mermaid**
+Diagram-as-code syntax used throughout the documentation for flowcharts, sequence diagrams, and architecture topologies rendered directly in Markdown.
+*First used in:* [Architecture: overview](../architecture/index.md)
+
 **Module**
 A single-purpose wrapper around a model call. The three production modules are `sla_classifier`, `qwen_rag`, and `factory_summary`. Each module has its own prompt, its own validators, its own eval set, and its own `ModuleMeta` audit fields.
 *First used in:* [Reference: Python API: the module contracts](python-api.md#the-module-contracts)
@@ -122,19 +149,59 @@ The audit fields added to every module response by the application layer. Includ
 
 ---
 
+## N
+
+**No-answer case**
+A query where the retrieved knowledge corpus does not contain sufficient factual evidence to answer. The model must emit a deterministic fallback string rather than hallucinating an answer.
+*First used in:* [Reference: prompts: RAG with citations](prompts.md#2-rag-with-citations)
+
+---
+
+## O
+
+**Override rate**
+The proportion of model-generated triage suggestions rejected or altered by human operators (`overrides / total`). Monitored as a primary drift and degradation metric.
+*First used in:* [Case study: ISP support](../case-studies/isp-support.md)
+
+---
+
 ## P
 
 **p95**
 The 95th percentile of a latency distribution. The ISP case study's bar is 3 s p95. "p95 under 3 s" means 95% of requests complete in 3 s; 5% can be slower.
 *First used in:* [Case study: ISP support](../case-studies/isp-support.md)
 
+**Parallel-system coexistence**
+The operational state where a legacy manual workflow runs concurrently with an automated AI pipeline during validation and shadow phases to eliminate operational downtime risk.
+*First used in:* [Adoption: pilot](../adoption/pilot.md)
+
 **Pilot (phase)**
 The second phase of the adoption journey. A single team, a single workflow, a single bar. The bank's IT helpdesk is the canonical Pilot-phase example.
 *First used in:* [Adoption: pilot](../adoption/pilot.md)
 
+**Platinum / Gold / Silver**
+Customer service level agreement (SLA) tiers in telecom and enterprise contracts, which deterministically drive priority assignment in triage workflows.
+*First used in:* [Case study: ISP support](../case-studies/isp-support.md)
+
+**Priority-within-matrix**
+The invariant rule ensuring that ticket priority (P1/P2/P3) is computed strictly by a deterministic lookup table mapping Customer Tier × Category, never by LLM speculation.
+*First used in:* [Case study: ISP support](../case-studies/isp-support.md)
+
+**Prompt injection resistance**
+The capability of an LLM prompt and validator pipeline to withstand adversarial instructions attempting to alter system instructions or extract sensitive data.
+*First used in:* [Reference: benchmarks](benchmarks.md#4-prompt-injection)
+
 **Pydantic**
 The Python validation library used for every typed object on this site. `ChatRequest`, `ChatResult`, `TriageOutput`, `RAGOutput`, `ShiftSummary` are all Pydantic models. The validator runs on every response.
 *First used in:* [Reference: Python API: the typed contracts](python-api.md#the-typed-contracts)
+
+---
+
+## Q
+
+**Qwen 2.5 1.5B Instruct**
+The default local small language model (SLM) recommended in this site, deployed in quantized GGUF format (Q4_K_M) via LM Studio or Ollama for low-memory CPU and edge execution.
+*First used in:* [Hands-on demo](../demo.md)
 
 ---
 
@@ -152,25 +219,61 @@ A UUID assigned to each `run()` call. Returned to the caller, written to the aud
 The list of chunk_ids the model was given in the prompt, even if not cited in the response. Used to validate that every cited chunk_id is one the model actually saw.
 *First used in:* [Reference: prompts: RAG with citations](prompts.md#2-rag-with-citations)
 
+**ROADMAP.md**
+The repository's permanent, date-stamped ledger recording architectural decisions, schema evolutions, and release commitments.
+*First used in:* [Roadmap](../ROADMAP.md)
+
 ---
 
 ## S
 
 **Scale (phase)**
-The fourth phase of the adoption journey. Multiple teams, multiple workflows, a shared platform. The site does not have a case study for this phase yet; the work is ongoing.
+The fourth phase of the adoption journey. Multiple teams, multiple workflows, a shared platform.
 *First used in:* [Adoption: scale](../adoption/scale.md)
 
 **Schema validation**
 The first stage of validation: the response must parse as the module's Pydantic model. A response that is valid JSON but not a `TriageOutput` is rejected here.
 *First used in:* [Reference: Python API: the module contracts](python-api.md#the-module-contracts)
 
+**Semver**
+Semantic Versioning (`MAJOR.MINOR.PATCH`) applied strictly to typed module schemas, prompt templates, and workflow orchestration contracts.
+*First used in:* [Reference: conventions](conventions.md#versioning)
+
+**Severity (1 / 2 / 3)**
+The categorical impact level of factory machine incidents: 1 = cosmetic / non-blocking, 2 = operational degradation, 3 = critical safety / line stoppage. Escapes are caught by safety keyword dictionaries.
+*First used in:* [Case study: factory IT](../case-studies/factory-it.md)
+
+**sla_system**
+The canonical Python package (`aiwf.modules.sla_system`) implementing ISP tier-1 complaint classification with telemetry pre-checks.
+*First used in:* [Case study: ISP support](../case-studies/isp-support.md)
+
+**SOP (Standard Operating Procedure)**
+Formal, version-controlled organizational procedures converted into chunked markdown documents for indexed retrieval in enterprise RAG workflows.
+*First used in:* [Case study: bank IT](../case-studies/bank-it.md)
+
+**Stability contract**
+The architectural guarantee that schemas, CLI arguments, and API entry points remain backward-compatible across minor versions, with changes protected by frozen eval sets.
+*First used in:* [Reference: conventions](conventions.md#versioning)
+
 ---
 
 ## T
 
+**Temperature**
+Sampling randomness parameter for language model decoding. Set to `0.0` across all production workflow steps to ensure deterministic and reproducible outputs.
+*First used in:* [Reference: prompts](prompts.md#1-triage)
+
 **Tenant id**
 An identifier for the customer organisation. Multi-tenant deployments route by tenant id, isolate data by tenant id, and audit by tenant id. The bank's helpdesk is single-tenant; the ISP's triage is single-tenant; the factory is single-tenant. Tenant isolation is a prerequisite for the bank and ISP deployments to grow into multi-tenant.
 *First used in:* [Reference: Python API: the Workflow.run() contract](python-api.md#the-workflowrun-contract)
+
+**Tier × category matrix**
+The deterministic lookup table mapping customer agreement levels (Platinum, Gold, Silver) and triage categories (Connectivity, Outage, Hardware, Billing) to service priorities (P1, P2, P3).
+*First used in:* [Case study: ISP support](../case-studies/isp-support.md)
+
+**TOML**
+The declarative configuration file format (`aiwf.toml`) used to specify engine endpoints, model timeouts, validator thresholds, and directory paths.
+*First used in:* [Reference: conventions](conventions.md#4-config-file)
 
 **Triage**
 The act of routing a ticket to the right queue. The ISP's tier-1 triage is the canonical example. The model produces a `TriageOutput` (category + rationale + free-text confidence); the application looks up the priority in a matrix and writes the ticket.
@@ -179,6 +282,18 @@ The act of routing a ticket to the right queue. The ISP's tier-1 triage is the c
 **Typed object**
 A Pydantic model that constrains the shape and types of a value. "The response is a typed object" means "the response must parse as `TriageOutput` (or whichever model); anything that does not parse is rejected." The site uses typed objects as a first-class design tool.
 *First used in:* [Reference: Python API: the typed contracts](python-api.md#the-typed-contracts)
+
+---
+
+## U
+
+**Uptime_24h**
+Continuous operational availability metric tracked for local workflow execution workers, targeting $\ge 99\%$ uptime on edge infrastructure.
+*First used in:* [Case study: factory IT](../case-studies/factory-it.md)
+
+**Usecase vs Case study**
+An important distinction in this book: a *use case* is a lab tutorial or toy demonstration, whereas a *case study* documents real-world production deployment metrics, failure modes, and operational trade-offs.
+*First used in:* [Case studies: overview](../case-studies/index.md)
 
 ---
 
@@ -193,6 +308,10 @@ A function that runs after the model produces a response. The site has three kin
 A response that fails any validator is rejected. The model is re-prompted once; on the second failure, the system falls back to a safe default ("please open a ticket" for RAG, `category=other` for triage, an empty summary for shifts).
 *First used in:* [Reference: Python API: the module contracts](python-api.md#the-module-contracts)
 
+**Vector store**
+The embedding database (e.g. ChromaDB, Qdrant) used to store and similarity-search text chunks in enterprise retrieval workflows.
+*First used in:* [Case study: bank IT](../case-studies/bank-it.md)
+
 **Version (module)**
 The version of a module's code, prompt, and schema, in semver. `module_version` is a `ModuleMeta` field and an audit-log field. A breaking change to a typed object's schema is a major version bump.
 *First used in:* [Reference: Python API: versioning](python-api.md#versioning)
@@ -203,11 +322,32 @@ The version of the prompt text the module is using, in the form `vN`. A change t
 
 ---
 
+## W
+
+**Workflow**
+The execution of a business process through a defined sequence of activities, validations, and human approvals. In code, represented by the `Workflow.run()` entry point.
+*First used in:* [Reference: Python API](python-api.md#the-workflowrun-contract)
+
+**Workflow orchestration engine**
+Durable execution software (Temporal, Camunda, LangGraph, Windmill) that manages state machines, retries, timeouts, and human checkpoints, calling local SLMs as stateless worker tasks.
+*First used in:* [Architecture: workflow orchestration](../architecture/workflows.md)
+
+---
+
+## Y
+
+**YAML**
+The serialization format used for MkDocs site configuration (`mkdocs.yml`) and declarative workflow definitions.
+*First used in:* [Reference: conventions](conventions.md)
+
+---
+
 ## See also
 
-- [Reference: Python API](python-api.md) — most of the type-level terms
-- [Reference: prompts](prompts.md) — the prompt-design terms
-- [Reference: benchmarks](benchmarks.md) — the eval-set and bar terms
-- [Reference: conventions](conventions.md) — the deployment-shape terms
-- [Reference: CLI](cli.md) — the operator-facing terms
-- [Adoption: overview](../adoption/index.md) — the phase names
+- [Reference: Python API](python-api.md) — the type-level terms and contracts
+- [Reference: prompts](prompts.md) — the prompt-design terms and schemas
+- [Reference: benchmarks](benchmarks.md) — the eval-set, harness, and bar terms
+- [Reference: conventions](conventions.md) — the deployment-shape and storage terms
+- [Reference: CLI](cli.md) — the operator-facing terms and subcommands
+- [Architecture: workflow orchestration](../architecture/workflows.md) — engine integration contracts
+- [Adoption: overview](../adoption/index.md) — the adoption phase definitions

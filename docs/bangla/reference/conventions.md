@@ -7,7 +7,7 @@
 
 ---
 
-## ১. Doctrine
+## 1. Doctrine
 
 কোনো doctrine-ই code-এ comment-এ নেই — সবকিছুই validator, contract, বা test দিয়ে enforce। Comment-এ থাকা rule-ই bug।
 
@@ -49,7 +49,7 @@ Enforcement: codebase-এ কোনো HTTP egress নেই; CI-তে firewall
 
 ---
 
-## ২. Naming
+## 2. Naming
 
 | Surface | Rule | Example |
 | --- | --- | --- |
@@ -69,7 +69,7 @@ English ও Bengali mirror-এ একই module-এর জন্য আলাদ
 
 ---
 
-## ৩. Environment variables
+## 3. Environment variables
 
 `AIWF_*` prefix ছাড়া অন্য কোনো env var use হয় না, except: LM Studio endpoint-এর জন্য `LMSTUDIO_BASE_URL` (LM Studio-র standard)।
 
@@ -87,7 +87,7 @@ English ও Bengali mirror-এ একই module-এর জন্য আলাদ
 
 ---
 
-## ৪. Config file
+## 4. Config file
 
 TOML ফরম্যাট, `aiwf.toml` (default)। Schema module-specific, common section `[core]`:
 
@@ -116,7 +116,7 @@ CLI flag-এর precedence: `flag > env var > config file > default`। Config f
 
 ---
 
-## ৫. Audit log format
+## 5. Audit log format
 
 JSONL — প্রতি line-এ একটা record। Schema (Python-এর `TypedDict` notation):
 

@@ -10,7 +10,7 @@
 ## A
 
 **actor**
-একটা typed input পাঠানো entity — ticket, request, note, প্রশ্ন। Workflow-এ প্রতিটা `Actor` instance পাঠানোর আগে module-specific contract-এ conform করতে হয়। [Python API](python-api.md#workflowrun-input) দেখো।
+একটা typed input পাঠানো entity — ticket, request, note, প্রশ্ন। Workflow-এ প্রতিটা `Actor` instance পাঠানোর আগে module-specific contract-এ conform করতে হয়। [Python API](python-api.md#the-workflowrun-contract) দেখুন।
 
 **AIWF**
 `aiwf` command-এর source project-এর নাম; CLI-এর জন্য product surface। সব module-ই `aiwf`-এর অধীনে থাকে।
@@ -189,7 +189,7 @@ ISP-র service tier-এর (highest-to-lowest)। Triage prompt-এ priority ma
 ISP-র enforcement check: `priority` field tier × category matrix-এ থাকতে হবে, model কখনো matrix-এর বাইরে কিছু বলতে পারে না। Bar 1.000।
 
 **prompt-injection-resist**
-[cross-cutting eval](benchmarks.md#4-prompt-injection--safety-cross-cutting)-এ metric। bank module-এ "ignore previous instructions"-style attack-এর bar 0.95; cite-in-set check-ই 1.0 enforce করে।
+[cross-cutting eval](benchmarks.md#4-prompt-injection)-এ metric। bank module-এ "ignore previous instructions"-style attack-এর bar 0.95; cite-in-set check-ই 1.0 enforce করে।
 
 **prompt_version**
 `prompts/<name>.v<n>.txt` filename-এর `.v<n>`। Prompt text-এর প্রতিটা release-এ পরিবর্তন নতুন `v<n+1>`।
@@ -240,7 +240,7 @@ Bengali-র জন্য Material for MkDocs-এ default font। `mkdocs.yml`-�
 Standard Operating Procedure — bank-এর internal IT procedure document। RAG corpus-এর primary content।
 
 **stability**
-[Reference](index.md#স্টেবিলিটি) section-এ describe করা: CLI stable, Python API semver, prompts semver, eval set frozen।
+[Reference](index.md#stability) section-এ describe করা: CLI stable, Python API semver, prompts semver, eval set frozen।
 
 ---
 
@@ -289,7 +289,7 @@ ChromaDB। RAG-এ corpus-এর embeddings store করে।
 ## W
 
 **workflow**
-[Reference: Python API](python-api.md#workflowrun-input)-এর `Workflow.run(actor: Actor)` — module-কে পাঠানো generic entry point। `Actor` typed input।
+[Reference: Python API](python-api.md#the-workflowrun-contract)-এর `Workflow.run(actor: Actor)` — module-কে পাঠানো generic entry point। `Actor` typed input।
 
 ---
 

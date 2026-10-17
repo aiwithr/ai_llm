@@ -100,7 +100,7 @@ A workflow is a good candidate for local-LLM automation if and only if all three
 
 An FDE who runs these three questions against the customer's top 10 workflows will find that 6–7 are not candidates. The instinct to find an automation candidate in all 10 is the instinct to fail. The good news is the 3–4 that *are* candidates are usually high-value, and shipping on those 3–4 is what builds the programme.
 
-This is the same logic that lives in [Discover — Step 1](discover.md#step-1--pick-one-real-workflow-30-min), and the reason it lives there is that the logic is the FDE's logic. The book and the role are the same thing.
+This is the same logic that lives in [Discover — Step 1](discover.md#step-1-pick-one-real-workflow-30-min), and the reason it lives there is that the logic is the FDE's logic. The book and the role are the same thing.
 
 ---
 

@@ -66,6 +66,7 @@ flowchart TB
 - [Layers](layers.md) — what each layer is responsible for, and what it is not
 - [Data flow](data-flow.md) — what data moves where, and what never leaves your network
 - [Security](security.md) — threat model, network placement, audit logging
+- [Workflow Orchestration](workflows.md) — integrating Temporal, Camunda, LangGraph, and Windmill with local SLMs
 
 ## Design principles
 

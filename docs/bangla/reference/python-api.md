@@ -100,7 +100,7 @@ result: ChatResult = client.chat(ChatRequest(
 
 ---
 
-## `Workflow.run()` contract
+## The Workflow.run() contract {: #the-workflowrun-contract }
 
 প্রতিটা মডিউল প্যাকেজ (`isp_classifier`, `sla_system`, `qwen_rag`, `factory_summary` ইত্যাদি) এই signature-সহ একটা top-level function expose করে:
 

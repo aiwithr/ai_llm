@@ -2,10 +2,10 @@ site_name: AI Work Flow for Business Docs
 site_url: https://aiwithr.github.io/ai_llm/
 repo_url: https://github.com/aiwithr/ai_llm
 repo_name: aiwithr/ai_llm
-site_author: রকিবুল হাসান
+site_author: Rakibul Hassan (রকিবুল হাসান)
 site_description: >-
-   Enterprise automation, without the cloud. Local LLMs, real workflows, no data leaving your network.
-copyright: "সৃজনশীল লাইসেন্সিং ২০২৪ - ২০২৬ &copy; রকিবুল হাসান"
+  AI Work Flow for Business: Enterprise automation and AI workflow without the cloud by AI author Rakibul Hassan. Production workflows, local SLMs (Qwen 2.5, Gemma 3), open-source orchestration (Temporal, Camunda, LangGraph), and zero cloud data leakage for ISP, bank, factory, and enterprise IT.
+copyright: "সৃজনশীল লাইসেন্সিং ২০২৪ - ২০২৬ &copy; Rakibul Hassan (রকিবুল হাসান) &middot; <a href='https://aiwithr.github.io/'>aiwithr.github.io</a>"
 edit_uri: ""
 
 exclude_docs: |
@@ -13,6 +13,7 @@ exclude_docs: |
 
 theme:
   name: material
+  custom_dir: overrides
   language: bn
   palette:
     scheme: default

@@ -107,7 +107,7 @@ flowchart LR
 
 | # | Chapter / Path | Primary Language | Lines | Current Status | Key Issues & Next Actions |
 |---|---|---|---|---|---|
-| **01** | `docs/index.md` | EN | 134 | Stable | Landing page; bilingual tables; working well. |
+| **01** | `docs/index.md` | EN | 139 | **Stable (SEO Enriched)** | Landing page; bilingual tables; enriched SEO frontmatter & structured metadata. |
 | **02** | `docs/why-ai-work-flow.md` | EN | 93 | Stable | Core thesis; clear and concise. |
 | **03** | `docs/demo.md` | EN | 156 | Stable | Hands-on walkthrough with Qwen 2.5 1.5B. |
 | **04** | `docs/adoption/index.md` | EN | 165 | **Stable (Enriched)** | 6-column phase table, exit criteria, step-by-step breakdown, and anti-patterns back-ported. |

@@ -1,4 +1,9 @@
-﻿# AI Work Flow for Business
+---
+title: AI Work Flow for Business — Enterprise Automation, Without the Cloud
+description: Enterprise automation and AI workflow for businesses without the cloud by AI author Rakibul Hassan. Production workflows, local SLMs, open-source orchestration, zero data leakage.
+---
+
+# AI Work Flow for Business
 
 > **Adopt AI in your business. Keep your data on your network.**
 > **A Forward Deployed Engineer (FDE) makes the rollout real** — they audit your data, build evals, and ship the gateway. Read the full [FDE chapter](adoption/fde.md).

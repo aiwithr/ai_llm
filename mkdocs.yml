@@ -4,8 +4,8 @@ repo_url: https://github.com/aiwithr/ai_llm
 repo_name: aiwithr/ai_llm
 site_author: Rakibul Hassan (রকিবুল হাসান)
 site_description: >-
-  AI Work Flow for Business: Enterprise automation and AI workflow without the cloud by AI author Rakibul Hassan. Production workflows, local SLMs (Qwen 2.5, Gemma 3), open-source orchestration (Temporal, Camunda, LangGraph), and zero cloud data leakage for ISP, bank, factory, and enterprise IT.
-copyright: "সৃজনশীল লাইসেন্সিং ২০২৪ - ২০২৬ &copy; Rakibul Hassan (রকিবুল হাসান) &middot; <a href='https://aiwithr.github.io/'>aiwithr.github.io</a>"
+  AI Work Flow for Business by Rakibul Hassan: Enterprise AI automation without the cloud using local SLMs (Qwen, Gemma) & Temporal/LangGraph workflows.
+copyright: "সৃজনশীল লাইসেন্সিং &copy; Rakibul Hassan (রকিবুল হাসান) &middot; <a href='https://aiwithr.github.io/'>aiwithr.github.io</a> &middot; <a href='https://aiwithr.github.io/resources/'>সব বই (All Books)</a> &middot; <a href='https://aiwithr.github.io/about/'>লেখক পরিচিতি</a>"
 edit_uri: ""
 
 exclude_docs: |
@@ -58,8 +58,12 @@ extra:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
   social:
+    - icon: fontawesome/brands/git-alt
+      link: https://github.com/aiwithr/ai_llm
     - icon: fontawesome/brands/github
       link: https://github.com/raqueeb
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@aiwithr
     - icon: fontawesome/brands/facebook-messenger
       link: http://m.me/raqueeb
     - icon: fontawesome/brands/whatsapp

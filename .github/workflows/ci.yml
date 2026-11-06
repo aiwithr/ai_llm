@@ -7,11 +7,9 @@ on:
       - main
   workflow_dispatch:
 
-# Needed so `mkdocs gh-deploy` can push the built site to the gh-pages branch.
 permissions:
   contents: write
 
-# Prevent overlapping deploys from racing each other on the gh-pages branch.
 concurrency:
   group: pages-gh-deploy
   cancel-in-progress: false
@@ -38,7 +36,7 @@ jobs:
       - name: Cache MkDocs Material
         uses: actions/cache@v4
         with:
-          key: mkdocs-material-${{ hashFiles('mkdocs.yml', 'docs/**/*.md') }}
+          key: mkdocs-material-${{ hashFiles('mkdocs.yml', 'overrides/**/*.html', 'docs/**/*.md') }}
           path: |
             ~/.cache/pip
             ~/.cache/mkdocs_material
@@ -46,7 +44,7 @@ jobs:
             mkdocs-material-
 
       - name: Install MkDocs Material
-        run: pip install mkdocs-material pymdown-extensions
+        run: pip install mkdocs-material pymdown-extensions pillow cairosvg
 
       - name: Build and deploy to gh-pages
         run: mkdocs gh-deploy --force --clean
